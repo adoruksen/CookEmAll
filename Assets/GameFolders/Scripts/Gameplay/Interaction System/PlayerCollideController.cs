@@ -23,7 +23,7 @@ public class PlayerCollideController : MonoBehaviour
 
                 Debug.Log("pancake");
                 other.transform.parent = pancakeParent;
-                other.transform.localPosition= new Vector3(0,0.1f*pancakeParent.childCount,0);
+                other.transform.localPosition= new Vector3(0,pancakeParent.GetChild(0).localScale.y*pancakeParent.childCount,0);
             }
             else if (interactable.type == InteractableTypes.Banana)
             {
@@ -35,24 +35,24 @@ public class PlayerCollideController : MonoBehaviour
                 other.GetComponent<BoxCollider>().enabled = false;
 
                 other.transform.parent = bananaParent;
-                other.transform.localPosition = new Vector3(0, 0.2f * bananaParent.childCount, 0);
+                other.transform.localPosition = new Vector3(0, bananaParent.GetChild(0).localScale.y * bananaParent.childCount, 0);
 
 
             }
-            //else if (interactable.type == InteractableTypes.Plate)
-            //{
-            //   Debug.Log("plate");
-            //   if (bananaParent.childCount>2||pancakeParent.childCount>2)
-            //   {
-            //       for (int i = 0; i < bananaParent.childCount; i++)
-            //       {
-            //           bananaParent.GetChild(i).transform.position = other.transform.position;
-            //           bananaParent.GetChild(i).parent = other.transform;
-            //           Debug.Log("muzlar býrakýldý");
+            else if (interactable.type == InteractableTypes.Plate)
+            {
+                Debug.Log("plate");
+                if (bananaParent.childCount > 2 || pancakeParent.childCount > 2)
+                {
+                    for (int i = 0; i < bananaParent.childCount; i++)
+                    {
+                        bananaParent.GetChild(i).transform.position = other.transform.position;
+                        bananaParent.GetChild(i).parent = other.transform;
+                        Debug.Log("muzlar býrakýldý");
 
-            //       }
-            //   }
-            //}
+                    }
+                }
+            }
         }
     }
 
