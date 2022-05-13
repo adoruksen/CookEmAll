@@ -9,7 +9,6 @@ using UnityEditor;
 public class LevelCreator : EditorWindow
 {
     public GridSpecsForLevel levelParts;
-    //int viewIndex = 1;
     Vector2 scrollPos;
 
     [MenuItem("Window/My Editors/Level Creator")]
@@ -52,7 +51,6 @@ public class LevelCreator : EditorWindow
                     GUIStyle bananaStyle = new GUIStyle("popup");
                     GUIStyle pancakeStyle = new GUIStyle("popup");
                     GUIStyle plateStyle = new GUIStyle("popup");
-                    //GUIStyle portalStyle = new GUIStyle("popup");
                     GUIStyle shifterStyle = new GUIStyle("popup");
 
 
@@ -62,17 +60,6 @@ public class LevelCreator : EditorWindow
 
                     GUILayout.Label("Level Part " + section, EditorStyles.boldLabel);
                     levelParts.gridSpecifications[section - 1].boardSize = (Vector2Int)EditorGUILayout.Vector2IntField("Board Size", levelParts.gridSpecifications[section - 1].boardSize, GUILayout.ExpandWidth(false));
-                    //#region Bridge Part
-
-                    //if (section != levelParts.gridSpecifications.Count)
-                    //{
-                    //    GUILayout.Space(30);
-                    //    GUILayout.Label("Bridge Specs", EditorStyles.boldLabel);
-                    //    GUILayout.BeginVertical();
-                    //    levelParts.gridSpecifications[section - 1].bridgeLenght = (int)EditorGUILayout.IntField("Bridge Lenght", levelParts.gridSpecifications[section - 1].bridgeLenght, GUILayout.ExpandWidth(false));
-                    //    GUILayout.EndVertical();
-                    //}
-                    //#endregion
 
 
                     #region Build Part Button
@@ -105,7 +92,6 @@ public class LevelCreator : EditorWindow
                             {
                                 levelParts.gridSpecifications[section - 1].objType[row, column] =
                                     (InteractableTypes)EditorGUILayout.EnumPopup(levelParts.gridSpecifications[section - 1].objType[row, column], plateStyle);
-                                //SpawnManager.SetPlayerPos(row, column, levelParts.gridSpecifications[section - 1]);
                             }
 
                             else if (levelParts.gridSpecifications[section - 1].objType[row, column] == InteractableTypes.Banana)
@@ -113,11 +99,7 @@ public class LevelCreator : EditorWindow
                                 levelParts.gridSpecifications[section - 1].objType[row, column] =
                                     (InteractableTypes)EditorGUILayout.EnumPopup(levelParts.gridSpecifications[section - 1].objType[row, column], bananaStyle);
                             }
-                            //else if (levelParts.gridSpecifications[section - 1].objType[row, column] == InteractableTypes.Portal)
-                            //{
-                            //    levelParts.gridSpecifications[section - 1].objType[row, column] =
-                            //        (InteractableTypes)EditorGUILayout.EnumPopup(levelParts.gridSpecifications[section - 1].objType[row, column], portalStyle);
-                            //}
+
 
                             else
                             {

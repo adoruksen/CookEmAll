@@ -16,7 +16,6 @@ public class GridSpecs
 
     [System.NonSerialized] public Vector3 startPos;
 
-    //public int scoreLenght;
 
     public InteractableTypes[,] objType = new InteractableTypes[Consts.maxSize, Consts.maxSize]; //objelerin typelarýna göre spawn edilmesini kolaylaþtýracak board
 
