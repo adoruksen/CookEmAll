@@ -6,7 +6,7 @@ public class PlayerMovementController : MonoBehaviour
     private Collider planeCollider;
     private RaycastHit hit;
     private Ray ray;
-    private Vector3 offset;
+
     [SerializeField] private InputController inputController;
 
 

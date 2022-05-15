@@ -1,12 +1,12 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 
 [RequireComponent(typeof(LineRenderer))]
 public class LineRendererController : MonoBehaviour
 {
     public static LineRendererController instance;
+
+    public List<Transform> colliderList;
     //ilk basta bir collidera basýlýyor olmalý, basýldýgýnda true olacak bir boolean kontrol edilecek.
     //collidera basýldýðý anda type ý bilinecek ve listeye eklenecek.
     //sonrasýnda line oluþacak ve mouseposition u takip edecek. line ýn max uzunlugu olacak
@@ -16,8 +16,7 @@ public class LineRendererController : MonoBehaviour
 
     private LineRenderer lineRenderer;
 
-    public List<Transform> colliderList = new List<Transform>();
-    void Awake()
+    private void Awake()
     {
         instance = this;
         lineRenderer = GetComponent<LineRenderer>();
@@ -25,7 +24,7 @@ public class LineRendererController : MonoBehaviour
 
     public void ColliderListController(Transform objTransform)
     {
-        if (colliderList.Count>0)
+        if (colliderList.Count > 0)
         {
             if (objTransform.GetComponent<Interactable>().type != colliderList[0].GetComponent<Interactable>().type)
             {
@@ -33,14 +32,15 @@ public class LineRendererController : MonoBehaviour
             }
             else
             {
+                objTransform.GetChild(0).gameObject.SetActive(true);
                 colliderList.Add(objTransform);
             }
         }
 
         else
         {
+            objTransform.GetChild(0).gameObject.SetActive(true);
             colliderList.Add(objTransform);
         }
-
     }
 }
