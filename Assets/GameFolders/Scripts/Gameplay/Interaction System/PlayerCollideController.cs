@@ -26,13 +26,7 @@ public class PlayerCollideController : MonoBehaviour
             else if (interactable.type == InteractableTypes.Plate)
             {
                 Debug.Log("plate");
-                if (bananaParent.childCount > 2 || pancakeParent.childCount > 2)
-                    for (var i = 0; i < bananaParent.childCount; i++)
-                    {
-                        bananaParent.GetChild(i).transform.position = other.transform.position;
-                        bananaParent.GetChild(i).parent = other.transform;
-                        Debug.Log("muzlar býrakýldý");
-                    }
+                PlateAction(other.transform);
             }
         }
     }
@@ -64,5 +58,20 @@ public class PlayerCollideController : MonoBehaviour
             objTransform.transform.localPosition = new Vector3(0,
                 parent.GetChild(0).localScale.y * parent.childCount, 0);
         }
+    }
+
+
+    void PlateAction(Transform platePosTransform)
+    {
+        if (stackedList.Count > 2)
+        {
+            for (int i = 0; i < stackedList.Count; i++)
+            {
+                stackedList[i].position = platePosTransform.position;
+                stackedList[i].parent = platePosTransform;
+            }
+            stackedList.Clear();
+        }
+        
     }
 }
