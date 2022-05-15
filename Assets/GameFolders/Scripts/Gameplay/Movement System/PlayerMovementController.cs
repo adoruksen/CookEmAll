@@ -26,17 +26,10 @@ public class PlayerMovementController : MonoBehaviour
                 if (hit.collider == planeCollider)
                 {
                     transform.position = hit.point;
-                    //SpatulaMovement();
 
                 }
             }
         }
-    }
-
-    void SpatulaMovement()
-    {
-        transform.position = Vector3.MoveTowards(transform.position, (hit.point-offset), Time.deltaTime * 5f);
-        transform.LookAt(new Vector3(hit.point.x, transform.position.y, hit.point.z));
     }
 
 }
