@@ -1,59 +1,68 @@
-using System.Collections;
 using System.Collections.Generic;
-using DG.Tweening;
 using UnityEngine;
 
+[RequireComponent(typeof(Collider))]
 public class PlayerCollideController : MonoBehaviour
 {
-    [SerializeField] private Transform pancakeParent;
     [SerializeField] private Transform bananaParent;
-    void OnTriggerEnter(Collider other)
+    [SerializeField] private Transform pancakeParent;
+    [SerializeField] private List<Transform> stackedList;
+
+    private void OnTriggerEnter(Collider other)
     {
-        Interactable interactable = other.GetComponent<Interactable>();
+        var interactable = other.GetComponent<Interactable>();
         if (interactable != null)
         {
             if (interactable.type == InteractableTypes.Pancake)
             {
-                if (bananaParent
-                        .childCount > 0)
-                {
-                    return;
-                }
-                other.GetComponent<BoxCollider>().enabled = false;
-
-                Debug.Log("pancake");
-                other.transform.parent = pancakeParent;
-                other.transform.localPosition= new Vector3(0,pancakeParent.GetChild(0).localScale.y*pancakeParent.childCount,0);
+                StackedListController(other.transform, pancakeParent);
+                LineRendererController.instance.ColliderListController(other.transform);
             }
             else if (interactable.type == InteractableTypes.Banana)
             {
-                if (pancakeParent.childCount > 0)
-                {
-                    return;
-                }
-                Debug.Log("banana");
-                other.GetComponent<BoxCollider>().enabled = false;
-
-                other.transform.parent = bananaParent;
-                other.transform.localPosition = new Vector3(0, bananaParent.GetChild(0).localScale.y * bananaParent.childCount, 0);
-
-
+                StackedListController(other.transform, bananaParent);
+                LineRendererController.instance.ColliderListController(other.transform);
             }
             else if (interactable.type == InteractableTypes.Plate)
             {
                 Debug.Log("plate");
                 if (bananaParent.childCount > 2 || pancakeParent.childCount > 2)
-                {
-                    for (int i = 0; i < bananaParent.childCount; i++)
+                    for (var i = 0; i < bananaParent.childCount; i++)
                     {
                         bananaParent.GetChild(i).transform.position = other.transform.position;
                         bananaParent.GetChild(i).parent = other.transform;
                         Debug.Log("muzlar býrakýldý");
-
                     }
-                }
             }
         }
     }
 
+
+    private void StackedListController(Transform objTransform, Transform parent)
+    {
+        if (stackedList.Count > 0)
+        {
+            if (objTransform.GetComponent<Interactable>().type != stackedList[0].GetComponent<Interactable>().type)
+            {
+                Debug.Log("ayný türde degil collider controller");
+            }
+            else
+            {
+                stackedList.Add(objTransform);
+                objTransform.GetComponent<BoxCollider>().enabled = false;
+                objTransform.transform.parent = parent;
+                objTransform.transform.localPosition = new Vector3(0,
+                    parent.GetChild(0).localScale.y * parent.childCount, 0);
+            }
+        }
+
+        else
+        {
+            stackedList.Add(objTransform);
+            objTransform.GetComponent<BoxCollider>().enabled = false;
+            objTransform.transform.parent = parent;
+            objTransform.transform.localPosition = new Vector3(0,
+                parent.GetChild(0).localScale.y * parent.childCount, 0);
+        }
+    }
 }
