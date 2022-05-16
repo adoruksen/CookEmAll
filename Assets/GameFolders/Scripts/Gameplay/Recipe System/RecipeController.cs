@@ -21,16 +21,22 @@ public class RecipeController : MonoBehaviour
 
     public void RecipeControllerFunction(int value)
     {
+        //recipeObjects[0].GetComponent<SingleRecipe>().type
         //matematiksel iþlem yapýlacak sadece
-    }
-
-    public void Somethign()
-    {
-        if (currentLevel < recipeObjects.Count)
+        int finalVal = value - PlayerCollideController.instance.StackedListCount;
+        if (finalVal <= 0)
         {
-            recipeObjects[currentLevel].GetComponent<SingleRecipe>().HandleRecipe(recipeObjects[currentLevel].GetComponent<SingleRecipe>().type, recipeObjects[currentLevel].GetComponent<SingleRecipe>().value);
-            currentLevel++;
+            textHolder.text = "okey";
         }
     }
+
+    //public void Something()
+    //{
+    //    if (currentLevel < recipeObjects.Count)
+    //    {
+    //        recipeObjects[currentLevel].GetComponent<SingleRecipe>().HandleRecipe(recipeObjects[currentLevel].GetComponent<SingleRecipe>().type, recipeObjects[currentLevel].GetComponent<SingleRecipe>().value);
+    //        currentLevel++;
+    //    }
+    //}
     
 }

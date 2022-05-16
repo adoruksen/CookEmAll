@@ -553,6 +553,7 @@ GameObject:
   - component: {fileID: 203381466}
   - component: {fileID: 203381469}
   - component: {fileID: 203381467}
+  - component: {fileID: 203381470}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -601,6 +602,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelAsset: {fileID: 11400000, guid: 07435a9bd78b1b949aec8cef6722090f, type: 2}
   levelRules: {fileID: 11400000, guid: 6be3eda1a7e03264999b4301639c962b, type: 2}
+--- !u!114 &203381470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203381465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f750765b53ad6d438251adb680a09fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recipeObjects: []
+  textHolder: {fileID: 0}
 --- !u!1 &274492576
 GameObject:
   m_ObjectHideFlags: 0
@@ -1666,7 +1681,6 @@ GameObject:
   - component: {fileID: 1620840555}
   - component: {fileID: 1620840554}
   - component: {fileID: 1620840553}
-  - component: {fileID: 1620840558}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -1769,19 +1783,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 24.549, y: 179.545, z: 0}
---- !u!114 &1620840558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1620840552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f750765b53ad6d438251adb680a09fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textHolder: {fileID: 0}
 --- !u!1001 &1794115752
 PrefabInstance:
   m_ObjectHideFlags: 0

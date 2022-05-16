@@ -79,11 +79,11 @@ public class PlayerCollideController : MonoBehaviour
             t.position = platePosTransform.position;
             t.parent = platePosTransform;
         }
+        RecipeController.instance.RecipeControllerFunction(stackedList.Count);
 
         stackedList.Clear();
         LineRendererController.instance.ClearLines();
         DuringGamePanelController.instance.MoveCountDecrease();
-        RecipeController.instance.RecipeControllerFunction(3);
 
     }
 }
