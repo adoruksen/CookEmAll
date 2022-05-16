@@ -1,0 +1,31 @@
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class CompletePanelController : MonoBehaviour
+{
+    public static CompletePanelController instance;
+    void Awake()
+    {
+        instance=this;
+    }
+
+    public void WinStatusOpener()
+    {
+        transform.GetChild(0).gameObject.SetActive(true);
+    }
+
+    public void LoseStatusOpener()
+    {
+        transform.GetChild(1).gameObject.SetActive(true);
+    }
+    public void NextButtonHandle()
+    {
+        GameManager.Level++;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void TryAgainButtonHandle()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+}

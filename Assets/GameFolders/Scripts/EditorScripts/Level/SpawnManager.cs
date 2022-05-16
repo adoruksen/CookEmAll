@@ -34,17 +34,17 @@ public class SpawnManager : MonoBehaviour
         for (var column = 0; column < gridSpecs.boardSize.y; column++)
             if (gridSpecs.objType[row, column] == InteractableTypes.Banana)
             {
-                var pos = new Vector3(row - firstDash, .6f, gridSpecs.boardSize.y - column);
+                var pos = new Vector3(row - firstDash, .65f, gridSpecs.boardSize.y - column);
                 Instantiator("Banana", pos, banana.transform, column, gridSpecs);
             }
             else if (gridSpecs.objType[row, column] == InteractableTypes.Pancake)
             {
-                var pos = new Vector3(row - firstDash, .6f, gridSpecs.boardSize.y - column);
+                var pos = new Vector3(row - firstDash, .65f, gridSpecs.boardSize.y - column);
                 Instantiator("Pancake", pos, pancake.transform, column, gridSpecs);
             }
             else if (gridSpecs.objType[row, column] == InteractableTypes.Plate)
             {
-                var pos = new Vector3(row - firstDash, .6f, gridSpecs.boardSize.y - column);
+                var pos = new Vector3(row - firstDash, .5f, gridSpecs.boardSize.y - column);
                 Instantiator("Plate", pos, plate.transform, column, gridSpecs);
             }
     }

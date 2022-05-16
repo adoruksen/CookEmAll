@@ -5,5 +5,5 @@ using UnityEngine;
 public class InputController : MonoBehaviour
 {
     public bool FingerHold => Input.GetMouseButton(0);
-    public bool FingerPulled => Input.GetMouseButtonUp(1);
+    public bool FingerTap => Input.GetMouseButtonDown(1);
 }

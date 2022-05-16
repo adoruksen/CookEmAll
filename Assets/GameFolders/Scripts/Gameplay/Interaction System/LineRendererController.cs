@@ -32,6 +32,7 @@ public class LineRendererController : MonoBehaviour
             }
             else
             {
+                lineRenderer.positionCount = colliderList.Count;
                 objTransform.GetChild(0).gameObject.SetActive(true);
                 colliderList.Add(objTransform);
             }
@@ -39,8 +40,24 @@ public class LineRendererController : MonoBehaviour
 
         else
         {
+            lineRenderer.positionCount = colliderList.Count;
             objTransform.GetChild(0).gameObject.SetActive(true);
             colliderList.Add(objTransform);
         }
+    }
+
+    public void SetUpLine()
+    {
+        lineRenderer.positionCount = colliderList.Count;
+        for (var i = 0; i < colliderList.Count; i++)
+        {
+            lineRenderer.SetPosition(i,colliderList[i].position);
+        }
+    }
+
+    public void ClearLines()
+    {
+        colliderList.Clear();
+        lineRenderer.positionCount = 0;
     }
 }
