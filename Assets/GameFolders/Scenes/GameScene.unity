@@ -614,8 +614,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f750765b53ad6d438251adb680a09fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recipeObjects: []
-  textHolder: {fileID: 0}
+  recipeObjects:
+  - {fileID: 1620840552}
+  textHolder: {fileID: 1156110221}
 --- !u!1 &274492576
 GameObject:
   m_ObjectHideFlags: 0
@@ -1701,7 +1702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  value: 3
+  value: 7
   recipe: {fileID: 1620840552}
   countText: {fileID: 1156110221}
 --- !u!65 &1620840554
