@@ -17,7 +17,7 @@ public class PlayerCollideController : MonoBehaviour
     [SerializeField] private List<Transform> stackedList;
     [SerializeField] private Transform targetPosition;
 
-
+    [SerializeField] private List<Transform> objectsWillBeDestroyed;
     public int StackedListCount => stackedList.Count;
 
     private void OnTriggerEnter(Collider other)
@@ -53,6 +53,7 @@ public class PlayerCollideController : MonoBehaviour
                 else if (interactable.type == InteractableTypes.Plate)
                 {
                     Debug.Log("plate");
+                    FillerBoardManager.instance.TakeTransformInfos(objectsWillBeDestroyed);
                     PlateAction(other.transform);
                 }
             }
@@ -68,29 +69,29 @@ public class PlayerCollideController : MonoBehaviour
                 Debug.Log("ayný türde degil collider controller");
             else
                 stackedList.Add(objTransform);
+            objectsWillBeDestroyed.Add(objTransform);
             objTransform.GetComponent<BoxCollider>().enabled = false;
-            objTransform.transform.parent = parent;
-            objTransform.transform.localPosition = new Vector3(0,
-                parent.GetChild(0).localScale.y * parent.childCount, 0);
+            //objTransform.transform.parent = parent;
+            //objTransform.transform.localPosition = new Vector3(0,
+            //    parent.GetChild(0).localScale.y * parent.childCount, 0);
         }
 
         else
         {
             stackedList.Add(objTransform);
+            objectsWillBeDestroyed.Add(objTransform);
             objTransform.GetComponent<BoxCollider>().enabled = false;
 
-            objTransform.transform.parent = parent;
-            objTransform.transform.localPosition = new Vector3(0,
-                parent.GetChild(0).localScale.y * parent.childCount, 0);
+            //objTransform.transform.parent = parent;
+            //objTransform.transform.localPosition = new Vector3(0,
+            //    parent.GetChild(0).localScale.y * parent.childCount, 0);
         }
     }
 
     private void PlateAction(Transform platePosTransform)
     {
+        objectsWillBeDestroyed.Clear();
         if (stackedList.Count <= 2) return;
-        FillerBoardManager.instance.FillTheBoard(stackedList);
-
-
         foreach (var t in stackedList)
         {
             t.position = platePosTransform.position;
@@ -100,11 +101,8 @@ public class PlayerCollideController : MonoBehaviour
             platePosTransform.GetChild(0).GetComponent<SingleRecipe>().type,
             platePosTransform.GetChild(0).GetComponent<SingleRecipe>().value, platePosTransform.GetChild(0).GetComponent<SingleRecipe>().countText);
 
-        //LineRendererController.instance.ClearLines();
         DuringGamePanelController.instance.MoveCountDecrease();
         stackedList.Clear();
-
-
     }
 
 }
