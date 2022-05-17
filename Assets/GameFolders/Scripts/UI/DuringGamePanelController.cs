@@ -37,6 +37,5 @@ public class DuringGamePanelController : MonoBehaviour
         if (moveCount != 0) return;
         LevelManager.gameState = GameState.Finish;
         CompletePanelController.instance.transform.GetChild(1).gameObject.SetActive(true);
-        Debug.Log("hamle hakký bitti");
     }
 }
