@@ -19,6 +19,10 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
         [SerializeField] private Transform targetPosition;
         public int StackedListCount => stackedList.Count;
 
+        private float maxDistance = 1f;
+
+
+
         private void Awake()
         {
             instance = this;
@@ -76,13 +80,17 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
             {
                 if (objTransform.GetComponent<Interactable>().type == stackedList[0].GetComponent<Interactable>().type)
                 {
-                    stackedList.Add(objTransform);
-                    var indexOfObj = stackedList.IndexOf(objTransform);
-                    stackedList[indexOfObj].GetComponent<BoxCollider>().enabled = false;
-                    stackedList[indexOfObj].transform.parent = parent;
-                    stackedList[indexOfObj].transform.position = new Vector3(stackedList[indexOfObj - 1].transform.position.x,
-                        stackedList[indexOfObj - 1].transform.position.y + .2f,
-                        stackedList[indexOfObj - 1].transform.position.z);
+                    if (Mathf.Abs(Vector3.Distance(objTransform.position, stackedList[stackedList.Count - 1].position)) < maxDistance)
+                    {
+                        stackedList.Add(objTransform);
+                        var indexOfObj = stackedList.IndexOf(objTransform);
+                        stackedList[indexOfObj].GetComponent<BoxCollider>().enabled = false;
+                        stackedList[indexOfObj].transform.parent = parent;
+                        stackedList[indexOfObj].transform.position = new Vector3(stackedList[indexOfObj - 1].transform.position.x,
+                            stackedList[indexOfObj - 1].transform.position.y + .2f,
+                            stackedList[indexOfObj - 1].transform.position.z);
+                    }
+                    
                 }
             }
 
