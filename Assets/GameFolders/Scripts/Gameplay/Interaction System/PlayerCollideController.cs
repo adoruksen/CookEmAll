@@ -31,8 +31,9 @@ public class PlayerCollideController : MonoBehaviour
             {
                 if (interactable.type == InteractableTypes.Pancake)
                 {
-                    interactable.firstPos = other.transform.position;
-                    objectsWillBeDestroyed.Add(interactable.firstPos);
+                    ObjectDestroyedListController(other.transform);
+                    //interactable.firstPos = other.transform.position;
+                    //objectsWillBeDestroyed.Add(interactable.firstPos);
 
                     StackedListController(other.transform,pancakeParent);
 
@@ -46,8 +47,10 @@ public class PlayerCollideController : MonoBehaviour
                 }
                 else if (interactable.type == InteractableTypes.Banana)
                 {
-                    interactable.firstPos = other.transform.position;
-                    objectsWillBeDestroyed.Add(interactable.firstPos);
+                    ObjectDestroyedListController(other.transform);
+
+                    //interactable.firstPos = other.transform.position;
+                    //objectsWillBeDestroyed.Add(interactable.firstPos);
                     StackedListController(other.transform,bananaParent);
 
                     #region commented
@@ -67,7 +70,14 @@ public class PlayerCollideController : MonoBehaviour
         }
     }
 
-
+    void ObjectDestroyedListController(Transform objDestroyed)
+    {
+        objDestroyed.GetComponent<Interactable>().firstPos = objDestroyed.transform.position;
+        if (objectsWillBeDestroyed.Count<= stackedList.Count)
+        {
+            objectsWillBeDestroyed.Add(objDestroyed.GetComponent<Interactable>().firstPos);
+        }
+    }
     private void StackedListController(Transform objTransform,Transform parent)
     {
         if (stackedList.Count > 0)
