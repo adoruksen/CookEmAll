@@ -1,29 +1,37 @@
+using Assets.GameFolders.Scripts.Gameplay.Controllers;
+using Assets.GameFolders.Scripts.Managers;
 using UnityEngine;
 
-public class PlayerMovementController : MonoBehaviour
+namespace Assets.GameFolders.Scripts.Gameplay.Movement_System
 {
-    private Camera cam;
-    private Collider planeCollider;
-    private RaycastHit hit;
-    private Ray ray;
-
-
-    [SerializeField] private InputController inputController;
-
-
-    private void Start()
+    public class PlayerMovementController : MonoBehaviour
     {
-        cam = GameObject.Find("Main Camera").GetComponent<Camera>();
-        planeCollider = GameObject.Find("FreeRoamArea").GetComponent<Collider>();
-    }
+        private Camera cam;
+        private Collider planeCollider;
+        private RaycastHit hit;
+        private Ray ray;
 
-    private void FixedUpdate()
-    {
-        if (LevelManager.gameState != GameState.Normal) return;
-        if (!inputController.FingerHold) return;
-        ray = cam.ScreenPointToRay(Input.mousePosition);
-        if (!Physics.Raycast(ray, out hit)) return;
-        if (hit.collider == planeCollider)
-            transform.position = hit.point;
+
+        [SerializeField] private InputController inputController;
+
+
+        private void Start()
+        {
+            cam = GameObject.Find("Main Camera").GetComponent<Camera>();
+            planeCollider = GameObject.Find("FreeRoamArea").GetComponent<Collider>();
+        }
+
+        private void FixedUpdate()
+        {
+            if (LevelManager.gameState != GameState.Normal) return;
+            if (inputController.FingerHold)
+            {
+                ray = cam.ScreenPointToRay(Input.mousePosition);
+                if (!Physics.Raycast(ray, out hit)) return;
+                if (hit.collider == planeCollider)
+                    transform.position = hit.point;
+            }
+
+        }
     }
 }

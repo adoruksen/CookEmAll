@@ -6,4 +6,6 @@ using UnityEngine;
 public class LevelRules : ScriptableObject
 {
     public int[] moveCounter;
+
+    public GameObject[] levelObjects;
 }

@@ -1,17 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class SingleRecipe : RecipeBase
+namespace Assets.GameFolders.Scripts.Gameplay.Recipe_System
 {
-    public InteractableTypes type;
-    public int value;
-
-    [SerializeField] GameObject recipe;
-    public TMPro.TMP_Text countText;
-
-    private void Awake()
+    public class SingleRecipe : RecipeBase
     {
-        TextSetter( type,value, countText, recipe);
+        public InteractableTypes type;
+        public int value;
+
+        [SerializeField] GameObject recipe;
+        public TMPro.TMP_Text countText;
+
+        private void Awake()
+        {
+            TextSetter( type,value, countText, recipe);
+        }
     }
 }

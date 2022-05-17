@@ -1,30 +1,47 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using DG.Tweening;
+using UnityEngine;
 
-public class FillerBoardManager : MonoBehaviour
+namespace Assets.GameFolders.Scripts.Managers
 {
-    public static FillerBoardManager instance;
-
-    [SerializeField] private List<Transform> pancakeFillList;
-
-    [SerializeField] private List<Transform> targetPosList;
-
-    void Awake()
+    public class FillerBoardManager : MonoBehaviour
     {
-        instance = this;
-    }
-    
-    public void TakeTransformInfos(List<Vector3> destroyedObjectsList)
-    {
-        for (int i = 0; i < destroyedObjectsList.Count; i++)
+        public static FillerBoardManager instance;
+
+        [SerializeField] private List<Transform> objectFillList;
+
+        [SerializeField] private LevelRules levelRules;
+
+        [SerializeField] private Transform objectsParent;
+
+        void Awake()
         {
-            var pos = destroyedObjectsList[i];
-            pancakeFillList[i].gameObject.SetActive(true);
-            pancakeFillList[i].DOMove(pos, .5f);
+            instance = this;
+            InitializeObjects();
         }
-        pancakeFillList.RemoveRange(0,destroyedObjectsList.Count);
-    }
 
+        void InitializeObjects()
+        {
+            for (int i = 0; i < 150; i++)
+            {
+                var randomValue = Random.Range(0, levelRules.levelObjects.Length);
+                GameObject insObject = Instantiate(levelRules.levelObjects[randomValue], objectsParent);
+                insObject.GetComponent<BoxCollider>().isTrigger = false;
+                insObject.SetActive(false);
+                objectFillList.Add(insObject.transform);
+            }
+        }
+        public void TakeTransformInfos(List<Vector3> destroyedObjectsList)
+        {
+            for (var i = 0; i < destroyedObjectsList.Count; i++)
+            {
+                var pos = destroyedObjectsList[i];
+                objectFillList[i].gameObject.SetActive(true);
+                objectFillList[i].DOMove(pos, .5f);
+                objectFillList[i].GetComponent<BoxCollider>().isTrigger = true;
+            }
+            objectFillList.RemoveRange(0,destroyedObjectsList.Count);
+        }
+
+    }
 }

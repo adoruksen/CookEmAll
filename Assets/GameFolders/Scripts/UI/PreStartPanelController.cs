@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Assets.GameFolders.Scripts.Managers;
+using Assets.GameFolders.Scripts.UI;
 using UnityEngine;
 
 public class PreStartPanelController : MonoBehaviour

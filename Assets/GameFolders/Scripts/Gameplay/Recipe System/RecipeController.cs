@@ -1,35 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
+using Assets.GameFolders.Scripts.Gameplay.Interaction_System;
 using TMPro;
 using UnityEngine;
 
-public class RecipeController : MonoBehaviour
+namespace Assets.GameFolders.Scripts.Gameplay.Recipe_System
 {
-    public static RecipeController instance;
-    private int finalVal;
-
-    private void Awake()
+    public class RecipeController : MonoBehaviour
     {
-        instance = this;
-    }
+        public static RecipeController instance;
+        private int finalVal;
 
-
-    [SerializeField] private TMP_Text textHolder;
-
-    public void RecipeControllerFunction(InteractableTypes type, int value, TMP_Text textHolder)
-    {
-        if (type == InteractableTypes.Banana)
+        private void Awake()
         {
-            finalVal = value - PlayerCollideController.instance.StackedListCount;
-            value = finalVal;
-            textHolder.text = value <= 0 ? $"Done" : $"Banana x {value}";
+            instance = this;
         }
 
-        if (type == InteractableTypes.Pancake)
+        public void RecipeControllerFunction(InteractableTypes type, int value, TMP_Text textHolder)
         {
-            finalVal = value - PlayerCollideController.instance.StackedListCount;
-            value = finalVal;
-            textHolder.text = value <= 0 ? $"Done" : $"Pancake x {value}";
+            if (type == InteractableTypes.Banana)
+            {
+                finalVal = value - PlayerCollideController.instance.StackedListCount;
+                value = finalVal;
+                textHolder.text = value <= 0 ? $"Done" : $"Banana x {value}";
+            }
+
+            if (type == InteractableTypes.Pancake)
+            {
+                finalVal = value - PlayerCollideController.instance.StackedListCount;
+                value = finalVal;
+                textHolder.text = value <= 0 ? $"Done" : $"Pancake x {value}";
+            }
         }
     }
 }

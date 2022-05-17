@@ -1,17 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using TMPro;
 using UnityEngine;
-using TMPro;
 
-public abstract class RecipeBase : MonoBehaviour
+namespace Assets.GameFolders.Scripts.Gameplay.Recipe_System
 {
-    public virtual void TextSetter(InteractableTypes type, int value, TMP_Text textHolder, GameObject recipe)
+    public abstract class RecipeBase : MonoBehaviour
     {
-        textHolder.text = $"{type} x {value}";
-    }
+        public virtual void TextSetter(InteractableTypes type, int value, TMP_Text textHolder, GameObject recipe)
+        {
+            textHolder.text = $"{type} x {value}";
+        }
 
-    public virtual void HandleRecipe(InteractableTypes type,int value,TMP_Text textHolder)
-    {
-        RecipeController.instance.RecipeControllerFunction(type,value,textHolder);
+        public virtual void HandleRecipe(InteractableTypes type,int value,TMP_Text textHolder)
+        {
+            RecipeController.instance.RecipeControllerFunction(type,value,textHolder);
+        }
     }
 }

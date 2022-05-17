@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f088068c949e5074f9428a05c586c2e5, type: 3}
   m_Name: LevelRules
   m_EditorClassIdentifier: 
-  moveCounter: 040000000500000006000000
+  moveCounter: 190000000500000006000000
+  levelObjects:
+  - {fileID: 8499179159652098743, guid: be703cc8651820c499551d4045715925, type: 3}
+  - {fileID: 8040023013394170481, guid: 13c98617e8942c648aa5fdc53803f81e, type: 3}
