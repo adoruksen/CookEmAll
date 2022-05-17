@@ -17,7 +17,7 @@ public class PlayerCollideController : MonoBehaviour
     [SerializeField] private List<Transform> stackedList;
     [SerializeField] private Transform targetPosition;
 
-    [SerializeField] private List<Transform> objectsWillBeDestroyed;
+    [SerializeField] private List<Vector3> objectsWillBeDestroyed;
     public int StackedListCount => stackedList.Count;
 
     private void OnTriggerEnter(Collider other)
@@ -29,6 +29,10 @@ public class PlayerCollideController : MonoBehaviour
             {
                 if (interactable.type == InteractableTypes.Pancake)
                 {
+                    interactable.firstPos = other.transform.position;
+
+                    objectsWillBeDestroyed.Add(interactable.firstPos);
+
                     StackedListController(other.transform,pancakeParent);
 
                     #region commented
@@ -41,6 +45,9 @@ public class PlayerCollideController : MonoBehaviour
                 }
                 else if (interactable.type == InteractableTypes.Banana)
                 {
+                    interactable.firstPos = other.transform.position;
+
+                    objectsWillBeDestroyed.Add(interactable.firstPos);
                     StackedListController(other.transform,bananaParent);
 
                     #region commented
@@ -69,22 +76,28 @@ public class PlayerCollideController : MonoBehaviour
                 Debug.Log("ayný türde degil collider controller");
             else
                 stackedList.Add(objTransform);
-            objectsWillBeDestroyed.Add(objTransform);
-            objTransform.GetComponent<BoxCollider>().enabled = false;
-            //objTransform.transform.parent = parent;
-            //objTransform.transform.localPosition = new Vector3(0,
-            //    parent.GetChild(0).localScale.y * parent.childCount, 0);
+            foreach (var obj in stackedList)
+            {
+                obj.GetComponent<BoxCollider>().enabled = false;
+                obj.transform.parent = parent;
+                obj.transform.localPosition = new Vector3(0,
+                    obj.localScale.y * .1f, 0);
+            }
+            
         }
 
         else
         {
-            stackedList.Add(objTransform);
-            objectsWillBeDestroyed.Add(objTransform);
-            objTransform.GetComponent<BoxCollider>().enabled = false;
+            //objectsWillBeDestroyed.Add(objTransform.GetComponent<Interactable>().firstPos);
 
-            //objTransform.transform.parent = parent;
-            //objTransform.transform.localPosition = new Vector3(0,
-            //    parent.GetChild(0).localScale.y * parent.childCount, 0);
+            stackedList.Add(objTransform);
+            foreach (var obj in stackedList)
+            {
+                obj.GetComponent<BoxCollider>().enabled = false;
+                obj.transform.parent = parent;
+                obj.transform.localPosition = new Vector3(0,
+                    obj.localScale.y + .1f,0);
+            }
         }
     }
 

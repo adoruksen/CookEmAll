@@ -6,6 +6,12 @@ using DG.Tweening;
 public class Interactable : MonoBehaviour
 {
     public InteractableTypes type;
+    public Vector3 firstPos;
+
+    void Awake()
+    {
+        //firstPos = transform;
+    }
 
     IEnumerator Start()
     {
@@ -17,6 +23,10 @@ public class Interactable : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        Debug.Log(firstPos);
+    }
 
     //void Update()
     //{
