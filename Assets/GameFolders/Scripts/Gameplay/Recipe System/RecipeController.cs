@@ -6,11 +6,9 @@ using UnityEngine;
 public class RecipeController : MonoBehaviour
 {
     public static RecipeController instance;
+    private int finalVal;
 
-    public List<GameObject> recipeObjects;
-    private int currentLevel = 0;
-
-    void Awake()
+    private void Awake()
     {
         instance = this;
     }
@@ -18,25 +16,20 @@ public class RecipeController : MonoBehaviour
 
     [SerializeField] private TMP_Text textHolder;
 
-
-    public void RecipeControllerFunction(int value)
+    public void RecipeControllerFunction(InteractableTypes type, int value, TMP_Text textHolder)
     {
-        //recipeObjects[0].GetComponent<SingleRecipe>().type
-        //matematiksel iþlem yapýlacak sadece
-        int finalVal = value - PlayerCollideController.instance.StackedListCount;
-        if (finalVal <= 0)
+        if (type == InteractableTypes.Banana)
         {
-            textHolder.text = "okey";
+            finalVal = value - PlayerCollideController.instance.StackedListCount;
+            value = finalVal;
+            textHolder.text = value <= 0 ? $"Done" : $"Banana x {value}";
+        }
+
+        if (type == InteractableTypes.Pancake)
+        {
+            finalVal = value - PlayerCollideController.instance.StackedListCount;
+            value = finalVal;
+            textHolder.text = value <= 0 ? $"Done" : $"Pancake x {value}";
         }
     }
-
-    //public void Something()
-    //{
-    //    if (currentLevel < recipeObjects.Count)
-    //    {
-    //        recipeObjects[currentLevel].GetComponent<SingleRecipe>().HandleRecipe(recipeObjects[currentLevel].GetComponent<SingleRecipe>().type, recipeObjects[currentLevel].GetComponent<SingleRecipe>().value);
-    //        currentLevel++;
-    //    }
-    //}
-    
 }

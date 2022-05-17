@@ -8,8 +8,6 @@ public class PlayerMovementController : MonoBehaviour
     private Ray ray;
 
 
-    private Vector3 startPos;
-    private Vector3 endPos;
     [SerializeField] private InputController inputController;
 
 
@@ -22,16 +20,10 @@ public class PlayerMovementController : MonoBehaviour
     private void FixedUpdate()
     {
         if (LevelManager.gameState != GameState.Normal) return;
-        if (inputController.FingerHold)
-        {
-            ray = cam.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit))
-                if (hit.collider == planeCollider)
-                    transform.position = hit.point;
-        }
-
-        if (inputController.FingerTap)
-        {
-        }
+        if (!inputController.FingerHold) return;
+        ray = cam.ScreenPointToRay(Input.mousePosition);
+        if (!Physics.Raycast(ray, out hit)) return;
+        if (hit.collider == planeCollider)
+            transform.position = hit.point;
     }
 }

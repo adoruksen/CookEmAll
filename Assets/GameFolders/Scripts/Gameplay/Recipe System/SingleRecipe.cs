@@ -8,7 +8,7 @@ public class SingleRecipe : RecipeBase
     public int value;
 
     [SerializeField] GameObject recipe;
-    [SerializeField] TMPro.TMP_Text countText;
+    public TMPro.TMP_Text countText;
 
     private void Awake()
     {

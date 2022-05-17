@@ -15,6 +15,9 @@ public class PlayerCollideController : MonoBehaviour
     [SerializeField] private Transform bananaParent;
     [SerializeField] private Transform pancakeParent;
     [SerializeField] private List<Transform> stackedList;
+    [SerializeField] private Transform targetPosition;
+
+
     public int StackedListCount => stackedList.Count;
 
     private void OnTriggerEnter(Collider other)
@@ -26,15 +29,26 @@ public class PlayerCollideController : MonoBehaviour
             {
                 if (interactable.type == InteractableTypes.Pancake)
                 {
-                    StackedListController(other.transform, pancakeParent);
-                    LineRendererController.instance.ColliderListController(other.transform);
-                    LineRendererController.instance.SetUpLine();
+                    StackedListController(other.transform,pancakeParent);
+
+                    #region commented
+
+                    //LineRendererController.instance.ColliderListController(other.transform);
+                    //LineRendererController.instance.SetUpLine();
+
+                    #endregion
+
                 }
                 else if (interactable.type == InteractableTypes.Banana)
                 {
-                    StackedListController(other.transform, bananaParent);
-                    LineRendererController.instance.ColliderListController(other.transform);
-                    LineRendererController.instance.SetUpLine();
+                    StackedListController(other.transform,bananaParent);
+
+                    #region commented
+
+                    //LineRendererController.instance.ColliderListController(other.transform);
+                    //LineRendererController.instance.SetUpLine();
+
+                    #endregion
                 }
                 else if (interactable.type == InteractableTypes.Plate)
                 {
@@ -46,7 +60,7 @@ public class PlayerCollideController : MonoBehaviour
     }
 
 
-    private void StackedListController(Transform objTransform, Transform parent)
+    private void StackedListController(Transform objTransform,Transform parent)
     {
         if (stackedList.Count > 0)
         {
@@ -55,35 +69,42 @@ public class PlayerCollideController : MonoBehaviour
             else
                 stackedList.Add(objTransform);
             objTransform.GetComponent<BoxCollider>().enabled = false;
-            //objTransform.transform.parent = parent;
-            //objTransform.transform.localPosition = new Vector3(0,
-            //    parent.GetChild(0).localScale.y * parent.childCount, 0);
+            objTransform.transform.parent = parent;
+            objTransform.transform.localPosition = new Vector3(0,
+                parent.GetChild(0).localScale.y * parent.childCount, 0);
         }
 
         else
         {
             stackedList.Add(objTransform);
             objTransform.GetComponent<BoxCollider>().enabled = false;
-            //objTransform.transform.parent = parent;
-            //objTransform.transform.localPosition = new Vector3(0,
-            //    parent.GetChild(0).localScale.y * parent.childCount, 0);
+
+            objTransform.transform.parent = parent;
+            objTransform.transform.localPosition = new Vector3(0,
+                parent.GetChild(0).localScale.y * parent.childCount, 0);
         }
     }
-
 
     private void PlateAction(Transform platePosTransform)
     {
         if (stackedList.Count <= 2) return;
+        FillerBoardManager.instance.FillTheBoard(stackedList);
+
+
         foreach (var t in stackedList)
         {
             t.position = platePosTransform.position;
             t.parent = platePosTransform;
         }
-        RecipeController.instance.RecipeControllerFunction(stackedList.Count);
+        platePosTransform.GetChild(0).GetComponent<SingleRecipe>().HandleRecipe(
+            platePosTransform.GetChild(0).GetComponent<SingleRecipe>().type,
+            platePosTransform.GetChild(0).GetComponent<SingleRecipe>().value, platePosTransform.GetChild(0).GetComponent<SingleRecipe>().countText);
 
-        stackedList.Clear();
-        LineRendererController.instance.ClearLines();
+        //LineRendererController.instance.ClearLines();
         DuringGamePanelController.instance.MoveCountDecrease();
+        stackedList.Clear();
+
 
     }
+
 }
