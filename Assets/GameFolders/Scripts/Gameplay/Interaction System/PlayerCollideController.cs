@@ -30,7 +30,6 @@ public class PlayerCollideController : MonoBehaviour
                 if (interactable.type == InteractableTypes.Pancake)
                 {
                     interactable.firstPos = other.transform.position;
-
                     objectsWillBeDestroyed.Add(interactable.firstPos);
 
                     StackedListController(other.transform,pancakeParent);
@@ -46,7 +45,6 @@ public class PlayerCollideController : MonoBehaviour
                 else if (interactable.type == InteractableTypes.Banana)
                 {
                     interactable.firstPos = other.transform.position;
-
                     objectsWillBeDestroyed.Add(interactable.firstPos);
                     StackedListController(other.transform,bananaParent);
 
@@ -75,34 +73,35 @@ public class PlayerCollideController : MonoBehaviour
             if (objTransform.GetComponent<Interactable>().type != stackedList[0].GetComponent<Interactable>().type)
                 Debug.Log("ayný türde degil collider controller");
             else
-                stackedList.Add(objTransform);
-            foreach (var obj in stackedList)
-            {
-                obj.GetComponent<BoxCollider>().enabled = false;
-                obj.transform.parent = parent;
-                obj.transform.localPosition = new Vector3(0,
-                    obj.localScale.y * .1f, 0);
-            }
-            
+                objTransform.GetComponent<Interactable>().targetTransform = stackedList[stackedList.Count - 1];
+            stackedList.Add(objTransform);
+            objTransform.GetComponent<Interactable>().isStacked = true;
+            objTransform.GetComponent<BoxCollider>().enabled = false;
+            objTransform.transform.parent = parent;
+            objTransform.transform.position = new Vector3(objTransform.GetComponent<Interactable>().targetTransform.position.x, objTransform.GetComponent<Interactable>().targetTransform.position.y*0.3f, objTransform.GetComponent<Interactable>().targetTransform.position.z);
+
+
+
         }
 
         else
         {
-            //objectsWillBeDestroyed.Add(objTransform.GetComponent<Interactable>().firstPos);
-
             stackedList.Add(objTransform);
-            foreach (var obj in stackedList)
-            {
-                obj.GetComponent<BoxCollider>().enabled = false;
-                obj.transform.parent = parent;
-                obj.transform.localPosition = new Vector3(0,
-                    obj.localScale.y + .1f,0);
-            }
+            objTransform.GetComponent<Interactable>().targetTransform = targetPosition;
+            objTransform.GetComponent<Interactable>().isStacked = true;
+            objTransform.GetComponent<BoxCollider>().enabled = false;
+            objTransform.transform.parent = parent;
+            objTransform.transform.position =
+                objTransform.GetComponent<Interactable>().targetTransform.position;
         }
     }
 
     private void PlateAction(Transform platePosTransform)
     {
+        foreach (var obj in stackedList)
+        {
+            obj.GetComponent<Interactable>().isStacked = false;
+        }
         objectsWillBeDestroyed.Clear();
         if (stackedList.Count <= 2) return;
         foreach (var t in stackedList)

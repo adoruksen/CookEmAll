@@ -7,11 +7,8 @@ public class Interactable : MonoBehaviour
 {
     public InteractableTypes type;
     public Vector3 firstPos;
-
-    void Awake()
-    {
-        //firstPos = transform;
-    }
+    public bool isStacked = false;
+    public Transform targetTransform;
 
     IEnumerator Start()
     {
@@ -23,16 +20,12 @@ public class Interactable : MonoBehaviour
         }
     }
 
+
     void Update()
     {
-        Debug.Log(firstPos);
+        if (!isStacked) return;
+        transform.position = Vector3.Lerp(transform.position, new Vector3(targetTransform.position.x, targetTransform.position.y + 0.133f, targetTransform.position.z), 0.75f);
+        transform.rotation = targetTransform.rotation;
     }
-
-    //void Update()
-    //{
-    //    if (!isStacked) return;
-    //    transform.position = Vector3.Lerp(transform.position, new Vector3(targetTransform.position.x, targetTransform.position.y + 0.133f, targetTransform.position.z), 0.75f);
-    //    transform.rotation = targetTransform.rotation;
-    //}
 
 }
