@@ -19,7 +19,7 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
         [SerializeField] private Transform targetPosition;
         public int StackedListCount => stackedList.Count;
 
-        private float maxDistance = 1f;
+        private float maxDistance = 1.5f;
 
 
 
@@ -80,7 +80,9 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
             {
                 if (objTransform.GetComponent<Interactable>().type == stackedList[0].GetComponent<Interactable>().type)
                 {
-                    if (Mathf.Abs(Vector3.Distance(objTransform.position, stackedList[stackedList.Count - 1].position)) < maxDistance)
+                    var curDistance = Mathf.Abs(Vector3.Distance(objTransform.position,
+                        stackedList[stackedList.Count - 1].GetComponent<Interactable>().firstPos));
+                    if (curDistance < maxDistance)
                     {
                         stackedList.Add(objTransform);
                         var indexOfObj = stackedList.IndexOf(objTransform);
