@@ -1,6 +1,8 @@
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
+
+
+//objectdestroyed hep alýyo, onu da typelara böl
 
 [RequireComponent(typeof(Collider))]
 public class PlayerCollideController : MonoBehaviour
@@ -73,26 +75,20 @@ public class PlayerCollideController : MonoBehaviour
             if (objTransform.GetComponent<Interactable>().type != stackedList[0].GetComponent<Interactable>().type)
                 Debug.Log("ayný türde degil collider controller");
             else
-                objTransform.GetComponent<Interactable>().targetTransform = stackedList[stackedList.Count - 1];
-            stackedList.Add(objTransform);
-            objTransform.GetComponent<Interactable>().isStacked = true;
-            objTransform.GetComponent<BoxCollider>().enabled = false;
-            objTransform.transform.parent = parent;
-            objTransform.transform.position = new Vector3(objTransform.GetComponent<Interactable>().targetTransform.position.x, objTransform.GetComponent<Interactable>().targetTransform.position.y*0.3f, objTransform.GetComponent<Interactable>().targetTransform.position.z);
-
-
-
+                stackedList.Add(objTransform);
+            int indexOfObj = stackedList.IndexOf(objTransform);
+            stackedList[indexOfObj].GetComponent<BoxCollider>().enabled = false;
+            stackedList[indexOfObj].transform.parent = parent;
+            stackedList[indexOfObj].transform.position = new Vector3(stackedList[indexOfObj-1].transform.position.x, stackedList[indexOfObj - 1].transform.position.y + .1f, stackedList[indexOfObj - 1].transform.position.z);
         }
 
         else
         {
             stackedList.Add(objTransform);
-            objTransform.GetComponent<Interactable>().targetTransform = targetPosition;
-            objTransform.GetComponent<Interactable>().isStacked = true;
-            objTransform.GetComponent<BoxCollider>().enabled = false;
-            objTransform.transform.parent = parent;
-            objTransform.transform.position =
-                objTransform.GetComponent<Interactable>().targetTransform.position;
+            int indexOfObj = stackedList.IndexOf(objTransform);
+            stackedList[indexOfObj].GetComponent<BoxCollider>().enabled = false;
+            stackedList[indexOfObj].transform.parent = parent;
+            stackedList[indexOfObj].transform.position = targetPosition.position;
         }
     }
 
