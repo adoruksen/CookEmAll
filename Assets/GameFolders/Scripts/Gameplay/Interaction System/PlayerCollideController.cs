@@ -49,10 +49,10 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                         ObjectDestroyedListController(other.transform);
                         StackedListController(other.transform, targetPosition);
                     }
-                    else if (interactable.type == InteractableTypes.Plate)
-                    {
-                        //PlateAction(other.transform);
-                    }
+                    //else if (interactable.type == InteractableTypes.Plate)
+                    //{
+                    //    //PlateAction(other.transform);
+                    //}
                 }
             }
         }
