@@ -31,7 +31,6 @@ namespace Assets.GameFolders.Scripts.Gameplay.Movement_System
                 if (hit.collider == planeCollider)
                     transform.position = hit.point;
             }
-
         }
     }
 }

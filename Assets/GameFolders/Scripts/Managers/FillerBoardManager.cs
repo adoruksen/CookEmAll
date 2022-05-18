@@ -26,7 +26,7 @@ namespace Assets.GameFolders.Scripts.Managers
             {
                 var randomValue = Random.Range(0, levelRules.levelObjects.Length);
                 GameObject insObject = Instantiate(levelRules.levelObjects[randomValue], objectsParent);
-                insObject.GetComponent<BoxCollider>().isTrigger = false;
+                insObject.GetComponent<BoxCollider>().enabled = false;
                 insObject.SetActive(false);
                 objectFillList.Add(insObject.transform);
             }
@@ -38,7 +38,7 @@ namespace Assets.GameFolders.Scripts.Managers
                 var pos = destroyedObjectsList[i];
                 objectFillList[i].gameObject.SetActive(true);
                 objectFillList[i].DOMove(pos, .5f);
-                objectFillList[i].GetComponent<BoxCollider>().isTrigger = true;
+                objectFillList[i].GetComponent<BoxCollider>().enabled = true;
             }
             objectFillList.RemoveRange(0,destroyedObjectsList.Count);
         }

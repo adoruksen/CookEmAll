@@ -1,7 +1,10 @@
+using System.Collections;
 using System.Collections.Generic;
+using Assets.GameFolders.Scripts.Gameplay.Controllers;
 using Assets.GameFolders.Scripts.Gameplay.Recipe_System;
 using Assets.GameFolders.Scripts.Managers;
 using Assets.GameFolders.Scripts.UI;
+using DG.Tweening;
 using UnityEngine;
 
 namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
@@ -11,17 +14,18 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
     {
         public static PlayerCollideController instance;
 
-        [SerializeField] private Transform bananaParent;
 
         [SerializeField] private List<Vector3> objectsWillBeDestroyed;
-        [SerializeField] private Transform pancakeParent;
         [SerializeField] private List<Transform> stackedList;
+
         [SerializeField] private Transform targetPosition;
+        [SerializeField] private Transform platePos;
+        [SerializeField] private Transform tempParent;
+
+        [SerializeField] private InputController inputController;
         public int StackedListCount => stackedList.Count;
 
         private float maxDistance = 1.5f;
-
-
 
         private void Awake()
         {
@@ -38,17 +42,16 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                     if (interactable.type == InteractableTypes.Pancake)
                     {
                         ObjectDestroyedListController(other.transform);
-                        StackedListController(other.transform, pancakeParent);
+                        StackedListController(other.transform, targetPosition);
                     }
                     else if (interactable.type == InteractableTypes.Banana)
                     {
                         ObjectDestroyedListController(other.transform);
-                        StackedListController(other.transform, bananaParent);
+                        StackedListController(other.transform, targetPosition);
                     }
                     else if (interactable.type == InteractableTypes.Plate)
                     {
-                        FillerBoardManager.instance.TakeTransformInfos(objectsWillBeDestroyed);
-                        PlateAction(other.transform);
+                        //PlateAction(other.transform);
                     }
                 }
             }
@@ -84,23 +87,23 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                         stackedList[stackedList.Count - 1].GetComponent<Interactable>().firstPos));
                     if (curDistance < maxDistance)
                     {
+                        objTransform.GetComponent<BoxCollider>().enabled = false;
+
                         stackedList.Add(objTransform);
                         var indexOfObj = stackedList.IndexOf(objTransform);
-                        stackedList[indexOfObj].GetComponent<BoxCollider>().enabled = false;
                         stackedList[indexOfObj].transform.parent = parent;
-                        stackedList[indexOfObj].transform.position = new Vector3(stackedList[indexOfObj - 1].transform.position.x,
-                            stackedList[indexOfObj - 1].transform.position.y + .2f,
-                            stackedList[indexOfObj - 1].transform.position.z);
+                        stackedList[indexOfObj].transform.position = new Vector3(parent.position.x,
+                            parent.position.y + .2f,
+                            parent.position.z);
                     }
-                    
                 }
             }
 
             else
             {
+                objTransform.GetComponent<BoxCollider>().enabled = false;
                 stackedList.Add(objTransform);
                 var indexOfObj = stackedList.IndexOf(objTransform);
-                stackedList[indexOfObj].GetComponent<BoxCollider>().enabled = false;
                 stackedList[indexOfObj].transform.parent = parent;
                 stackedList[indexOfObj].transform.position = targetPosition.position;
             }
@@ -115,11 +118,9 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
         {
             if (stackedList.Count <= 2) return;
 
-            //foreach (var obj in stackedList) obj.GetComponent<Interactable>().isStacked = false;
-
             foreach (var t in stackedList)
             {
-                t.position = platePosTransform.position;
+                t.DOMove(platePosTransform.position,.5f);
                 t.parent = platePosTransform;
             }
 
@@ -129,10 +130,57 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                 platePosTransform.GetChild(0).GetComponent<SingleRecipe>().countText);
 
             DuringGamePanelController.instance.MoveCountDecrease();
-
             stackedList.Clear();
-            objectsWillBeDestroyed.Clear();
 
+            FillerBoardManager.instance.TakeTransformInfos(objectsWillBeDestroyed);
+            objectsWillBeDestroyed.Clear();
+ 
+
+        }
+
+        void Update()
+        {
+            if (!inputController.FingerHold)
+            {
+                GetComponent<BoxCollider>().enabled = false;
+                if (!IsEnough())
+                {
+                    CancelMove();
+                    if (transform.parent.GetChild(1).GetChild(1).childCount==0)
+                    {
+                        objectsWillBeDestroyed.Clear();
+                        stackedList.Clear();
+                    }
+                }
+                else
+                {
+                    PlateAction(platePos);
+                }
+            }
+            else
+            {
+                GetComponent<BoxCollider>().enabled = true;
+            }
+        }
+
+        bool IsEnough()
+        {
+            if (stackedList.Count>2)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        void CancelMove()
+        {
+            for (int i = 0; i < stackedList.Count; i++)
+            {
+                stackedList[i].DOMove(objectsWillBeDestroyed[i], .1f);
+                stackedList[i].SetParent(tempParent );
+                stackedList[i].GetComponent<BoxCollider>().enabled = true;
+            }
         }
     }
 }
