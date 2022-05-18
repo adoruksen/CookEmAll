@@ -65,7 +65,7 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                     if (!IsEnough())
                     {
                         CancelMove();
-                        if (transform.parent.GetChild(1).GetChild(1).childCount == 0)
+                        if (targetPosition.childCount == 0)
                         {
                             objectsWillBeDestroyed.Clear();
                             stackedList.Clear();
@@ -123,12 +123,13 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                     {
                         objTransform.GetComponent<BoxCollider>().enabled = false;
 
+                        //var indexOfObj = stackedList.IndexOf(objTransform);
+                        /*stackedList[indexOfObj]*/objTransform.transform.parent = parent;
+                        ///*stackedList[indexOfObj]*/objTransform.transform.DOLocalJump(new Vector3(parent.position.x, stackedList[0].position.y + (.3f*stackedList.Count), parent.position.z),1f,1,.5f);
+                        objTransform.GetComponent<Interactable>().targetTransform = stackedList[stackedList.Count-1];
                         stackedList.Add(objTransform);
-                        var indexOfObj = stackedList.IndexOf(objTransform);
-                        stackedList[indexOfObj].transform.parent = parent;
-                        stackedList[indexOfObj].transform.position = new Vector3(parent.position.x,
-                            parent.position.y + .2f,
-                            parent.position.z);
+                        objTransform.GetComponent<Interactable>().isStacked = true;
+
                     }
                 }
             }
@@ -136,16 +137,24 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
             else
             {
                 objTransform.GetComponent<BoxCollider>().enabled = false;
+                //var indexOfObj = stackedList.IndexOf(objTransform);
+                /*stackedList[indexOfObj]*/
+                objTransform.transform.parent = parent;
+                /*stackedList[indexOfObj]*/
+                //objTransform.transform.DOLocalJump(targetPosition.position,1f,1,.5f);
+                objTransform.GetComponent<Interactable>().targetTransform = targetPosition;
                 stackedList.Add(objTransform);
-                var indexOfObj = stackedList.IndexOf(objTransform);
-                stackedList[indexOfObj].transform.parent = parent;
-                stackedList[indexOfObj].transform.position = targetPosition.position;
+                objTransform.GetComponent<Interactable>().isStacked = true;
             }
         }
         private void PlateAction(string type)
         {
             if (stackedList.Count <= 2) return;
 
+            foreach (var stacked in stackedList)
+            {
+                stacked.GetComponent<Interactable>().isStacked = false;
+            }
             var plateTransform = GameObject.FindGameObjectWithTag(type).transform;
             foreach (var t in stackedList)
             {
@@ -153,12 +162,7 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                 t.parent = plateTransform;
             }
             RecipeController.instance.RecipeHandlerFunction(plateTransform.GetChild(0).GetComponent<SingleRecipe>(),stackedList.Count,type);
-            //þu aþaðýyý da düzenle
-            //plateTransform.GetChild(0).GetComponent<SingleRecipe>().HandleRecipe(
-            //    plateTransform.GetChild(0).GetComponent<SingleRecipe>().type,
-            //    plateTransform.GetChild(0).GetComponent<SingleRecipe>().value,
-            //    plateTransform.GetChild(0).GetComponent<SingleRecipe>().countText);
-
+           
             DuringGamePanelController.instance.MoveCountDecrease();
             stackedList.Clear();
 
