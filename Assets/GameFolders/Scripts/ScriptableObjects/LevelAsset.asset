@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: LevelAsset
   m_EditorClassIdentifier: 
   levels:
-  - {fileID: 9114553379966966579, guid: 366bfd634e780c548b3766c985664411, type: 3}
-  - {fileID: 8795503681624467395, guid: 04e794b27a78f264ab99210fecdf7ed3, type: 3}
+  - {fileID: 3395946687879590548, guid: 366bfd634e780c548b3766c985664411, type: 3}
+  - {fileID: 4953456995278474254, guid: 04e794b27a78f264ab99210fecdf7ed3, type: 3}

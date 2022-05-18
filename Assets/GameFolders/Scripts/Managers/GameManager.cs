@@ -1,32 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+namespace Assets.GameFolders.Scripts.Managers
 {
-    static int level;
-    public static int Level
+    public class GameManager : MonoBehaviour
     {
-        get
+        static int level;
+        public static int Level
+        {
+            get
+            {
+                if (!PlayerPrefs.HasKey("level"))
+                {
+                    return 1;
+                }
+                return PlayerPrefs.GetInt("level");
+            }
+            set
+            {
+                level = value;
+                PlayerPrefs.SetInt("level", level);
+            }
+        }
+
+        private void Awake()
         {
             if (!PlayerPrefs.HasKey("level"))
             {
-                return 1;
+                PlayerPrefs.SetInt("level", 1);
             }
-            return PlayerPrefs.GetInt("level");
-        }
-        set
-        {
-            level = value;
-            PlayerPrefs.SetInt("level", level);
-        }
-    }
-
-    private void Awake()
-    {
-        if (!PlayerPrefs.HasKey("level"))
-        {
-            PlayerPrefs.SetInt("level", 1);
         }
     }
 }

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using Assets.GameFolders.Scripts.Gameplay.Controllers;
 using Assets.GameFolders.Scripts.Gameplay.Recipe_System;
@@ -14,16 +13,19 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
     {
         public static PlayerCollideController instance;
 
-
+        [Header("Lists")]
         [SerializeField] private List<Vector3> objectsWillBeDestroyed;
         [SerializeField] private List<Transform> stackedList;
 
+        [Header("Transforms")]
         [SerializeField] private Transform targetPosition;
-        [SerializeField] private Transform platePos;
         [SerializeField] private Transform tempParent;
 
+        [Header("Scripts")]
         [SerializeField] private InputController inputController;
-        public int StackedListCount => stackedList.Count;
+
+        [Header("Components")] 
+        [SerializeField] private BoxCollider playerCollider;
 
         private float maxDistance = 1.5f;
 
@@ -49,12 +51,44 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                         ObjectDestroyedListController(other.transform);
                         StackedListController(other.transform, targetPosition);
                     }
-                    //else if (interactable.type == InteractableTypes.Plate)
-                    //{
-                    //    //PlateAction(other.transform);
-                    //}
                 }
             }
+        }
+
+        void Update()
+        {
+            if (LevelManager.gameState == GameState.Normal)
+            {
+                if (!inputController.FingerHold)
+                {
+                    playerCollider.enabled = false;
+                    if (!IsEnough())
+                    {
+                        CancelMove();
+                        if (transform.parent.GetChild(1).GetChild(1).childCount == 0)
+                        {
+                            objectsWillBeDestroyed.Clear();
+                            stackedList.Clear();
+                        }
+                    }
+                    else
+                    {
+                        if (stackedList[0].GetComponent<Interactable>().type == InteractableTypes.Pancake)
+                        {
+                            PlateAction("PancakePlate");
+                        }
+                        else
+                        {
+                            PlateAction("BananaPlate");
+                        }
+                    }
+                }
+                else
+                {
+                    playerCollider.enabled = true;
+                }
+            }
+
         }
 
         private void ObjectDestroyedListController(Component objDestroyed)
@@ -108,12 +142,6 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                 stackedList[indexOfObj].transform.position = targetPosition.position;
             }
         }
-
-
-        //platelerin üstünde taþýdýðý istek listesi script tarafýndan bilinmek zorunda,
-        //toplanmýs olan objeler el tuþtan çekildiðinde, kendi türleriyle ayný türe sahip tabaða gideceðini bilmeliw
-        //teker teker gider puff olur ve son obje oluþur
-        //tabak listeden çýkar
         private void PlateAction(string type)
         {
             if (stackedList.Count <= 2) return;
@@ -124,7 +152,7 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                 t.DOMove(plateTransform.position,.5f);
                 t.parent = plateTransform;
             }
-            RecipeController.instance.BilmemNe(plateTransform.GetChild(0).GetComponent<SingleRecipe>(),stackedList.Count,type);
+            RecipeController.instance.RecipeHandlerFunction(plateTransform.GetChild(0).GetComponent<SingleRecipe>(),stackedList.Count,type);
             //þu aþaðýyý da düzenle
             //plateTransform.GetChild(0).GetComponent<SingleRecipe>().HandleRecipe(
             //    plateTransform.GetChild(0).GetComponent<SingleRecipe>().type,
@@ -140,49 +168,13 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
 
         }
 
-        void Update()
+
+        private bool IsEnough()
         {
-            if (!inputController.FingerHold)
-            {
-                GetComponent<BoxCollider>().enabled = false;
-                if (!IsEnough())
-                {
-                    CancelMove();
-                    if (transform.parent.GetChild(1).GetChild(1).childCount==0)
-                    {
-                        objectsWillBeDestroyed.Clear();
-                        stackedList.Clear();
-                    }
-                }
-                else
-                {
-                    if (stackedList[0].GetComponent<Interactable>().type ==InteractableTypes.Pancake)
-                    {
-                        PlateAction("PancakePlate");
-                    }
-                    else
-                    {
-                        PlateAction("BananaPlate");
-                    }
-                }
-            }
-            else
-            {
-                GetComponent<BoxCollider>().enabled = true;
-            }
+            return stackedList.Count>2;
         }
 
-        bool IsEnough()
-        {
-            if (stackedList.Count>2)
-            {
-                return true;
-            }
-
-            return false;
-        }
-
-        void CancelMove()
+        private void CancelMove()
         {
             for (int i = 0; i < stackedList.Count; i++)
             {

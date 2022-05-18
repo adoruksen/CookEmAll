@@ -1,3 +1,4 @@
+using Assets.GameFolders.Scripts.Managers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -24,6 +25,8 @@ namespace Assets.GameFolders.Scripts.UI
         {
             GameManager.Level++;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneLoadLayer.instance.SceneLoadAnimation(false);
+
         }
 
         public void TryAgainButtonHandle()

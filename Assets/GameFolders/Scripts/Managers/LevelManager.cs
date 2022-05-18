@@ -20,6 +20,7 @@ namespace Assets.GameFolders.Scripts.Managers
         }
         private void Start()
         {
+            SceneLoadLayer.instance.SceneLoadAnimation();
             CreateLevel();
         }
         void CreateLevel()
@@ -27,20 +28,24 @@ namespace Assets.GameFolders.Scripts.Managers
             if (GameManager.Level <= levelAsset.levels.Length)
             {
                 GameObject level = Instantiate(levelAsset.levels[GameManager.Level - 1]);
-                DuringGamePanelController.instance.MoveCounterSetter(MoveCounter);
-                //RecipeController.instance.singleRecipes.Clear();
-                //for (int i = 0; i < level.transform.childCount; i++)
-                //{
-                //    RecipeController.instance.singleRecipes.Add(level.transform.GetChild(i).gameObject);
-
-                //}
+                DuringGamePanelController.instance.MoveCounterSetter(GameManager.Level-1);
+                RecipeController.instance.singleRecipes.Clear();
+                for (int i = 0; i < level.transform.GetChild(0).childCount; i++)
+                {
+                    RecipeController.instance.singleRecipes.Add(level.transform.GetChild(0).GetChild(i).GetChild(0).GetComponent<SingleRecipe>());
+                }
 
             }
             else
             {
-                GameObject myLevel =Instantiate(levelAsset.levels[Random.Range(0, levelAsset.levels.Length)]);
-                int myIndex = Array.IndexOf(levelAsset.levels, myLevel);
-                DuringGamePanelController.instance.MoveCounterSetter(myIndex);
+                var randomNumber = Random.Range(0, levelAsset.levels.Length);
+                GameObject myLevel =Instantiate(levelAsset.levels[randomNumber]);
+                DuringGamePanelController.instance.MoveCounterSetter(levelRules.moveCounter[randomNumber]);
+                RecipeController.instance.singleRecipes.Clear();
+                for (int i = 0; i < myLevel.transform.GetChild(0).childCount; i++)
+                {
+                    RecipeController.instance.singleRecipes.Add(myLevel.transform.GetChild(0).GetChild(i).GetChild(0).GetComponent<SingleRecipe>());
+                }
             }
         }
 
