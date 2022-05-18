@@ -9,7 +9,7 @@ namespace Assets.GameFolders.Scripts.Gameplay.Recipe_System
     public class RecipeController : MonoBehaviour
     {
         public static RecipeController instance;
-        [SerializeField] private List<SingleRecipe> singleRecipes;
+        public List<SingleRecipe> singleRecipes;
         private void Awake()
         {
             instance = this;

@@ -1,4 +1,5 @@
 using System;
+using Assets.GameFolders.Scripts.Gameplay.Recipe_System;
 using Assets.GameFolders.Scripts.UI;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -25,8 +26,14 @@ namespace Assets.GameFolders.Scripts.Managers
         {
             if (GameManager.Level <= levelAsset.levels.Length)
             {
-                Instantiate(levelAsset.levels[GameManager.Level - 1]);
+                GameObject level = Instantiate(levelAsset.levels[GameManager.Level - 1]);
                 DuringGamePanelController.instance.MoveCounterSetter(MoveCounter);
+                //RecipeController.instance.singleRecipes.Clear();
+                //for (int i = 0; i < level.transform.childCount; i++)
+                //{
+                //    RecipeController.instance.singleRecipes.Add(level.transform.GetChild(i).gameObject);
+
+                //}
 
             }
             else
