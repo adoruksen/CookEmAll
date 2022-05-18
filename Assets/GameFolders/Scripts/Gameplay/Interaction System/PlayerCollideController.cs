@@ -114,20 +114,22 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
         //toplanmýs olan objeler el tuþtan çekildiðinde, kendi türleriyle ayný türe sahip tabaða gideceðini bilmeliw
         //teker teker gider puff olur ve son obje oluþur
         //tabak listeden çýkar
-        private void PlateAction(Transform platePosTransform)
+        private void PlateAction(string type)
         {
             if (stackedList.Count <= 2) return;
 
+            var plateTransform = GameObject.FindGameObjectWithTag(type).transform;
             foreach (var t in stackedList)
             {
-                t.DOMove(platePosTransform.position,.5f);
-                t.parent = platePosTransform;
+                t.DOMove(plateTransform.position,.5f);
+                t.parent = plateTransform;
             }
-
-            platePosTransform.GetChild(0).GetComponent<SingleRecipe>().HandleRecipe(
-                platePosTransform.GetChild(0).GetComponent<SingleRecipe>().type,
-                platePosTransform.GetChild(0).GetComponent<SingleRecipe>().value,
-                platePosTransform.GetChild(0).GetComponent<SingleRecipe>().countText);
+            RecipeController.instance.BilmemNe(plateTransform.GetChild(0).GetComponent<SingleRecipe>(),stackedList.Count,type);
+            //þu aþaðýyý da düzenle
+            //plateTransform.GetChild(0).GetComponent<SingleRecipe>().HandleRecipe(
+            //    plateTransform.GetChild(0).GetComponent<SingleRecipe>().type,
+            //    plateTransform.GetChild(0).GetComponent<SingleRecipe>().value,
+            //    plateTransform.GetChild(0).GetComponent<SingleRecipe>().countText);
 
             DuringGamePanelController.instance.MoveCountDecrease();
             stackedList.Clear();
@@ -154,7 +156,14 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                 }
                 else
                 {
-                    PlateAction(platePos);
+                    if (stackedList[0].GetComponent<Interactable>().type ==InteractableTypes.Pancake)
+                    {
+                        PlateAction("PancakePlate");
+                    }
+                    else
+                    {
+                        PlateAction("BananaPlate");
+                    }
                 }
             }
             else

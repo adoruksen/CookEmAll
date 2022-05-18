@@ -10,9 +10,9 @@ namespace Assets.GameFolders.Scripts.Gameplay.Recipe_System
             textHolder.text = $"{type} x {value}";
         }
 
-        public virtual void HandleRecipe(InteractableTypes type,int value,TMP_Text textHolder)
-        {
-            RecipeController.instance.RecipeControllerFunction(type,value,textHolder);
-        }
+        //public virtual void HandleRecipe(InteractableTypes type,int value,TMP_Text textHolder)
+        //{
+        //    RecipeController.instance.RecipeControllerFunction(type,value,textHolder);
+        //}
     }
 }
