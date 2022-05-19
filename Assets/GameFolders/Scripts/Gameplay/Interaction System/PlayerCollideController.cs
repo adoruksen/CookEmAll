@@ -46,7 +46,7 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                         ObjectDestroyedListController(other.transform);
                         StackedListController(other.transform, targetPosition);
                     }
-                    else if (interactable.type == InteractableTypes.Banana)
+                    else if (interactable.type == InteractableTypes.Egg)
                     {
                         ObjectDestroyedListController(other.transform);
                         StackedListController(other.transform, targetPosition);

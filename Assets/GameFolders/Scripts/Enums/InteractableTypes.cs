@@ -1,6 +1,6 @@
 public enum InteractableTypes
 {
-    Banana, //-> obstacle
+    Egg, //-> obstacle
     Pancake, //-> dash
     Plate, //->Player
     OvenParts //->ground

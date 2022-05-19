@@ -16,7 +16,7 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
         {
             yield return new WaitForSeconds(.2f);
 
-            if (type is InteractableTypes.Pancake or InteractableTypes.Banana)
+            if (type is InteractableTypes.Pancake or InteractableTypes.Egg)
             {
                 transform.DOPunchScale(new Vector3(.05f, .05f, .05f), .5f);
             }

@@ -14,7 +14,7 @@ public class SpawnManager : MonoBehaviour
     public static void Spawn(GridSpecs gridSpecs, int curPart, int lastPart)
     {
         ovenParts = new GameObject("OvenParts" + curPart);
-        banana = new GameObject("Bananas" + curPart);
+        banana = new GameObject("Eggs" + curPart);
         pancake = new GameObject("Pancakes" + curPart);
         plate = new GameObject("Plate" + curPart);
 
@@ -32,10 +32,10 @@ public class SpawnManager : MonoBehaviour
 
         for (var row = 0; row < gridSpecs.boardSize.x; row++)
         for (var column = 0; column < gridSpecs.boardSize.y; column++)
-            if (gridSpecs.objType[row, column] == InteractableTypes.Banana)
+            if (gridSpecs.objType[row, column] == InteractableTypes.Egg)
             {
                 var pos = new Vector3(row - firstDash, .65f, gridSpecs.boardSize.y - column);
-                Instantiator("Banana", pos, banana.transform, column, gridSpecs);
+                Instantiator("Egg", pos, banana.transform, column, gridSpecs);
             }
             else if (gridSpecs.objType[row, column] == InteractableTypes.Pancake)
             {
@@ -53,7 +53,7 @@ public class SpawnManager : MonoBehaviour
     private static float FirstDashPosition(GridSpecs gridSpecs)
     {
         for (var i = 0; i < gridSpecs.boardSize.x; i++)
-            if (gridSpecs.objType[i, gridSpecs.boardSize.y - 1] == InteractableTypes.Banana)
+            if (gridSpecs.objType[i, gridSpecs.boardSize.y - 1] == InteractableTypes.Egg)
                 return i;
         return -1;
     }

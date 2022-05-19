@@ -101,7 +101,7 @@ public class LevelCreator : EditorWindow
                                         levelParts.gridSpecifications[section - 1].objType[row, column], plateStyle);
 
                             else if (levelParts.gridSpecifications[section - 1].objType[row, column] ==
-                                     InteractableTypes.Banana)
+                                     InteractableTypes.Egg)
                                 levelParts.gridSpecifications[section - 1].objType[row, column] =
                                     (InteractableTypes)EditorGUILayout.EnumPopup(
                                         levelParts.gridSpecifications[section - 1].objType[row, column], bananaStyle);
