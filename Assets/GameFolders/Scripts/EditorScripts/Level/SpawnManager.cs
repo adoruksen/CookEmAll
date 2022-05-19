@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SpawnManager : MonoBehaviour
+public class SpawnManager : ConstantPosClass //cons verileri yazdýrt
 {
     private static GameObject ovenParts;
     private static GameObject egg;
@@ -38,17 +38,17 @@ public class SpawnManager : MonoBehaviour
         for (var column = 0; column < gridSpecs.boardSize.y; column++)
             if (gridSpecs.objType[row, column] == InteractableTypes.Egg)
             {
-                var pos = new Vector3(row - firstDash, .65f, gridSpecs.boardSize.y - column);
+                var pos = new Vector3(row - firstDash, DEFAULT_EGG_Y, gridSpecs.boardSize.y - column);
                 Instantiator("Egg", pos, egg.transform, column, gridSpecs);
             }
             else if (gridSpecs.objType[row, column] == InteractableTypes.Pancake)
             {
-                var pos = new Vector3(row - firstDash, .65f, gridSpecs.boardSize.y - column);
+                var pos = new Vector3(row - firstDash, DEFAULT_PANCAKE_Y, gridSpecs.boardSize.y - column);
                 Instantiator("Pancake", pos, pancake.transform, column, gridSpecs);
             }
             else if (gridSpecs.objType[row, column] == InteractableTypes.Plate)
             {
-                var pos = new Vector3(row - firstDash, .5f, gridSpecs.boardSize.y - column);
+                var pos = new Vector3(row - firstDash, DEFAULT_PLATE_Z, gridSpecs.boardSize.y - column);
                 Instantiator("Plate", pos, plate.transform, column, gridSpecs);
             }
     }
