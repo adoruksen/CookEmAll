@@ -13,7 +13,7 @@ namespace Assets.GameFolders.Scripts.Managers
         public LevelAsset levelAsset;
         public LevelRules levelRules;
 
-        public int MoveCounter => levelRules.moveCounter[GameManager.Level-1];
+        //public int MoveCounter => levelRules.moveCounter[GameManager.Level-1];
         void Awake()
         {
             instance = this;
@@ -28,7 +28,7 @@ namespace Assets.GameFolders.Scripts.Managers
             if (GameManager.Level <= levelAsset.levels.Length)
             {
                 GameObject level = Instantiate(levelAsset.levels[GameManager.Level - 1]);
-                DuringGamePanelController.instance.MoveCounterSetter(GameManager.Level-1);
+                //DuringGamePanelController.instance.MoveCounterSetter(GameManager.Level-1);
                 RecipeController.instance.singleRecipes.Clear();
                 for (int i = 0; i < level.transform.GetChild(0).childCount; i++)
                 {
@@ -40,7 +40,7 @@ namespace Assets.GameFolders.Scripts.Managers
             {
                 var randomNumber = Random.Range(0, levelAsset.levels.Length);
                 GameObject myLevel =Instantiate(levelAsset.levels[randomNumber]);
-                DuringGamePanelController.instance.MoveCounterSetter(levelRules.moveCounter[randomNumber]);
+                //DuringGamePanelController.instance.MoveCounterSetter(levelRules.moveCounter[randomNumber]);
                 RecipeController.instance.singleRecipes.Clear();
                 for (int i = 0; i < myLevel.transform.GetChild(0).childCount; i++)
                 {

@@ -22,11 +22,29 @@ namespace Assets.GameFolders.Scripts.Managers
             }
         }
 
+        static int coin;
+        public static int Coin
+        {
+            get
+            {
+                return PlayerPrefs.GetInt("coin");
+            }
+            set
+            {
+                coin = value;
+                PlayerPrefs.SetInt("coin", coin);
+            }
+        }
+
         private void Awake()
         {
             if (!PlayerPrefs.HasKey("level"))
             {
                 PlayerPrefs.SetInt("level", 1);
+            }
+            if (!PlayerPrefs.HasKey("coin"))
+            {
+                PlayerPrefs.SetInt("coin", 0);
             }
         }
     }

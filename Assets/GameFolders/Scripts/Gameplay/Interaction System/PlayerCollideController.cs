@@ -118,7 +118,7 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                 if (objTransform.GetComponent<Interactable>().type == stackedList[0].GetComponent<Interactable>().type)
                 {
                     var curDistance = Mathf.Abs(Vector3.Distance(objTransform.position,
-                        stackedList[stackedList.Count - 1].GetComponent<Interactable>().firstPos));
+                        stackedList[^1].GetComponent<Interactable>().firstPos));
                     if (curDistance < maxDistance)
                     {
                         objTransform.GetComponent<BoxCollider>().enabled = false;
@@ -151,6 +151,7 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
         {
             if (stackedList.Count <= 2) return;
 
+            DuringGamePanelController.instance.UpdateCoin(stackedList.Count*3);
             foreach (var stacked in stackedList)
             {
                 stacked.GetComponent<Interactable>().isStacked = false;
@@ -163,13 +164,11 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
             }
             RecipeController.instance.RecipeHandlerFunction(plateTransform.GetChild(0).GetComponent<SingleRecipe>(),stackedList.Count,type);
            
-            DuringGamePanelController.instance.MoveCountDecrease();
+            //DuringGamePanelController.instance.MoveCountDecrease();
             stackedList.Clear();
 
             FillerBoardManager.instance.TakeTransformInfos(objectsWillBeDestroyed);
             objectsWillBeDestroyed.Clear();
- 
-
         }
 
 
@@ -182,7 +181,8 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
         {
             for (int i = 0; i < stackedList.Count; i++)
             {
-                stackedList[i].DOMove(objectsWillBeDestroyed[i], .1f);
+                stackedList[i].GetComponent<Interactable>().isStacked = false;
+                stackedList[i].DOMove(objectsWillBeDestroyed[i], .2f);
                 stackedList[i].SetParent(tempParent );
                 stackedList[i].GetComponent<BoxCollider>().enabled = true;
             }

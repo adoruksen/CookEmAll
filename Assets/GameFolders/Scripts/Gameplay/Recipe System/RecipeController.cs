@@ -19,6 +19,7 @@ namespace Assets.GameFolders.Scripts.Gameplay.Recipe_System
             singleRecipe.countText.text = singleRecipe.value <=0 ? $"{type} Done" : $"{type} x {singleRecipe.value}";
             if (DidWin())
             {
+                Debug.Log("ee did win oldu");
                 CompletePanelController.instance.Activator();
             }
         }
@@ -31,7 +32,7 @@ namespace Assets.GameFolders.Scripts.Gameplay.Recipe_System
                 valueList.Add(recipe.value);
             }
             valueList.Sort();
-            return valueList[valueList.Count-1]<0;
+            return valueList[^1]<0;
         }
     }
 }

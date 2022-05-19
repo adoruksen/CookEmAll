@@ -2,14 +2,15 @@ using Assets.GameFolders.Scripts.Managers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
-using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 
 namespace Assets.GameFolders.Scripts.UI
 {
     public class CompletePanelController : MonoBehaviour
     {
-        [Header("UI Elements")]
+        [Header("UI Elements")] [SerializeField]
+        private GameObject backgroundImg;
         [SerializeField] GameObject levelCompletedText;
         [SerializeField] GameObject nextLevelButton;
         [SerializeField] GameObject score;
@@ -43,6 +44,7 @@ namespace Assets.GameFolders.Scripts.UI
         public void Activator(bool condition = true)
         {
             if (!condition) return;
+            BackgroundAnimation();
             levelCompletedText.GetComponent<TMP_Text>().text = $"Level {GameManager.Level} Completed";
             StartCoroutine(PanelOpenDelay());
         }
@@ -59,8 +61,21 @@ namespace Assets.GameFolders.Scripts.UI
 
             yield return waitTime;
             nextLevelButton.SetActive(true);
+        }
 
+        public void BackgroundAnimation(/*bool isStart = true*/)
+        {
+            backgroundImg.SetActive(true);
+            backgroundImg.transform.DOScale(1, .5f);
 
+            //if (isStart)
+            //{
+            //    backgroundImg.transform.localScale = new Vector2(75, 75);
+            //    backgroundImg.transform.DOScale(0, 1);
+            //}
+            //else
+            //{
+            //}
         }
     }
 }
