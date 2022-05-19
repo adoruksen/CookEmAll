@@ -36,9 +36,9 @@ namespace Assets.GameFolders.Scripts.UI
 
         }
 
-        public void TryAgainButtonHandle()
+        public string SetFinalScoreText(int scoreValue)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            return score.GetComponent<TMP_Text>().text = $"Score: {scoreValue}";
         }
 
         public void Activator(bool condition = true)
@@ -49,7 +49,7 @@ namespace Assets.GameFolders.Scripts.UI
             StartCoroutine(PanelOpenDelay());
         }
 
-        IEnumerator PanelOpenDelay()
+        private IEnumerator PanelOpenDelay()
         {
             yield return waitTime;
 

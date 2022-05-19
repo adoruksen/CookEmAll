@@ -1,6 +1,5 @@
 using System.Collections;
-using Assets.GameFolders.Scripts.Managers;
-using TMPro;
+using Assets.GameFolders.Scripts.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
@@ -36,7 +35,7 @@ public class LosePanelController : MonoBehaviour
         StartCoroutine(PanelOpenDelay());
     }
 
-    IEnumerator PanelOpenDelay()
+    private IEnumerator PanelOpenDelay()
     {
         yield return waitTime;
 

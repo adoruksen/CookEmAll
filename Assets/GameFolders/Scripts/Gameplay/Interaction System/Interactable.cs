@@ -29,14 +29,14 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
             transform.position = Vector3.Lerp(transform.position, new Vector3(targetTransform.position.x, targetTransform.position.y + 0.133f, targetTransform.position.z), 5f*Time.deltaTime);
         }
 
-        public void MoveElements(List<Transform> collected)
-        {
-            for (var i = 1; i < collected.Count; i++)
-            {
-                Vector3 pos = collected[i].transform.position;
-                pos.x = collected[i - 1].transform.position.x;
-                collected[i].transform.position = Vector3.Lerp(collected[i].transform.position, pos, .25f * Time.deltaTime);
-            }
-        }
+        //public void MoveElements(List<Transform> collected)
+        //{
+        //    for (var i = 1; i < collected.Count; i++)
+        //    {
+        //        var pos = collected[i].transform.position;
+        //        pos.x = collected[i - 1].transform.position.x;
+        //        collected[i].transform.position = Vector3.Lerp(collected[i].transform.position, pos, .25f * Time.deltaTime);
+        //    }
+        //}
     }
 }

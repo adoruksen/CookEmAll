@@ -34,7 +34,7 @@ namespace Assets.GameFolders.Scripts.UI
 
         public void UpdateCoin(int amount)
         {
-            int before = GameManager.Coin;
+            var before = GameManager.Coin;
             GameManager.Coin += amount;
             DOTween.To(() => before, x => before = x, GameManager.Coin, 1).OnUpdate(() => coinText.text = before + string.Empty);
         }

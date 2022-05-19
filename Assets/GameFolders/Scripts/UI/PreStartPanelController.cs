@@ -1,16 +1,18 @@
 using Assets.GameFolders.Scripts.Managers;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.GameFolders.Scripts.UI
 {
     public class PreStartPanelController : MonoBehaviour
     {
-        void Awake()
+        void Start()
         {
             if (GameManager.Level <= 1) return;
+            gameObject.SetActive(false);
+            GetComponent<Button>().enabled = false;
             LevelManager.gameState = GameState.Normal;
             DuringGamePanelController.instance.Activator();
-            gameObject.SetActive(false);
         }
         public void GameStarterButton()
         {

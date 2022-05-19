@@ -7,14 +7,7 @@ namespace Assets.GameFolders.Scripts.Managers
         static int level;
         public static int Level
         {
-            get
-            {
-                if (!PlayerPrefs.HasKey("level"))
-                {
-                    return 1;
-                }
-                return PlayerPrefs.GetInt("level");
-            }
+            get => !PlayerPrefs.HasKey("level") ? 1 : PlayerPrefs.GetInt("level");
             set
             {
                 level = value;
@@ -25,10 +18,7 @@ namespace Assets.GameFolders.Scripts.Managers
         static int coin;
         public static int Coin
         {
-            get
-            {
-                return PlayerPrefs.GetInt("coin");
-            }
+            get => PlayerPrefs.GetInt("coin");
             set
             {
                 coin = value;

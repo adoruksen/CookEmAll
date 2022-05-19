@@ -115,23 +115,19 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
         {
             if (stackedList.Count > 0)
             {
-                if (objTransform.GetComponent<Interactable>().type == stackedList[0].GetComponent<Interactable>().type)
-                {
-                    var curDistance = Mathf.Abs(Vector3.Distance(objTransform.position,
-                        stackedList[^1].GetComponent<Interactable>().firstPos));
-                    if (curDistance < maxDistance)
-                    {
-                        objTransform.GetComponent<BoxCollider>().enabled = false;
+                if (objTransform.GetComponent<Interactable>().type !=
+                    stackedList[0].GetComponent<Interactable>().type) return;
+                var curDistance = Mathf.Abs(Vector3.Distance(objTransform.position,
+                    stackedList[^1].GetComponent<Interactable>().firstPos));
+                if (!(curDistance < maxDistance)) return;
+                objTransform.GetComponent<BoxCollider>().enabled = false;
 
-                        //var indexOfObj = stackedList.IndexOf(objTransform);
-                        /*stackedList[indexOfObj]*/objTransform.transform.parent = parent;
-                        ///*stackedList[indexOfObj]*/objTransform.transform.DOLocalJump(new Vector3(parent.position.x, stackedList[0].position.y + (.3f*stackedList.Count), parent.position.z),1f,1,.5f);
-                        objTransform.GetComponent<Interactable>().targetTransform = stackedList[stackedList.Count-1];
-                        stackedList.Add(objTransform);
-                        objTransform.GetComponent<Interactable>().isStacked = true;
-
-                    }
-                }
+                //var indexOfObj = stackedList.IndexOf(objTransform);
+                /*stackedList[indexOfObj]*/objTransform.transform.parent = parent;
+                ///*stackedList[indexOfObj]*/objTransform.transform.DOLocalJump(new Vector3(parent.position.x, stackedList[0].position.y + (.3f*stackedList.Count), parent.position.z),1f,1,.5f);
+                objTransform.GetComponent<Interactable>().targetTransform = stackedList[^1];
+                stackedList.Add(objTransform);
+                objTransform.GetComponent<Interactable>().isStacked = true;
             }
 
             else
@@ -151,7 +147,7 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
         {
             if (stackedList.Count <= 2) return;
 
-            DuringGamePanelController.instance.UpdateCoin(stackedList.Count*3);
+            DuringGamePanelController.instance.UpdateCoin(stackedList.Count*2);
             foreach (var stacked in stackedList)
             {
                 stacked.GetComponent<Interactable>().isStacked = false;
@@ -179,7 +175,7 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
 
         private void CancelMove()
         {
-            for (int i = 0; i < stackedList.Count; i++)
+            for (var i = 0; i < stackedList.Count; i++)
             {
                 stackedList[i].GetComponent<Interactable>().isStacked = false;
                 stackedList[i].DOMove(objectsWillBeDestroyed[i], .2f);

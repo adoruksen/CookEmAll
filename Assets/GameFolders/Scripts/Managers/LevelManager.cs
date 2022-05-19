@@ -23,14 +23,15 @@ namespace Assets.GameFolders.Scripts.Managers
             SceneLoadLayer.instance.SceneLoadAnimation();
             CreateLevel();
         }
-        void CreateLevel()
+
+        private void CreateLevel()
         {
             if (GameManager.Level <= levelAsset.levels.Length)
             {
-                GameObject level = Instantiate(levelAsset.levels[GameManager.Level - 1]);
+                var level = Instantiate(levelAsset.levels[GameManager.Level - 1]);
                 //DuringGamePanelController.instance.MoveCounterSetter(GameManager.Level-1);
                 RecipeController.instance.singleRecipes.Clear();
-                for (int i = 0; i < level.transform.GetChild(0).childCount; i++)
+                for (var i = 0; i < level.transform.GetChild(0).childCount; i++)
                 {
                     RecipeController.instance.singleRecipes.Add(level.transform.GetChild(0).GetChild(i).GetChild(0).GetComponent<SingleRecipe>());
                 }
@@ -39,10 +40,10 @@ namespace Assets.GameFolders.Scripts.Managers
             else
             {
                 var randomNumber = Random.Range(0, levelAsset.levels.Length);
-                GameObject myLevel =Instantiate(levelAsset.levels[randomNumber]);
+                var myLevel =Instantiate(levelAsset.levels[randomNumber]);
                 //DuringGamePanelController.instance.MoveCounterSetter(levelRules.moveCounter[randomNumber]);
                 RecipeController.instance.singleRecipes.Clear();
-                for (int i = 0; i < myLevel.transform.GetChild(0).childCount; i++)
+                for (var i = 0; i < myLevel.transform.GetChild(0).childCount; i++)
                 {
                     RecipeController.instance.singleRecipes.Add(myLevel.transform.GetChild(0).GetChild(i).GetChild(0).GetComponent<SingleRecipe>());
                 }
