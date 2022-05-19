@@ -3,8 +3,12 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     private static GameObject ovenParts;
-    private static GameObject banana;
+    private static GameObject egg;
     private static GameObject pancake;
+    private static GameObject bacon;
+    private static GameObject bagel;
+    private static GameObject steak;
+
 
     private static GameObject plate;
 
@@ -14,7 +18,7 @@ public class SpawnManager : MonoBehaviour
     public static void Spawn(GridSpecs gridSpecs, int curPart, int lastPart)
     {
         ovenParts = new GameObject("OvenParts" + curPart);
-        banana = new GameObject("Eggs" + curPart);
+        egg = new GameObject("Eggs" + curPart);
         pancake = new GameObject("Pancakes" + curPart);
         plate = new GameObject("Plate" + curPart);
 
@@ -35,7 +39,7 @@ public class SpawnManager : MonoBehaviour
             if (gridSpecs.objType[row, column] == InteractableTypes.Egg)
             {
                 var pos = new Vector3(row - firstDash, .65f, gridSpecs.boardSize.y - column);
-                Instantiator("Egg", pos, banana.transform, column, gridSpecs);
+                Instantiator("Egg", pos, egg.transform, column, gridSpecs);
             }
             else if (gridSpecs.objType[row, column] == InteractableTypes.Pancake)
             {

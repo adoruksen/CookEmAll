@@ -53,6 +53,10 @@ public class LevelCreator : EditorWindow
 
                     var bananaStyle = new GUIStyle("popup");
                     var pancakeStyle = new GUIStyle("popup");
+                    var bagelStyle = new GUIStyle("popup");
+                    var baconStyle = new GUIStyle("popup");
+                    var steakStyle = new GUIStyle("popup");
+
                     var plateStyle = new GUIStyle("popup");
                     var shifterStyle = new GUIStyle("popup");
 
