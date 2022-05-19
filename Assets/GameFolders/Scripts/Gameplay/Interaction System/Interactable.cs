@@ -27,7 +27,6 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
         {
             if (!isStacked) return;
             transform.position = Vector3.Lerp(transform.position, new Vector3(targetTransform.position.x, targetTransform.position.y + 0.133f, targetTransform.position.z), 5f*Time.deltaTime);
-            transform.rotation = targetTransform.rotation;
         }
 
         public void MoveElements(List<Transform> collected)

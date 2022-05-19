@@ -19,8 +19,7 @@ namespace Assets.GameFolders.Scripts.Gameplay.Recipe_System
             singleRecipe.countText.text = singleRecipe.value <=0 ? $"{type} Done" : $"{type} x {singleRecipe.value}";
             if (DidWin())
             {
-                CompletePanelController.instance.transform.GetChild(0).gameObject.SetActive(true);
-                Debug.Log("kazandýnýz");
+                CompletePanelController.instance.Activator();
             }
         }
 

@@ -39,7 +39,7 @@ namespace Assets.GameFolders.Scripts.UI
             moveCounterText.text = $"Move: {moveCount}";
             if (moveCount != 0) return;
             LevelManager.gameState = GameState.Finish;
-            CompletePanelController.instance.transform.GetChild(1).gameObject.SetActive(true);
+            //CompletePanelController.instance.transform.GetChild(1).gameObject.SetActive(true); about Move Counter
         }
     }
 }
