@@ -92,6 +92,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7936422636929333671}
+  - component: {fileID: 5807064664630622292}
+  - component: {fileID: 597803938174254963}
   m_Layer: 0
   m_Name: Bacon
   m_TagString: Untagged
@@ -115,3 +117,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5807064664630622292
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7003372874284843569}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5772748, y: 0.07973087, z: 0.58849776}
+  m_Center: {x: 0.009352326, y: 0.014965981, z: 0.011222795}
+--- !u!114 &597803938174254963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7003372874284843569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7d5857c944c8ed4eae18b3e6bd84c27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
+  isStacked: 0
+  targetTransform: {fileID: 0}

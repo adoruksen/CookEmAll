@@ -50,11 +50,6 @@ public class SpawnManager : ConstantPosClass //cons verileri yazdýrt
                 var pos = new Vector3(row - firstDash, DEFAULT_PANCAKE_Y, gridSpecs.boardSize.y - column);
                 Instantiator("Pancake", pos, pancake.transform, column, gridSpecs);
             }
-            else if (gridSpecs.objType[row, column] == InteractableTypes.Plate)
-            {
-                var pos = new Vector3(row - firstDash, DEFAULT_PLATE_Z, gridSpecs.boardSize.y - column);
-                Instantiator("Plate", pos, plate.transform, column, gridSpecs);
-            }
             else if (gridSpecs.objType[row, column] == InteractableTypes.Bacon)
             {
                 var pos = new Vector3(row - firstDash, DEFAULT_BACON_Y, gridSpecs.boardSize.y - column);
@@ -63,12 +58,37 @@ public class SpawnManager : ConstantPosClass //cons verileri yazdýrt
             else if (gridSpecs.objType[row, column] == InteractableTypes.Bagel)
             {
                 var pos = new Vector3(row - firstDash, DEFAULT_BAGEL_Y, gridSpecs.boardSize.y - column);
-                Instantiator("Bagel", pos, bacon.transform, column, gridSpecs);
+                Instantiator("Bagel", pos, bagel.transform, column, gridSpecs);
             }
             else if (gridSpecs.objType[row, column] == InteractableTypes.Steak)
             {
                 var pos = new Vector3(row - firstDash, DEFAULT_STEAK_Y, gridSpecs.boardSize.y - column);
-                Instantiator("Steak", pos, bacon.transform, column, gridSpecs);
+                Instantiator("Steak", pos, steak.transform, column, gridSpecs);
+            }
+            else if (gridSpecs.objType[row, column] == InteractableTypes.EggPlate)
+            {
+                var pos = new Vector3(row - firstDash, DEFAULT_PLATE_Y, gridSpecs.boardSize.y - column);
+                Instantiator("EggPlate", pos, plate.transform, column, gridSpecs);
+            }
+            else if (gridSpecs.objType[row, column] == InteractableTypes.PancakePlate)
+            {
+                var pos = new Vector3(row - firstDash, DEFAULT_PLATE_Y, gridSpecs.boardSize.y - column);
+                Instantiator("PancakePlate", pos, plate.transform, column, gridSpecs);
+            }
+            else if (gridSpecs.objType[row, column] == InteractableTypes.BaconPlate)
+            {
+                var pos = new Vector3(row - firstDash, DEFAULT_PLATE_Y, gridSpecs.boardSize.y - column);
+                Instantiator("BaconPlate", pos, plate.transform, column, gridSpecs);
+            }
+            else if (gridSpecs.objType[row, column] == InteractableTypes.BagelPlate)
+            {
+                var pos = new Vector3(row - firstDash, DEFAULT_PLATE_Y, gridSpecs.boardSize.y - column);
+                Instantiator("BagelPlate", pos, plate.transform, column, gridSpecs);
+            }
+            else if (gridSpecs.objType[row, column] == InteractableTypes.SteakPlate)
+            {
+                var pos = new Vector3(row - firstDash, DEFAULT_PLATE_Y, gridSpecs.boardSize.y - column);
+                Instantiator("SteakPlate", pos, plate.transform, column, gridSpecs);
             }
     }
 

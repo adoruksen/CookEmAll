@@ -12,7 +12,7 @@ namespace Assets.GameFolders.Scripts.Gameplay.Recipe_System
 
         private void Awake()
         {
-            TextSetter( type,value, countText, recipe);
+            TextSetter(value, countText, recipe);
         }
     }
 }

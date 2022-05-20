@@ -51,13 +51,18 @@ public class LevelCreator : EditorWindow
                     boardStyle.padding = new RectOffset(10, 10, 10, 10);
                     boardStyle.margin.left = 32;
 
-                    var bananaStyle = new GUIStyle("popup");
+                    var eggStyle = new GUIStyle("popup");
                     var pancakeStyle = new GUIStyle("popup");
                     var bagelStyle = new GUIStyle("popup");
                     var baconStyle = new GUIStyle("popup");
                     var steakStyle = new GUIStyle("popup");
 
-                    var plateStyle = new GUIStyle("popup");
+                    var eggPlateStyle = new GUIStyle("popup");
+                    var pancakePlateStyle = new GUIStyle("popup");
+                    var bagelPlateStyle = new GUIStyle("popup");
+                    var baconPlateStyle = new GUIStyle("popup");
+                    var steakPlateStyle = new GUIStyle("popup");
+
                     var shifterStyle = new GUIStyle("popup");
 
 
@@ -99,16 +104,10 @@ public class LevelCreator : EditorWindow
                                         levelParts.gridSpecifications[section - 1].objType[row, column], pancakeStyle);
 
                             else if (levelParts.gridSpecifications[section - 1].objType[row, column] ==
-                                     InteractableTypes.Plate)
-                                levelParts.gridSpecifications[section - 1].objType[row, column] =
-                                    (InteractableTypes)EditorGUILayout.EnumPopup(
-                                        levelParts.gridSpecifications[section - 1].objType[row, column], plateStyle);
-
-                            else if (levelParts.gridSpecifications[section - 1].objType[row, column] ==
                                      InteractableTypes.Egg)
                                 levelParts.gridSpecifications[section - 1].objType[row, column] =
                                     (InteractableTypes)EditorGUILayout.EnumPopup(
-                                        levelParts.gridSpecifications[section - 1].objType[row, column], bananaStyle);
+                                        levelParts.gridSpecifications[section - 1].objType[row, column], eggStyle);
                             
                             else if (levelParts.gridSpecifications[section - 1].objType[row, column] ==
                                      InteractableTypes.Bacon)
@@ -127,6 +126,36 @@ public class LevelCreator : EditorWindow
                                 levelParts.gridSpecifications[section - 1].objType[row, column] =
                                     (InteractableTypes)EditorGUILayout.EnumPopup(
                                         levelParts.gridSpecifications[section - 1].objType[row, column], bagelStyle);
+
+                            else if (levelParts.gridSpecifications[section - 1].objType[row, column] ==
+                                     InteractableTypes.EggPlate)
+                                levelParts.gridSpecifications[section - 1].objType[row, column] =
+                                    (InteractableTypes)EditorGUILayout.EnumPopup(
+                                        levelParts.gridSpecifications[section - 1].objType[row, column], eggPlateStyle);
+
+                            else if (levelParts.gridSpecifications[section - 1].objType[row, column] ==
+                                     InteractableTypes.PancakePlate)
+                                levelParts.gridSpecifications[section - 1].objType[row, column] =
+                                    (InteractableTypes)EditorGUILayout.EnumPopup(
+                                        levelParts.gridSpecifications[section - 1].objType[row, column], pancakePlateStyle);
+
+                            else if (levelParts.gridSpecifications[section - 1].objType[row, column] ==
+                                     InteractableTypes.BagelPlate)
+                                levelParts.gridSpecifications[section - 1].objType[row, column] =
+                                    (InteractableTypes)EditorGUILayout.EnumPopup(
+                                        levelParts.gridSpecifications[section - 1].objType[row, column], bagelPlateStyle);
+
+                            else if (levelParts.gridSpecifications[section - 1].objType[row, column] ==
+                                     InteractableTypes.BaconPlate)
+                                levelParts.gridSpecifications[section - 1].objType[row, column] =
+                                    (InteractableTypes)EditorGUILayout.EnumPopup(
+                                        levelParts.gridSpecifications[section - 1].objType[row, column], baconPlateStyle);
+
+                            else if (levelParts.gridSpecifications[section - 1].objType[row, column] ==
+                                     InteractableTypes.SteakPlate)
+                                levelParts.gridSpecifications[section - 1].objType[row, column] =
+                                    (InteractableTypes)EditorGUILayout.EnumPopup(
+                                        levelParts.gridSpecifications[section - 1].objType[row, column], steakPlateStyle);
 
 
                             else

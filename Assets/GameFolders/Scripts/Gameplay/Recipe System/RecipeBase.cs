@@ -5,9 +5,9 @@ namespace Assets.GameFolders.Scripts.Gameplay.Recipe_System
 {
     public abstract class RecipeBase : MonoBehaviour
     {
-        public virtual void TextSetter(InteractableTypes type, int value, TMP_Text textHolder, GameObject recipe)
+        public virtual void TextSetter(int value, TMP_Text textHolder, GameObject recipe)
         {
-            textHolder.text = $"{type} x {value}";
+            textHolder.text = $"x{value}";
         }
 
         //public virtual void HandleRecipe(InteractableTypes type,int value,TMP_Text textHolder)

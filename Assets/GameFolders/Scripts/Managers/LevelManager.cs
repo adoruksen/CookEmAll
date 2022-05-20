@@ -11,7 +11,6 @@ namespace Assets.GameFolders.Scripts.Managers
         public static LevelManager instance;
         public static GameState gameState;
         public LevelAsset levelAsset;
-        public LevelRules levelRules;
 
         //public int MoveCounter => levelRules.moveCounter[GameManager.Level-1];
         void Awake()
@@ -33,7 +32,7 @@ namespace Assets.GameFolders.Scripts.Managers
                 RecipeController.instance.singleRecipes.Clear();
                 for (var i = 0; i < level.transform.GetChild(0).childCount; i++)
                 {
-                    RecipeController.instance.singleRecipes.Add(level.transform.GetChild(0).GetChild(i).GetChild(0).GetComponent<SingleRecipe>());
+                    RecipeController.instance.singleRecipes.Add(level.transform.GetChild(0).GetChild(i).GetChild(1).GetComponent<SingleRecipe>());
                 }
 
             }
@@ -45,7 +44,7 @@ namespace Assets.GameFolders.Scripts.Managers
                 RecipeController.instance.singleRecipes.Clear();
                 for (var i = 0; i < myLevel.transform.GetChild(0).childCount; i++)
                 {
-                    RecipeController.instance.singleRecipes.Add(myLevel.transform.GetChild(0).GetChild(i).GetChild(0).GetComponent<SingleRecipe>());
+                    RecipeController.instance.singleRecipes.Add(myLevel.transform.GetChild(0).GetChild(i).GetChild(1).GetComponent<SingleRecipe>());
                 }
             }
         }

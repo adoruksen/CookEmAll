@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8520885627090191249}
+  - component: {fileID: 8014819109064279114}
+  - component: {fileID: 5568245244100025072}
   m_Layer: 0
   m_Name: Steak
   m_TagString: Untagged
@@ -32,6 +34,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8014819109064279114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2648643936722839014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7d5857c944c8ed4eae18b3e6bd84c27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 4
+  isStacked: 0
+  targetTransform: {fileID: 0}
+--- !u!65 &5568245244100025072
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2648643936722839014}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.794646, y: 0.0770269, z: 0.84028023}
+  m_Center: {x: 0.047915936, y: -0.0013440549, z: -0.043352455}
 --- !u!1 &5836103440679890356
 GameObject:
   m_ObjectHideFlags: 0

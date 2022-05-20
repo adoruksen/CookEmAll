@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2974541836431359864}
+  - component: {fileID: 6223788271790921706}
+  - component: {fileID: 6672264108944835573}
   m_Layer: 0
   m_Name: Bagel
   m_TagString: Untagged
@@ -32,6 +34,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6223788271790921706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761809052884370806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7d5857c944c8ed4eae18b3e6bd84c27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 3
+  isStacked: 0
+  targetTransform: {fileID: 0}
+--- !u!65 &6672264108944835573
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761809052884370806}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6146841, y: 0.23685023, z: 0.629648}
+  m_Center: {x: 0.0018704534, y: 0.108487025, z: -0.0018703938}
 --- !u!1 &6757566288493311117
 GameObject:
   m_ObjectHideFlags: 0

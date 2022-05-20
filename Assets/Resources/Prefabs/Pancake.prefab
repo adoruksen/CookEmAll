@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3344996524715336761}
   - component: {fileID: 1856621077931617180}
   - component: {fileID: 4476855387631198038}
-  - component: {fileID: 2826346291184049221}
   - component: {fileID: 2887388118109247531}
+  - component: {fileID: 4437972823664081429}
   m_Layer: 0
   m_Name: Pancake
   m_TagString: Untagged
@@ -86,19 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2826346291184049221
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2675138390254599811}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.19199893, y: 0.014024782, z: 0.19199389}
-  m_Center: {x: 0.0003162697, y: 0.0075573795, z: 0.0004889518}
 --- !u!114 &2887388118109247531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,3 +101,16 @@ MonoBehaviour:
   type: 1
   isStacked: 0
   targetTransform: {fileID: 0}
+--- !u!65 &4437972823664081429
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2675138390254599811}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7679957, y: 0.056099128, z: 0.78206897}
+  m_Center: {x: 0.0012650788, y: 0.030229518, z: 0.0019558072}

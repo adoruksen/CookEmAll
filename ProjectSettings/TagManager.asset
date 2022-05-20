@@ -5,7 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - PancakePlate
-  - BananaPlate
+  - EggPlate
+  - BaconPlate
+  - BagelPlate
+  - SteakPlate
   layers:
   - Default
   - TransparentFX
@@ -13,7 +16,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Plates
   - 
   - 
   - 

@@ -1,11 +1,15 @@
 public enum InteractableTypes
 {
-    Egg, //-> obstacle
-    Pancake, //-> dash
-    Plate, //->Player
+    Egg,
+    Pancake, 
     Bacon,
     Bagel,
     Steak,
+    EggPlate,
+    PancakePlate,
+    BaconPlate,
+    BagelPlate,
+    SteakPlate,
     OvenParts //->ground
   
 }

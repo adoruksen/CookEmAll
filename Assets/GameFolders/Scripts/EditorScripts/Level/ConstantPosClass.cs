@@ -9,6 +9,6 @@ public class ConstantPosClass : MonoBehaviour
     protected const float DEFAULT_EGG_Y = 0.177F;
     protected const float DEFAULT_STEAK_Y = 0.226F;
     protected const float DEFAULT_PANCAKE_Y = 0.177F;
-    protected const float DEFAULT_PLATE_Z = 11F;
+    protected const float DEFAULT_PLATE_Y = 0.24F;
     protected const string GROUND_PATH = "Assets/Resources/Prefabs/OvenParts";
 }

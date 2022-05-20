@@ -14,11 +14,11 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
 
         IEnumerator Start()
         {
-            yield return new WaitForSeconds(.2f);
+            yield return new WaitForSeconds(1f);
 
             if (type is InteractableTypes.Pancake or InteractableTypes.Egg)
             {
-                transform.DOPunchScale(new Vector3(.05f, .05f, .05f), .5f);
+                transform.DOPunchScale(new Vector3(.075f, .075f, .075f), .3f);
             }
         }
 
@@ -27,6 +27,8 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
         {
             if (!isStacked) return;
             transform.position = Vector3.Lerp(transform.position, new Vector3(targetTransform.position.x, targetTransform.position.y + 0.133f, targetTransform.position.z), 5f*Time.deltaTime);
+            transform.rotation = targetTransform.rotation;
+
         }
 
         //public void MoveElements(List<Transform> collected)
