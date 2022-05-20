@@ -109,6 +109,24 @@ public class LevelCreator : EditorWindow
                                 levelParts.gridSpecifications[section - 1].objType[row, column] =
                                     (InteractableTypes)EditorGUILayout.EnumPopup(
                                         levelParts.gridSpecifications[section - 1].objType[row, column], bananaStyle);
+                            
+                            else if (levelParts.gridSpecifications[section - 1].objType[row, column] ==
+                                     InteractableTypes.Bacon)
+                                levelParts.gridSpecifications[section - 1].objType[row, column] =
+                                    (InteractableTypes)EditorGUILayout.EnumPopup(
+                                        levelParts.gridSpecifications[section - 1].objType[row, column], baconStyle);
+                            
+                            else if (levelParts.gridSpecifications[section - 1].objType[row, column] ==
+                                     InteractableTypes.Steak)
+                                levelParts.gridSpecifications[section - 1].objType[row, column] =
+                                    (InteractableTypes)EditorGUILayout.EnumPopup(
+                                        levelParts.gridSpecifications[section - 1].objType[row, column], steakStyle);
+
+                            else if (levelParts.gridSpecifications[section - 1].objType[row, column] ==
+                                     InteractableTypes.Bagel)
+                                levelParts.gridSpecifications[section - 1].objType[row, column] =
+                                    (InteractableTypes)EditorGUILayout.EnumPopup(
+                                        levelParts.gridSpecifications[section - 1].objType[row, column], bagelStyle);
 
 
                             else

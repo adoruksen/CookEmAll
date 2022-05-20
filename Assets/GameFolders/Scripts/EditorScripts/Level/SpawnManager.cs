@@ -21,6 +21,10 @@ public class SpawnManager : ConstantPosClass //cons verileri yazdýrt
         egg = new GameObject("Eggs" + curPart);
         pancake = new GameObject("Pancakes" + curPart);
         plate = new GameObject("Plate" + curPart);
+        bacon = new GameObject("Bacons" + curPart);
+        bagel = new GameObject("Bagels" + curPart);
+        steak= new GameObject("Steaks" + curPart);
+
 
         if (curPart != 1)
             firstDash = FirstDashPosition(gridSpecs);
@@ -50,6 +54,21 @@ public class SpawnManager : ConstantPosClass //cons verileri yazdýrt
             {
                 var pos = new Vector3(row - firstDash, DEFAULT_PLATE_Z, gridSpecs.boardSize.y - column);
                 Instantiator("Plate", pos, plate.transform, column, gridSpecs);
+            }
+            else if (gridSpecs.objType[row, column] == InteractableTypes.Bacon)
+            {
+                var pos = new Vector3(row - firstDash, DEFAULT_BACON_Y, gridSpecs.boardSize.y - column);
+                Instantiator("Bacon", pos, bacon.transform, column, gridSpecs);
+            }
+            else if (gridSpecs.objType[row, column] == InteractableTypes.Bagel)
+            {
+                var pos = new Vector3(row - firstDash, DEFAULT_BAGEL_Y, gridSpecs.boardSize.y - column);
+                Instantiator("Bagel", pos, bacon.transform, column, gridSpecs);
+            }
+            else if (gridSpecs.objType[row, column] == InteractableTypes.Steak)
+            {
+                var pos = new Vector3(row - firstDash, DEFAULT_STEAK_Y, gridSpecs.boardSize.y - column);
+                Instantiator("Steak", pos, bacon.transform, column, gridSpecs);
             }
     }
 
