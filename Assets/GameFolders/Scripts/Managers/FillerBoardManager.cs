@@ -25,7 +25,7 @@ namespace Assets.GameFolders.Scripts.Managers
             for (int i = 0; i < 150; i++)
             {
                 var randomValue = Random.Range(0, levelRules.levelObjects.Length);
-                GameObject insObject = Instantiate(levelRules.levelObjects[randomValue], objectsParent);
+                var insObject = Instantiate(levelRules.levelObjects[randomValue], objectsParent);
                 insObject.GetComponent<BoxCollider>().enabled = false;
                 insObject.SetActive(false);
                 objectFillList.Add(insObject.transform);
