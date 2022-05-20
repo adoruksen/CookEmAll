@@ -71,12 +71,12 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
             }
         }
 
-        void FixedUpdate()
+        void Update()
         {
             if (LevelManager.gameState != GameState.Normal) return;
             if (!inputController.FingerHold)
             {
-                //playerCollider.enabled = false;
+                playerCollider.enabled = false;
                 if (!IsEnough())
                 {
                     CancelMove();
@@ -112,9 +112,8 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
             }
             else
             {
-                //playerCollider.enabled = true;
+                playerCollider.enabled = true;
             }
-            
         }
 
         private void ObjectDestroyedListController(Transform objDestroyed)
@@ -141,18 +140,19 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
         {
             if (stackedList.Count > 0)
             {
-                if (objTransform.GetComponent<Interactable>().type !=
-                    stackedList[0].GetComponent<Interactable>().type) return;
-                var curDistance = Mathf.Abs(Vector3.Distance(objTransform.position,
-                    stackedList[^1].GetComponent<Interactable>().firstPos));
-                //Debug.Log(curDistance +"curDistance");
-                if (!(curDistance < maxDistance)) return;
-                objTransform.GetComponent<BoxCollider>().enabled = false;
-
-                objTransform.transform.parent = parent;
-                objTransform.GetComponent<Interactable>().targetTransform = stackedList[^1];
-                stackedList.Add(objTransform);
-                objTransform.GetComponent<Interactable>().isStacked = true;
+                if (objTransform.GetComponent<Interactable>().type == stackedList[0].GetComponent<Interactable>().type)
+                {
+                    var curDistance = Mathf.Abs(Vector3.Distance(objTransform.position,
+                        stackedList[^1].GetComponent<Interactable>().firstPos));
+                    if ((curDistance < maxDistance))
+                    {
+                        objTransform.GetComponent<BoxCollider>().enabled = false;
+                        objTransform.transform.parent = parent;
+                        objTransform.GetComponent<Interactable>().targetTransform = stackedList[^1];
+                        stackedList.Add(objTransform);
+                        objTransform.GetComponent<Interactable>().isStacked = true;
+                    }
+                }
             }
 
             else
@@ -177,7 +177,7 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
             foreach (var t in stackedList)
             {
                 t.DOMove(plateTransform.position,.5f);
-                //t.rotation = plateTransform.rotation;
+                t.rotation = plateTransform.rotation;
                 t.parent = plateTransform;
             }
             RecipeController.instance.RecipeHandlerFunction(plateTransform.GetChild(1).GetComponent<SingleRecipe>(),stackedList.Count,type);
