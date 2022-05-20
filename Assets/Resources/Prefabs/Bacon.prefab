@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 980376759638809228}
   - component: {fileID: 4194299184240579881}
   - component: {fileID: 2148731230039712227}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bacon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 7936422636929333671}
   - component: {fileID: 5807064664630622292}
   - component: {fileID: 597803938174254963}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bacon
   m_TagString: Untagged
   m_Icon: {fileID: 0}

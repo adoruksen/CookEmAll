@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2974541836431359864}
   - component: {fileID: 6223788271790921706}
   - component: {fileID: 6672264108944835573}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bagel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 6236467408643305015}
   - component: {fileID: 6999642229555011986}
   - component: {fileID: 5100131742399059288}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bagel
   m_TagString: Untagged
   m_Icon: {fileID: 0}

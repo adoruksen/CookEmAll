@@ -9,6 +9,7 @@ namespace Assets.GameFolders.Scripts.UI
     public class DuringGamePanelController : MonoBehaviour
     {
         public static DuringGamePanelController instance;
+        [SerializeField] private GameObject retryButton;
         [SerializeField] private TMP_Text levelText;
 
         [SerializeField] private TMP_Text coinText;
@@ -41,6 +42,7 @@ namespace Assets.GameFolders.Scripts.UI
 
         public void Activator()
         {
+            retryButton.SetActive(true);
             levelText.text = $"Level {GameManager.Level}";
             levelText.gameObject.SetActive(true);
             coinText.transform.parent.gameObject.SetActive(true);

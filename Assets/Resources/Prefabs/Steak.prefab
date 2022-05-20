@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8520885627090191249}
   - component: {fileID: 8014819109064279114}
   - component: {fileID: 5568245244100025072}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Steak
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 6608418393581729550}
   - component: {fileID: 7789549575141308587}
   - component: {fileID: 5476092754289708129}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Steak
   m_TagString: Untagged
   m_Icon: {fileID: 0}

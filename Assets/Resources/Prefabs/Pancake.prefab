@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4476855387631198038}
   - component: {fileID: 2887388118109247531}
   - component: {fileID: 4437972823664081429}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Pancake
   m_TagString: Untagged
   m_Icon: {fileID: 0}
