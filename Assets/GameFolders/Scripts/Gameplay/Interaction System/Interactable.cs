@@ -9,6 +9,7 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
         public InteractableTypes type;
         [System.NonSerialized]public  Vector3 firstPos;
         public bool isStacked = false;
+        public bool isPlate = false;
         public Transform targetTransform ;
 
         IEnumerator Start()
@@ -24,9 +25,19 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
 
         void Update()
         {
-            if (!isStacked) return;
-            transform.position = Vector3.Lerp(transform.position, new Vector3(targetTransform.position.x, targetTransform.position.y + 0.133f, targetTransform.position.z), 5f*Time.deltaTime);
-            transform.rotation = targetTransform.rotation;
+            if (isStacked)
+            {
+                transform.position = Vector3.Lerp(transform.position, new Vector3(targetTransform.position.x, targetTransform.position.y + 0.133f, targetTransform.position.z), 10f * Time.deltaTime);
+                transform.rotation = targetTransform.rotation;
+            }
+
+
+            if (isPlate)
+            {
+                transform.position = Vector3.Lerp(transform.position, new Vector3(targetTransform.position.x, targetTransform.position.y + 0.05f, targetTransform.position.z), 15f * Time.deltaTime);
+                transform.rotation = targetTransform.rotation;
+            }
+            
 
         }
 

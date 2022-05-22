@@ -172,14 +172,22 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
             foreach (var stacked in stackedList)
             {
                 stacked.GetComponent<Interactable>().isStacked = false;
+                stacked.GetComponent<Interactable>().isPlate = true;
             }
             var plateTransform = GameObject.FindGameObjectWithTag(type).transform;
-            foreach (var t in stackedList)
+            for (int i = 0; i < stackedList.Count; i++)
             {
-                t.DOMove(plateTransform.position,.5f);
-                t.rotation = plateTransform.rotation;
-                t.parent = plateTransform;
+                stackedList[i].GetComponent<Interactable>().targetTransform = i==0 ? plateTransform : stackedList[i - 1];
+                stackedList[i].rotation = plateTransform.rotation;
+                stackedList[i].parent = plateTransform;
             }
+            //foreach (var t in stackedList)
+            //{
+            //    t.GetComponent<Interactable>().targetTransform = plateTransform;
+            //    //t.DOMove(plateTransform.position,.5f);
+            //    t.rotation = plateTransform.rotation;
+            //    t.parent = plateTransform;
+            //}
             RecipeController.instance.RecipeHandlerFunction(plateTransform.GetChild(1).GetComponent<SingleRecipe>(),stackedList.Count,type);
            
             //DuringGamePanelController.instance.MoveCountDecrease();
@@ -201,6 +209,7 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
             {
                 stackedList[i].GetComponent<Interactable>().isStacked = false;
                 stackedList[i].DOMove(objectsWillBeDestroyed[i], .2f);
+                stackedList[i].DORotate(new Vector3(-90,0,0), .1f);
                 stackedList[i].SetParent(tempParent);
                 stackedList[i].GetComponent<BoxCollider>().enabled = true;
             }
