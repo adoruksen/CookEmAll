@@ -35,7 +35,7 @@ namespace Assets.GameFolders.Scripts.Gameplay.Recipe_System
             //    valueList.Add(recipe.value);
             //}
             valueList.Sort();
-            return valueList[^1]<0;
+            return valueList[^1]<=0;
         }
     }
 }

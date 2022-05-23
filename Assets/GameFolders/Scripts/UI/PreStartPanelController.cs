@@ -19,6 +19,7 @@ namespace Assets.GameFolders.Scripts.UI
             LevelManager.gameState = GameState.Normal;
             gameObject.SetActive(false);
             DuringGamePanelController.instance.Activator();
+            TutorialPanelController.instance.transform.GetChild(0).gameObject.SetActive(true);
         }
     }
 }
