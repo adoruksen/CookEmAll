@@ -184,7 +184,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 200}
-  m_SizeDelta: {x: 800, y: 400}
+  m_SizeDelta: {x: 600, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2715180542489274250
 CanvasRenderer:
@@ -216,8 +216,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "TAP TO PLAY \n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: df96882bb6fd0e24eaf4bc376dc2d5f6, type: 2}
-  m_sharedMaterial: {fileID: -5381570952237116451, guid: df96882bb6fd0e24eaf4bc376dc2d5f6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ec8f6b69ca269af459bfda04b486ea41, type: 2}
+  m_sharedMaterial: {fileID: -7823340333909791897, guid: ec8f6b69ca269af459bfda04b486ea41, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -293,7 +293,7 @@ Animator:
   m_GameObject: {fileID: 2715180542489274254}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3ad556e2773beb24fa9c169785a4c8b1, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2676cdec9318d9d47b5bdc0fb3e83ea3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

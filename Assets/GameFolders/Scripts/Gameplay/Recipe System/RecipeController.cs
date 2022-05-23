@@ -15,12 +15,22 @@ namespace Assets.GameFolders.Scripts.Gameplay.Recipe_System
             instance = this;
         }
 
+        void Start()
+        {
+            singleRecipes.Clear();
+            for (var i = 0; i < LevelController.instance.recipeList.Count; i++)
+            {
+                singleRecipes.Add(LevelController.instance.recipeList[i].GetComponent<SingleRecipe>());
+            }
+        }
+
         public void RecipeHandlerFunction(SingleRecipe singleRecipe,int value,string type)
         {
             singleRecipe.value -= value;
             singleRecipe.countText.text = singleRecipe.value <=0 ? $"Done" : $"x {singleRecipe.value}";
             if (DidWin())
             {
+                LevelManager.gameState = GameState.Finish;
                 CompletePanelController.instance.Activator();
                 CompletePanelController.instance.SetFinalScoreText(value*5);
             }

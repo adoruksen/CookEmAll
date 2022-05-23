@@ -2332,6 +2332,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 661373335542834796}
+  - component: {fileID: 1761752048}
   m_Layer: 0
   m_Name: Level1
   m_TagString: Untagged
@@ -2358,6 +2359,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &1761752048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661373335542834797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 669784f5228d6404ead37f35c23dfcef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectsCanBeInstantiated:
+  - {fileID: 8776449815978770029, guid: ea6e4b685cce0bf4e9d52a9bd76a3b9e, type: 3}
+  - {fileID: 2675138390254599811, guid: 7ef699695dfe5fb44b3246488a2b45a1, type: 3}
+  cameraPos: {x: 0, y: 0, z: -5}
+  recipeList:
+  - {fileID: 661373333921493882}
+  - {fileID: 661373334107630824}
 --- !u!1 &661373335566263958
 GameObject:
   m_ObjectHideFlags: 0

@@ -28,8 +28,8 @@ namespace Assets.GameFolders.Scripts.Managers
         {
             for (var i = 0; i < 150; i++)
             {
-                var randomValue = Random.Range(0, LevelManager.instance.LevelNumber/*levelRules.levelObjects.Length*/);
-                var insObject = Instantiate(levelRules.levelObjects[randomValue], objectsParent);
+                var randomValue = Random.Range(0, LevelController.instance.objectsCanBeInstantiated.Count/*LevelManager.instance.LevelNumber*//*levelRules.levelObjects.Length*/);
+                var insObject = Instantiate(LevelController.instance.objectsCanBeInstantiated[randomValue], objectsParent);
                 insObject.GetComponent<BoxCollider>().enabled = false;
                 insObject.SetActive(false);
                 objectFillList.Add(insObject.transform);
@@ -46,6 +46,5 @@ namespace Assets.GameFolders.Scripts.Managers
             }
             objectFillList.RemoveRange(0,destroyedObjectsList.Count);
         }
-
     }
 }

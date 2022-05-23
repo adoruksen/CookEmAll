@@ -44,7 +44,7 @@ namespace Assets.GameFolders.Scripts.UI
         {
             retryButton.SetActive(true);
             levelText.text = $"Level {GameManager.Level}";
-            levelText.gameObject.SetActive(true);
+            levelText.transform.parent.gameObject.SetActive(true);
             coinText.transform.parent.gameObject.SetActive(true);
         }
         //public void MoveCounterSetter(int value)

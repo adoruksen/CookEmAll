@@ -10,7 +10,7 @@ namespace Assets.GameFolders.Scripts.Gameplay.Recipe_System
         [SerializeField] GameObject recipe;
         public TMPro.TMP_Text countText;
 
-        private void Awake()
+        private void Start()
         {
             TextSetter(value, countText, recipe);
         }

@@ -5,15 +5,13 @@ namespace Assets.GameFolders.Scripts.UI
 {
     public class SceneLoadLayer : MonoBehaviour
     {
-        GameObject img_sceneLoad;
+        [SerializeField]GameObject img_sceneLoad;
 
         #region Singleton Pattern
         public static SceneLoadLayer instance;
         private void Awake()
         {
             instance = this;
-            img_sceneLoad = transform.GetChild(0).gameObject;
-
         }
         #endregion
 

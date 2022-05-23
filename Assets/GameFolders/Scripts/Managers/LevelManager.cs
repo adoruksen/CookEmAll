@@ -17,14 +17,22 @@ namespace Assets.GameFolders.Scripts.Managers
         //public int MoveCounter => levelRules.moveCounter[GameManager.Level-1];
         void Awake()
         {
-            instance = this;
-        }
-        private void Start()
-        {
-            SceneLoadLayer.instance.SceneLoadAnimation();
+            if (instance != null && instance != this)
+                Destroy(this.gameObject);
+            else
+            {
+                instance = this;
+                DontDestroyOnLoad(this.gameObject);
+            }
+            //instance = this;
             CreateLevel();
-            Debug.Log(levelNumber);
         }
+
+        //void OnEnable()
+        //{
+        //    SceneLoadLayer.instance.SceneLoadAnimation();
+        //}
+
 
         private void CreateLevel()
         {
@@ -32,13 +40,13 @@ namespace Assets.GameFolders.Scripts.Managers
             {
                 var level = Instantiate(levelAsset.levels[GameManager.Level - 1]);
                 //DuringGamePanelController.instance.MoveCounterSetter(GameManager.Level-1);
-                RecipeController.instance.singleRecipes.Clear();
-                for (var i = 0; i < level.transform.GetChild(0).childCount; i++)
-                {
-                    RecipeController.instance.singleRecipes.Add(level.transform.GetChild(0).GetChild(i).GetChild(1).GetComponent<SingleRecipe>());
-                }
+                //RecipeController.instance.singleRecipes.Clear();
+                //for (var i = 0; i < level.transform.GetChild(0).childCount; i++)
+                //{
+                //    RecipeController.instance.singleRecipes.Add(level.transform.GetChild(0).GetChild(i).GetChild(1).GetComponent<SingleRecipe>());
+                //}
 
-                levelNumber = GameManager.Level +1;
+                //levelNumber = GameManager.Level +1;
 
             }
             else
@@ -46,13 +54,13 @@ namespace Assets.GameFolders.Scripts.Managers
                 var randomNumber = Random.Range(0, levelAsset.levels.Length);
                 var myLevel =Instantiate(levelAsset.levels[randomNumber]);
                 //DuringGamePanelController.instance.MoveCounterSetter(levelRules.moveCounter[randomNumber]);
-                RecipeController.instance.singleRecipes.Clear();
-                for (var i = 0; i < myLevel.transform.GetChild(0).childCount; i++)
-                {
-                    RecipeController.instance.singleRecipes.Add(myLevel.transform.GetChild(0).GetChild(i).GetChild(1).GetComponent<SingleRecipe>());
-                }
+                //RecipeController.instance.singleRecipes.Clear();
+                //for (var i = 0; i < myLevel.transform.GetChild(0).childCount; i++)
+                //{
+                //    RecipeController.instance.singleRecipes.Add(myLevel.transform.GetChild(0).GetChild(i).GetChild(1).GetComponent<SingleRecipe>());
+                //}
 
-                levelNumber = randomNumber == 1 ? randomNumber + 1 : randomNumber;
+                //levelNumber = randomNumber == 1 ? randomNumber + 1 : randomNumber;
             }
         }
 
