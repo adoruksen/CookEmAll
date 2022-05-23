@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveCounter: 190000000500000006000000
   levelObjects:
-  - {fileID: 2675138390254599811, guid: 7ef699695dfe5fb44b3246488a2b45a1, type: 3}
   - {fileID: 8776449815978770029, guid: ea6e4b685cce0bf4e9d52a9bd76a3b9e, type: 3}
+  - {fileID: 2675138390254599811, guid: 7ef699695dfe5fb44b3246488a2b45a1, type: 3}

@@ -11,6 +11,8 @@ namespace Assets.GameFolders.Scripts.Managers
         public static LevelManager instance;
         public static GameState gameState;
         public LevelAsset levelAsset;
+        private int levelNumber;
+        public int LevelNumber => levelNumber;
 
         //public int MoveCounter => levelRules.moveCounter[GameManager.Level-1];
         void Awake()
@@ -21,6 +23,7 @@ namespace Assets.GameFolders.Scripts.Managers
         {
             SceneLoadLayer.instance.SceneLoadAnimation();
             CreateLevel();
+            Debug.Log(levelNumber);
         }
 
         private void CreateLevel()
@@ -35,6 +38,8 @@ namespace Assets.GameFolders.Scripts.Managers
                     RecipeController.instance.singleRecipes.Add(level.transform.GetChild(0).GetChild(i).GetChild(1).GetComponent<SingleRecipe>());
                 }
 
+                levelNumber = GameManager.Level +1;
+
             }
             else
             {
@@ -46,6 +51,8 @@ namespace Assets.GameFolders.Scripts.Managers
                 {
                     RecipeController.instance.singleRecipes.Add(myLevel.transform.GetChild(0).GetChild(i).GetChild(1).GetComponent<SingleRecipe>());
                 }
+
+                levelNumber = randomNumber == 1 ? randomNumber + 1 : randomNumber;
             }
         }
 

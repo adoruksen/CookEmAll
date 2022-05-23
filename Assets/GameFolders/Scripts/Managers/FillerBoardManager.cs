@@ -17,14 +17,18 @@ namespace Assets.GameFolders.Scripts.Managers
         void Awake()
         {
             instance = this;
+        }
+
+        void Start()
+        {
             InitializeObjects();
         }
 
         void InitializeObjects()
         {
-            for (int i = 0; i < 150; i++)
+            for (var i = 0; i < 150; i++)
             {
-                var randomValue = Random.Range(0, levelRules.levelObjects.Length);
+                var randomValue = Random.Range(0, LevelManager.instance.LevelNumber/*levelRules.levelObjects.Length*/);
                 var insObject = Instantiate(levelRules.levelObjects[randomValue], objectsParent);
                 insObject.GetComponent<BoxCollider>().enabled = false;
                 insObject.SetActive(false);

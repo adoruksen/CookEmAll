@@ -151,6 +151,7 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                         objTransform.GetComponent<Interactable>().targetTransform = stackedList[^1];
                         stackedList.Add(objTransform);
                         objTransform.GetComponent<Interactable>().isStacked = true;
+                        objTransform.GetChild(0).gameObject.SetActive(true);
                     }
                 }
             }
@@ -162,6 +163,8 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                 objTransform.GetComponent<Interactable>().targetTransform = targetPosition;
                 stackedList.Add(objTransform);
                 objTransform.GetComponent<Interactable>().isStacked = true;
+                objTransform.GetChild(0).gameObject.SetActive(true);
+
             }
         }
         private void PlateAction(string type)
