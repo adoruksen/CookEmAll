@@ -15,8 +15,10 @@ namespace Assets.GameFolders.Scripts.UI
         [SerializeField] GameObject nextLevelButton;
         [SerializeField] GameObject score;
         [SerializeField] GameObject coin;
+        public bool plateMoveFinished;
+        WaitForSeconds longWaitTime = new WaitForSeconds(2f);
+        WaitForSeconds shortWaitTime = new WaitForSeconds(.5f);
 
-        WaitForSeconds waitTime = new WaitForSeconds(.5f);
 
         #region Singleton Pattern
         public static CompletePanelController instance;
@@ -44,23 +46,27 @@ namespace Assets.GameFolders.Scripts.UI
         public void Activator(bool condition = true)
         {
             if (!condition) return;
-            BackgroundAnimation();
             levelCompletedText.GetComponent<TMP_Text>().text = $"Level {GameManager.Level} Completed";
             StartCoroutine(PanelOpenDelay());
         }
 
         private IEnumerator PanelOpenDelay()
         {
-            yield return waitTime;
+            yield return longWaitTime;
+            yield return new WaitUntil(() => plateMoveFinished);
+
+            BackgroundAnimation();
+
 
             levelCompletedText.SetActive(true);
-            yield return waitTime;
+            yield return shortWaitTime;
 
             score.SetActive(true);
             coin.SetActive(true);
 
-            yield return waitTime;
+            yield return shortWaitTime;
             nextLevelButton.SetActive(true);
+            plateMoveFinished = false;
         }
 
         public void BackgroundAnimation(/*bool isStart = true*/)

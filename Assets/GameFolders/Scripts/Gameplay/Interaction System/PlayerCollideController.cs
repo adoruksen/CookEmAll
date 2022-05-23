@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Collections;
 using Assets.GameFolders.Scripts.Gameplay.Controllers;
 using Assets.GameFolders.Scripts.Gameplay.Recipe_System;
 using Assets.GameFolders.Scripts.Managers;
@@ -198,8 +199,8 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
 
             FillerBoardManager.instance.TakeTransformInfos(objectsWillBeDestroyed);
             objectsWillBeDestroyed.Clear();
+            CompletePanelController.instance.plateMoveFinished = true;
         }
-
 
         private bool IsEnough()
         {
