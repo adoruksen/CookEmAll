@@ -16,8 +16,8 @@ namespace Assets.GameFolders.Scripts.UI
         [SerializeField] GameObject score;
         [SerializeField] GameObject coin;
         public bool plateMoveFinished;
-        WaitForSeconds longWaitTime = new WaitForSeconds(2f);
-        WaitForSeconds shortWaitTime = new WaitForSeconds(.5f);
+        WaitForSeconds longWaitTime = new WaitForSeconds(1.5f);
+        WaitForSeconds shortWaitTime = new WaitForSeconds(1f);
 
 
         #region Singleton Pattern

@@ -22,7 +22,7 @@ namespace Assets.GameFolders.Scripts.Gameplay.Recipe_System
             if (DidWin())
             {
                 CompletePanelController.instance.Activator();
-                CompletePanelController.instance.SetFinalScoreText(GameManager.Coin*5);
+                CompletePanelController.instance.SetFinalScoreText(value*5);
             }
         }
 
