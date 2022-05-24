@@ -5,7 +5,7 @@ namespace Assets.GameFolders.Scripts.Gameplay.Recipe_System
 {
     public abstract class RecipeBase : MonoBehaviour
     {
-        public virtual void TextSetter(int value, TMP_Text textHolder, GameObject recipe)
+        public virtual void TextSetter(int value, TMP_Text textHolder, GameObject recipe, GameObject doneImg)
         {
             textHolder.text = $"x{value}";
         }

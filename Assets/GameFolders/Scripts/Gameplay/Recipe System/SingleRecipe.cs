@@ -9,10 +9,11 @@ namespace Assets.GameFolders.Scripts.Gameplay.Recipe_System
 
         [SerializeField] GameObject recipe;
         public TMPro.TMP_Text countText;
+        public GameObject doneImg;
 
         private void Start()
         {
-            TextSetter(value, countText, recipe);
+            TextSetter(value, countText, recipe,doneImg);
         }
     }
 }

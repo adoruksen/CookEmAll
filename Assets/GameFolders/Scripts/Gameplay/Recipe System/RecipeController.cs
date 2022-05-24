@@ -27,7 +27,17 @@ namespace Assets.GameFolders.Scripts.Gameplay.Recipe_System
         public void RecipeHandlerFunction(SingleRecipe singleRecipe,int value,string type)
         {
             singleRecipe.value -= value;
-            singleRecipe.countText.text = singleRecipe.value <=0 ? $"Done" : $"x {singleRecipe.value}";
+            switch (singleRecipe.value)
+            {
+                //singleRecipe.countText.text = singleRecipe.value <=0 ? $"Done" : $"x {singleRecipe.value}";
+                case <= 0:
+                    singleRecipe.countText.gameObject.SetActive(false);
+                    singleRecipe.doneImg.SetActive(true);
+                    break;
+                default:
+                    singleRecipe.countText.text = $"x{singleRecipe.value}";
+                    break;
+            }
             if (DidWin())
             {
                 LevelManager.gameState = GameState.Finish;
