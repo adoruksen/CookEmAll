@@ -82,7 +82,7 @@ Shader "Toony Colors Pro 2/Hybrid Shader"
 	//# IF_PROPERTY _EmissionChannel < 5 || _UseMobileMode == 1
 		_EmissionMap ("Texture#Texture (A)", 2D) = "white" {}
 	//# END_IF
-		[TCP2ColorNoAlpha] [HDR] _EmissionColor ("Color", Color) = (1,1,0,1)
+		[TCP2ColorNoAlpha] [HDR] [PerRenderData]_EmissionColor ("Color", Color) = (1,1,0,1)
 	//# END_IF
 	//# ========================================================
 

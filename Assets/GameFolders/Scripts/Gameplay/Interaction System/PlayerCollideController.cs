@@ -65,8 +65,9 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                             ObjectDestroyedListController(other.transform);
                             StackedListController(other.transform, targetPosition);
                             break;
-                        default:
-                            throw new ArgumentOutOfRangeException();
+                        case InteractableTypes.OvenParts:
+                            MaterialColorChange(other.transform.GetChild(0).GetComponent<Renderer>());
+                            break;
                     }
                 }
             }
@@ -127,7 +128,6 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                     if (objectsWillBeDestroyed.Count <= stackedList.Count)
                         objectsWillBeDestroyed.Add(objDestroyed.GetComponent<Interactable>().firstPos);
                 }
-            
             }
             else
             {
@@ -154,6 +154,10 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                         objTransform.GetComponent<Interactable>().isStacked = true;
                         objTransform.GetChild(0).gameObject.SetActive(true);
                     }
+                    else
+                    {
+                        objTransform.DOPunchScale(new Vector3(.1f,.1f,.1f), 1f);
+                    }
                 }
             }
 
@@ -165,7 +169,6 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                 stackedList.Add(objTransform);
                 objTransform.GetComponent<Interactable>().isStacked = true;
                 objTransform.GetChild(0).gameObject.SetActive(true);
-
             }
         }
         private void PlateAction(string type)
@@ -212,11 +215,23 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
             for (var i = 0; i < stackedList.Count; i++)
             {
                 stackedList[i].GetComponent<Interactable>().isStacked = false;
+                stackedList[i].GetChild(0).gameObject.SetActive(false);
                 stackedList[i].DOMove(objectsWillBeDestroyed[i], .2f);
                 stackedList[i].DORotate(new Vector3(-90,0,0), .1f);
                 stackedList[i].SetParent(tempParent);
                 stackedList[i].GetComponent<BoxCollider>().enabled = true;
             }
+        }
+
+        void MaterialColorChange(Renderer renderer)
+        {
+            //Debug.Log(renderer.materials[1].GetColor("_EmissionColor"));
+
+            var myColor = renderer.materials[1].GetColor("_EmissionColor");
+            var endColor = new Color(0.302f, 0, 0, 0);
+            renderer.materials[1].SetColor("_EmissionColor",endColor);
+            //DOTween.To(() =>myColor , x => myColor = x, endColor , .3f);
+            //Debug.Log(renderer.materials[1].GetColor("_EmissionColor"));
         }
     }
 }

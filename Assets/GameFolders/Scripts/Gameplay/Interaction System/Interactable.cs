@@ -41,6 +41,26 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
 
         }
 
+        //void OnTriggerExit(Collider other)
+        //{
+        //    Debug.Log("buna girdi" + other.name);
+        //    if (type!= InteractableTypes.OvenParts)
+        //    {
+        //        var interactable = other.GetComponent<Interactable>();
+        //        if (interactable != null)
+        //        {
+        //            if (interactable.type == InteractableTypes.OvenParts)
+        //            {
+        //                Debug.Log("carpisma old");
+        //                MaterialColorChange(other.GetComponent<Renderer>());
+        //            }
+        //        }
+        //    }
+        //}
+
+
+        
+
         //public void MoveElements(List<Transform> collected)
         //{
         //    for (var i = 1; i < collected.Count; i++)

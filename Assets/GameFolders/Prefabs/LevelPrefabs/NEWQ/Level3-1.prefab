@@ -178,7 +178,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1092878308608956313}
-  m_Layer: 0
+  - component: {fileID: 7577103001135110913}
+  - component: {fileID: 8210158988111445699}
+  m_Layer: 2
   m_Name: OvenParts(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,6 +203,35 @@ Transform:
   m_Father: {fileID: 1092878308830666412}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7577103001135110913
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092878308608956312}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.18, z: 1}
+  m_Center: {x: 0, y: 0.09, z: 0}
+--- !u!114 &8210158988111445699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092878308608956312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7d5857c944c8ed4eae18b3e6bd84c27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 10
+  isStacked: 0
+  isPlate: 0
+  targetTransform: {fileID: 0}
 --- !u!1 &1092878308610117300
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,7 +241,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1092878308610117301}
-  m_Layer: 0
+  - component: {fileID: 5372711353014891595}
+  - component: {fileID: 7635518090482872231}
+  m_Layer: 2
   m_Name: OvenParts(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -233,6 +266,35 @@ Transform:
   m_Father: {fileID: 1092878308830666412}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5372711353014891595
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092878308610117300}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.18, z: 1}
+  m_Center: {x: 0, y: 0.09, z: 0}
+--- !u!114 &7635518090482872231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092878308610117300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7d5857c944c8ed4eae18b3e6bd84c27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 10
+  isStacked: 0
+  isPlate: 0
+  targetTransform: {fileID: 0}
 --- !u!1 &1092878308617708790
 GameObject:
   m_ObjectHideFlags: 0
@@ -9746,7 +9808,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -160475060082054231, guid: 82543f103b057654abfe16b09b9a9479, type: 2}
+  - {fileID: -7823340333909791897, guid: ec8f6b69ca269af459bfda04b486ea41, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9790,8 +9852,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: x5
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 82543f103b057654abfe16b09b9a9479, type: 2}
-  m_sharedMaterial: {fileID: -160475060082054231, guid: 82543f103b057654abfe16b09b9a9479, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ec8f6b69ca269af459bfda04b486ea41, type: 2}
+  m_sharedMaterial: {fileID: -7823340333909791897, guid: ec8f6b69ca269af459bfda04b486ea41, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9815,15 +9877,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 2.18
-  m_fontSizeBase: 2.18
+  m_fontSize: 1.75
+  m_fontSizeBase: 1.75
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -9851,7 +9913,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 7.9638996, y: -0.050667048, z: 11.712316, w: 4.6690016}
+  m_margin: {x: 7.9280457, y: -0.050667048, z: 11.6856, w: 4.6690016}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -9869,7 +9931,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1092878308736283938}
-  m_Layer: 0
+  - component: {fileID: 5378427532451192770}
+  - component: {fileID: 126964032426312007}
+  m_Layer: 2
   m_Name: OvenParts(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9892,6 +9956,35 @@ Transform:
   m_Father: {fileID: 1092878308830666412}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5378427532451192770
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092878308736283937}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.18, z: 1}
+  m_Center: {x: 0, y: 0.09, z: 0}
+--- !u!114 &126964032426312007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092878308736283937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7d5857c944c8ed4eae18b3e6bd84c27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 10
+  isStacked: 0
+  isPlate: 0
+  targetTransform: {fileID: 0}
 --- !u!1 &1092878308738818690
 GameObject:
   m_ObjectHideFlags: 0
@@ -14792,7 +14885,7 @@ GameObject:
   - component: {fileID: 1092878308882177332}
   - component: {fileID: 1092878308882177334}
   - component: {fileID: 1092878308882177333}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: cooker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19667,7 +19760,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1092878308958178772}
-  m_Layer: 0
+  - component: {fileID: 7418499528912228586}
+  - component: {fileID: 6255600736430960792}
+  m_Layer: 2
   m_Name: OvenParts(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19690,6 +19785,35 @@ Transform:
   m_Father: {fileID: 1092878308830666412}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7418499528912228586
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092878308958178779}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.18, z: 1}
+  m_Center: {x: 0, y: 0.09, z: 0}
+--- !u!114 &6255600736430960792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092878308958178779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7d5857c944c8ed4eae18b3e6bd84c27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 10
+  isStacked: 0
+  isPlate: 0
+  targetTransform: {fileID: 0}
 --- !u!1 &1092878308960558239
 GameObject:
   m_ObjectHideFlags: 0
@@ -19716,7 +19840,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1092878308960558239}
   m_LocalRotation: {x: -0.7028346, y: 0.07761194, z: -0.07761194, w: 0.7028346}
-  m_LocalPosition: {x: -0.1590979, y: 0.65967965, z: -0.08200002}
+  m_LocalPosition: {x: -0.166, y: 0.661, z: -0.082}
   m_LocalScale: {x: 0.4, y: 0.40000004, z: 0.40000004}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19800,7 +19924,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1092878309030922091}
   m_LocalRotation: {x: -0.7028346, y: 0.07761194, z: -0.07761194, w: 0.7028346}
-  m_LocalPosition: {x: -0.169, y: 0.649, z: -0.096000016}
+  m_LocalPosition: {x: -0.183, y: 0.652, z: -0.096}
   m_LocalScale: {x: 0.4, y: 0.40000004, z: 0.40000004}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19869,7 +19993,7 @@ GameObject:
   - component: {fileID: 1092878309101362196}
   - component: {fileID: 1092878309101362198}
   - component: {fileID: 1092878309101362197}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: cooker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20120,7 +20244,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1092878309201586529}
-  m_Layer: 0
+  - component: {fileID: 9090741255424914915}
+  - component: {fileID: 7821715372506725201}
+  m_Layer: 2
   m_Name: OvenParts(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20143,6 +20269,35 @@ Transform:
   m_Father: {fileID: 1092878308830666412}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &9090741255424914915
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092878309201586528}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.18, z: 1}
+  m_Center: {x: 0, y: 0.09, z: 0}
+--- !u!114 &7821715372506725201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092878309201586528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7d5857c944c8ed4eae18b3e6bd84c27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 10
+  isStacked: 0
+  isPlate: 0
+  targetTransform: {fileID: 0}
 --- !u!1 &1092878309234337840
 GameObject:
   m_ObjectHideFlags: 0
@@ -20152,7 +20307,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1092878309234337841}
-  m_Layer: 0
+  - component: {fileID: 5533029668166003523}
+  - component: {fileID: 8573568895453815768}
+  m_Layer: 2
   m_Name: OvenParts(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20175,6 +20332,35 @@ Transform:
   m_Father: {fileID: 1092878308830666412}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5533029668166003523
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092878309234337840}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.18, z: 1}
+  m_Center: {x: 0, y: 0.09, z: 0}
+--- !u!114 &8573568895453815768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092878309234337840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7d5857c944c8ed4eae18b3e6bd84c27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 10
+  isStacked: 0
+  isPlate: 0
+  targetTransform: {fileID: 0}
 --- !u!1 &1092878309238129758
 GameObject:
   m_ObjectHideFlags: 0
@@ -20350,7 +20536,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1092878309249944393}
-  m_Layer: 0
+  - component: {fileID: 8777975842704529224}
+  - component: {fileID: 8017242582346335018}
+  m_Layer: 2
   m_Name: OvenParts(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20373,6 +20561,35 @@ Transform:
   m_Father: {fileID: 1092878308830666412}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8777975842704529224
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092878309249944392}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.18, z: 1}
+  m_Center: {x: 0, y: 0.09, z: 0}
+--- !u!114 &8017242582346335018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092878309249944392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7d5857c944c8ed4eae18b3e6bd84c27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 10
+  isStacked: 0
+  isPlate: 0
+  targetTransform: {fileID: 0}
 --- !u!1 &1092878309387630287
 GameObject:
   m_ObjectHideFlags: 0
@@ -29871,7 +30088,7 @@ GameObject:
   - component: {fileID: 1092878309531330925}
   - component: {fileID: 1092878309531330927}
   - component: {fileID: 1092878309531330926}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: cooker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29953,7 +30170,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1092878309553379620}
-  m_Layer: 0
+  - component: {fileID: 8298221372090578712}
+  - component: {fileID: 5681303227564090934}
+  m_Layer: 2
   m_Name: OvenParts(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29976,6 +30195,35 @@ Transform:
   m_Father: {fileID: 1092878308830666412}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8298221372090578712
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092878309553379627}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.18, z: 1}
+  m_Center: {x: 0, y: 0.09, z: 0}
+--- !u!114 &5681303227564090934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092878309553379627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7d5857c944c8ed4eae18b3e6bd84c27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 10
+  isStacked: 0
+  isPlate: 0
+  targetTransform: {fileID: 0}
 --- !u!1 &1092878309557040048
 GameObject:
   m_ObjectHideFlags: 0
@@ -30050,7 +30298,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1092878309559868130}
-  m_Layer: 0
+  - component: {fileID: 6210535906828687488}
+  - component: {fileID: 2876329909597210107}
+  m_Layer: 2
   m_Name: OvenParts(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30073,6 +30323,35 @@ Transform:
   m_Father: {fileID: 1092878308830666412}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6210535906828687488
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092878309559868129}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.18, z: 1}
+  m_Center: {x: 0, y: 0.09, z: 0}
+--- !u!114 &2876329909597210107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092878309559868129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7d5857c944c8ed4eae18b3e6bd84c27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 10
+  isStacked: 0
+  isPlate: 0
+  targetTransform: {fileID: 0}
 --- !u!1 &1092878309575821874
 GameObject:
   m_ObjectHideFlags: 0
@@ -30119,7 +30398,7 @@ GameObject:
   - component: {fileID: 1092878309579731984}
   - component: {fileID: 1092878309579731986}
   - component: {fileID: 1092878309579731985}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: cooker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30203,7 +30482,7 @@ GameObject:
   - component: {fileID: 1092878309580010822}
   - component: {fileID: 1092878309580010816}
   - component: {fileID: 1092878309580010823}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: cooker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30403,7 +30682,7 @@ GameObject:
   - component: {fileID: 1092878309595837667}
   - component: {fileID: 1092878309595837661}
   - component: {fileID: 1092878309595837660}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: cooker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35680,8 +35959,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 2.18
-  m_fontSizeBase: 2.18
+  m_fontSize: 1.75
+  m_fontSizeBase: 1.75
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -35716,7 +35995,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 7.9638996, y: -0.066759825, z: 11.712316, w: 4.646981}
+  m_margin: {x: 7.9137716, y: -0.066759825, z: 11.692418, w: 4.646981}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -40380,7 +40659,7 @@ GameObject:
   - component: {fileID: 1092878309875637260}
   - component: {fileID: 1092878309875637262}
   - component: {fileID: 1092878309875637261}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: cooker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40462,7 +40741,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1092878309876173223}
-  m_Layer: 0
+  - component: {fileID: 7434992737434720911}
+  - component: {fileID: 7099393860511159970}
+  m_Layer: 2
   m_Name: OvenParts(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40485,6 +40766,35 @@ Transform:
   m_Father: {fileID: 1092878308830666412}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7434992737434720911
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092878309876173222}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.18, z: 1}
+  m_Center: {x: 0, y: 0.09, z: 0}
+--- !u!114 &7099393860511159970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092878309876173222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7d5857c944c8ed4eae18b3e6bd84c27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 10
+  isStacked: 0
+  isPlate: 0
+  targetTransform: {fileID: 0}
 --- !u!1 &1092878309879159939
 GameObject:
   m_ObjectHideFlags: 0
@@ -40641,8 +40951,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ff6dcfe5f3488c64cb7341b5fd380971, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 1283734485, guid: d2697f73e82ba464fb7086e38978c656, type: 3}
+  m_Color: {r: 0.5411765, g: 0.80784315, b: 0.4862745, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -50153,7 +50463,7 @@ GameObject:
   - component: {fileID: 1092878310002024567}
   - component: {fileID: 1092878310002024561}
   - component: {fileID: 1092878310002024560}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: cooker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50252,7 +50562,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1092878310021717098}
   m_LocalRotation: {x: -0.7019992, y: 0.08483641, z: -0.07037924, w: 0.70359564}
-  m_LocalPosition: {x: -0.33906433, y: 0.58711785, z: 0.503}
+  m_LocalPosition: {x: -0.34, y: 0.594, z: 0.503}
   m_LocalScale: {x: 0.44537035, y: 0.4453703, z: 0.4453703}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -54989,7 +55299,7 @@ MonoBehaviour:
   - {fileID: 7003372874284843569, guid: cde2c60937558ac4ca641fc676a0e800, type: 3}
   - {fileID: 8776449815978770029, guid: ea6e4b685cce0bf4e9d52a9bd76a3b9e, type: 3}
   - {fileID: 2675138390254599811, guid: 7ef699695dfe5fb44b3246488a2b45a1, type: 3}
-  cameraPos: {x: 0, y: 1.24, z: -5.73}
+  cameraPos: {x: 0, y: 1.5, z: -7}
   recipeList:
   - {fileID: 1092878308806605883}
   - {fileID: 1092878309102786141}
@@ -59828,7 +60138,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1092878310222993424}
-  m_Layer: 0
+  - component: {fileID: 1863140865562417367}
+  - component: {fileID: 6609611719964936581}
+  m_Layer: 2
   m_Name: OvenParts(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59851,6 +60163,35 @@ Transform:
   m_Father: {fileID: 1092878308830666412}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1863140865562417367
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092878310222993431}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.18, z: 1}
+  m_Center: {x: 0, y: 0.09, z: 0}
+--- !u!114 &6609611719964936581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092878310222993431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7d5857c944c8ed4eae18b3e6bd84c27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 10
+  isStacked: 0
+  isPlate: 0
+  targetTransform: {fileID: 0}
 --- !u!1 &1092878310224842422
 GameObject:
   m_ObjectHideFlags: 0
@@ -60027,7 +60368,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1092878310278897121}
-  m_Layer: 0
+  - component: {fileID: 4938816048134960953}
+  - component: {fileID: 6364460797468166965}
+  m_Layer: 2
   m_Name: OvenParts(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60050,6 +60393,35 @@ Transform:
   m_Father: {fileID: 1092878308830666412}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4938816048134960953
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092878310278897120}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.18, z: 1}
+  m_Center: {x: 0, y: 0.09, z: 0}
+--- !u!114 &6364460797468166965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092878310278897120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7d5857c944c8ed4eae18b3e6bd84c27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 10
+  isStacked: 0
+  isPlate: 0
+  targetTransform: {fileID: 0}
 --- !u!1 &1092878310287303697
 GameObject:
   m_ObjectHideFlags: 0
@@ -60061,7 +60433,7 @@ GameObject:
   - component: {fileID: 1092878310287303698}
   - component: {fileID: 1092878310287303692}
   - component: {fileID: 1092878310287303699}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: cooker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60192,7 +60564,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -160475060082054231, guid: 82543f103b057654abfe16b09b9a9479, type: 2}
+  - {fileID: -7823340333909791897, guid: ec8f6b69ca269af459bfda04b486ea41, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -60236,8 +60608,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: x5
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 82543f103b057654abfe16b09b9a9479, type: 2}
-  m_sharedMaterial: {fileID: -160475060082054231, guid: 82543f103b057654abfe16b09b9a9479, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ec8f6b69ca269af459bfda04b486ea41, type: 2}
+  m_sharedMaterial: {fileID: -7823340333909791897, guid: ec8f6b69ca269af459bfda04b486ea41, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -60261,15 +60633,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 2.18
-  m_fontSizeBase: 2.18
+  m_fontSize: 1.75
+  m_fontSizeBase: 1.75
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -60297,7 +60669,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 7.9638996, y: -0.050667048, z: 11.712316, w: 4.6690016}
+  m_margin: {x: 7.9234343, y: -0.050667048, z: 11.690498, w: 4.6690016}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -65172,8 +65544,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ff6dcfe5f3488c64cb7341b5fd380971, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 1283734485, guid: d2697f73e82ba464fb7086e38978c656, type: 3}
+  m_Color: {r: 0.5411765, g: 0.80784315, b: 0.4862745, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -65277,7 +65649,7 @@ GameObject:
   - component: {fileID: 1092878310489335812}
   - component: {fileID: 1092878310489335814}
   - component: {fileID: 1092878310489335813}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: cooker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65361,7 +65733,7 @@ GameObject:
   - component: {fileID: 1092878310536024055}
   - component: {fileID: 1092878310536024049}
   - component: {fileID: 1092878310536024048}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: cooker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65445,7 +65817,7 @@ GameObject:
   - component: {fileID: 1092878310550144384}
   - component: {fileID: 1092878310550144386}
   - component: {fileID: 1092878310550144385}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: cooker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65716,7 +66088,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1092878310628344068
 Transform:
   m_ObjectHideFlags: 0
@@ -65773,8 +66145,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ff6dcfe5f3488c64cb7341b5fd380971, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 1283734485, guid: d2697f73e82ba464fb7086e38978c656, type: 3}
+  m_Color: {r: 0.5411765, g: 0.80784315, b: 0.4862745, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
