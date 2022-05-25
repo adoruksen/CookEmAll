@@ -14096,6 +14096,7 @@ GameObject:
   - component: {fileID: 2362533414359005457}
   - component: {fileID: 2362533414359005471}
   - component: {fileID: 2362533414359005456}
+  - component: {fileID: 3214986937857086072}
   m_Layer: 2
   m_Name: cooker
   m_TagString: Untagged
@@ -14169,6 +14170,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &3214986937857086072
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2362533414359005458}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bfb7cec843415244ca9fd9314827858f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2362533414359979716
 GameObject:
   m_ObjectHideFlags: 0
@@ -19125,6 +19146,7 @@ GameObject:
   - component: {fileID: 2362533414465289589}
   - component: {fileID: 2362533414465289587}
   - component: {fileID: 2362533414465289588}
+  - component: {fileID: 5095572493842788167}
   m_Layer: 2
   m_Name: cooker
   m_TagString: Untagged
@@ -19198,6 +19220,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &5095572493842788167
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2362533414465289590}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bfb7cec843415244ca9fd9314827858f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2362533414472860183
 GameObject:
   m_ObjectHideFlags: 0
@@ -24178,6 +24220,7 @@ GameObject:
   - component: {fileID: 2362533414602733858}
   - component: {fileID: 2362533414602733856}
   - component: {fileID: 2362533414602733857}
+  - component: {fileID: 429749286945018316}
   m_Layer: 2
   m_Name: cooker
   m_TagString: Untagged
@@ -24251,6 +24294,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &429749286945018316
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2362533414602733859}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bfb7cec843415244ca9fd9314827858f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2362533414604607052
 GameObject:
   m_ObjectHideFlags: 0
@@ -24441,6 +24504,7 @@ GameObject:
   - component: {fileID: 2362533414664371048}
   - component: {fileID: 2362533414664370966}
   - component: {fileID: 2362533414664370967}
+  - component: {fileID: 4691323970132988400}
   m_Layer: 2
   m_Name: cooker
   m_TagString: Untagged
@@ -24514,6 +24578,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &4691323970132988400
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2362533414664371049}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bfb7cec843415244ca9fd9314827858f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2362533414666416684
 GameObject:
   m_ObjectHideFlags: 0
@@ -24525,6 +24609,7 @@ GameObject:
   - component: {fileID: 2362533414666416683}
   - component: {fileID: 2362533414666416681}
   - component: {fileID: 2362533414666416682}
+  - component: {fileID: 8228231550920721329}
   m_Layer: 2
   m_Name: cooker
   m_TagString: Untagged
@@ -24598,6 +24683,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &8228231550920721329
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2362533414666416684}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bfb7cec843415244ca9fd9314827858f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2362533414681108792
 GameObject:
   m_ObjectHideFlags: 0
@@ -34658,6 +34763,7 @@ GameObject:
   - component: {fileID: 2362533414837097154}
   - component: {fileID: 2362533414837097152}
   - component: {fileID: 2362533414837097153}
+  - component: {fileID: 8926385415149896413}
   m_Layer: 2
   m_Name: cooker
   m_TagString: Untagged
@@ -34731,6 +34837,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &8926385415149896413
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2362533414837097155}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bfb7cec843415244ca9fd9314827858f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2362533414875639421
 GameObject:
   m_ObjectHideFlags: 0
@@ -49692,6 +49818,7 @@ GameObject:
   - component: {fileID: 2362533415204013383}
   - component: {fileID: 2362533415204013381}
   - component: {fileID: 2362533415204013382}
+  - component: {fileID: 3641366157877036903}
   m_Layer: 2
   m_Name: cooker
   m_TagString: Untagged
@@ -49765,6 +49892,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &3641366157877036903
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2362533415204013400}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bfb7cec843415244ca9fd9314827858f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2362533415220143573
 GameObject:
   m_ObjectHideFlags: 0
@@ -54420,6 +54567,7 @@ GameObject:
   - component: {fileID: 2362533415223034447}
   - component: {fileID: 2362533415223034445}
   - component: {fileID: 2362533415223034446}
+  - component: {fileID: 5995575106138085200}
   m_Layer: 2
   m_Name: cooker
   m_TagString: Untagged
@@ -54493,6 +54641,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &5995575106138085200
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2362533415223034432}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bfb7cec843415244ca9fd9314827858f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2362533415239985341
 GameObject:
   m_ObjectHideFlags: 0
@@ -54956,6 +55124,7 @@ GameObject:
   - component: {fileID: 2362533415324069680}
   - component: {fileID: 2362533415324069694}
   - component: {fileID: 2362533415324069695}
+  - component: {fileID: 2528851279559357318}
   m_Layer: 2
   m_Name: cooker
   m_TagString: Untagged
@@ -55029,6 +55198,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &2528851279559357318
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2362533415324069681}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bfb7cec843415244ca9fd9314827858f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2362533415326126863
 GameObject:
   m_ObjectHideFlags: 0
@@ -64444,6 +64633,7 @@ GameObject:
   - component: {fileID: 2362533415355028779}
   - component: {fileID: 2362533415355028777}
   - component: {fileID: 2362533415355028778}
+  - component: {fileID: 3097832772787443686}
   m_Layer: 2
   m_Name: cooker
   m_TagString: Untagged
@@ -64517,6 +64707,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &3097832772787443686
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2362533415355028780}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bfb7cec843415244ca9fd9314827858f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2362533415399019768
 GameObject:
   m_ObjectHideFlags: 0
@@ -69446,6 +69656,7 @@ GameObject:
   - component: {fileID: 2362533415469142047}
   - component: {fileID: 2362533415469142045}
   - component: {fileID: 2362533415469142046}
+  - component: {fileID: 5108543580484314454}
   m_Layer: 2
   m_Name: cooker
   m_TagString: Untagged
@@ -69519,6 +69730,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &5108543580484314454
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2362533415469142032}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bfb7cec843415244ca9fd9314827858f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2362533415471967671
 GameObject:
   m_ObjectHideFlags: 0
@@ -69709,6 +69940,7 @@ GameObject:
   - component: {fileID: 2362533415554466441}
   - component: {fileID: 2362533415554466487}
   - component: {fileID: 2362533415554466440}
+  - component: {fileID: 4789066235662764474}
   m_Layer: 2
   m_Name: cooker
   m_TagString: Untagged
@@ -69782,6 +70014,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &4789066235662764474
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2362533415554466442}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bfb7cec843415244ca9fd9314827858f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2362533415564793711
 GameObject:
   m_ObjectHideFlags: 0
@@ -69858,6 +70110,7 @@ GameObject:
   - component: {fileID: 2362533415574378248}
   - component: {fileID: 2362533415574378294}
   - component: {fileID: 2362533415574378295}
+  - component: {fileID: 9199359213163251764}
   m_Layer: 2
   m_Name: cooker
   m_TagString: Untagged
@@ -69931,6 +70184,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &9199359213163251764
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2362533415574378249}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bfb7cec843415244ca9fd9314827858f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2362533415584854661
 GameObject:
   m_ObjectHideFlags: 0
@@ -69942,6 +70215,7 @@ GameObject:
   - component: {fileID: 2362533415584854660}
   - component: {fileID: 2362533415584854658}
   - component: {fileID: 2362533415584854659}
+  - component: {fileID: 4245186648771408074}
   m_Layer: 2
   m_Name: cooker
   m_TagString: Untagged
@@ -70015,6 +70289,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &4245186648771408074
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2362533415584854661}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bfb7cec843415244ca9fd9314827858f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2362533415587153406
 GameObject:
   m_ObjectHideFlags: 0
@@ -75273,6 +75567,7 @@ GameObject:
   - component: {fileID: 2362533415762813189}
   - component: {fileID: 2362533415762813187}
   - component: {fileID: 2362533415762813188}
+  - component: {fileID: 3761729470265953442}
   m_Layer: 2
   m_Name: cooker
   m_TagString: Untagged
@@ -75346,6 +75641,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &3761729470265953442
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2362533415762813190}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bfb7cec843415244ca9fd9314827858f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2362533415773615783
 GameObject:
   m_ObjectHideFlags: 0
@@ -75474,6 +75789,7 @@ GameObject:
   - component: {fileID: 2362533415779963601}
   - component: {fileID: 2362533415779963615}
   - component: {fileID: 2362533415779963600}
+  - component: {fileID: 2190283936670668484}
   m_Layer: 2
   m_Name: cooker
   m_TagString: Untagged
@@ -75547,6 +75863,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &2190283936670668484
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2362533415779963602}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bfb7cec843415244ca9fd9314827858f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2362533415788763082
 GameObject:
   m_ObjectHideFlags: 0
@@ -75802,6 +76138,7 @@ GameObject:
   - component: {fileID: 2362533415860792531}
   - component: {fileID: 2362533415860792529}
   - component: {fileID: 2362533415860792530}
+  - component: {fileID: 321594326407394696}
   m_Layer: 2
   m_Name: cooker
   m_TagString: Untagged
@@ -75875,6 +76212,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &321594326407394696
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2362533415860792532}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bfb7cec843415244ca9fd9314827858f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2362533415871352045
 GameObject:
   m_ObjectHideFlags: 0
@@ -95273,6 +95630,7 @@ GameObject:
   - component: {fileID: 2362533416053560207}
   - component: {fileID: 2362533416053560205}
   - component: {fileID: 2362533416053560206}
+  - component: {fileID: 2809334832610253632}
   m_Layer: 2
   m_Name: cooker
   m_TagString: Untagged
@@ -95346,6 +95704,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &2809334832610253632
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2362533416053560192}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bfb7cec843415244ca9fd9314827858f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2362533416053868264
 GameObject:
   m_ObjectHideFlags: 0
@@ -95567,6 +95945,7 @@ GameObject:
   - component: {fileID: 2362533416130470551}
   - component: {fileID: 2362533416130470549}
   - component: {fileID: 2362533416130470550}
+  - component: {fileID: 7803580408807854019}
   m_Layer: 2
   m_Name: cooker
   m_TagString: Untagged
@@ -95640,6 +96019,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &7803580408807854019
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2362533416130470632}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bfb7cec843415244ca9fd9314827858f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2362533416153324344
 GameObject:
   m_ObjectHideFlags: 0
@@ -105997,6 +106396,7 @@ GameObject:
   - component: {fileID: 2362533416397393962}
   - component: {fileID: 2362533416397393960}
   - component: {fileID: 2362533416397393961}
+  - component: {fileID: 8485272975682343597}
   m_Layer: 2
   m_Name: cooker
   m_TagString: Untagged
@@ -106070,6 +106470,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &8485272975682343597
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2362533416397393963}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bfb7cec843415244ca9fd9314827858f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2362533416400398046
 GameObject:
   m_ObjectHideFlags: 0

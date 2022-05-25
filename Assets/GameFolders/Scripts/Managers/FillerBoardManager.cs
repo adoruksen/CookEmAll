@@ -45,6 +45,7 @@ namespace Assets.GameFolders.Scripts.Managers
                 objectFillList[i].GetComponent<BoxCollider>().enabled = true;
             }
             objectFillList.RemoveRange(0,destroyedObjectsList.Count);
+            destroyedObjectsList.Clear();
         }
     }
 }

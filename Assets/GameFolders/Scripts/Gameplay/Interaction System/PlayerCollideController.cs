@@ -66,7 +66,7 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                             StackedListController(other.transform, targetPosition);
                             break;
                         case InteractableTypes.OvenParts:
-                            MaterialColorChange(other.transform.GetChild(0).GetComponent<Renderer>());
+                            MaterialColorChange(other.transform.GetChild(0).GetComponent<Animator/*Renderer*/>());
                             break;
                     }
                 }
@@ -125,7 +125,7 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                 if (objDestroyed.GetComponent<Interactable>().type == stackedList[0].GetComponent<Interactable>().type)
                 {
                     objDestroyed.GetComponent<Interactable>().firstPos = objDestroyed.transform.position;
-                    if (objectsWillBeDestroyed.Count <= stackedList.Count)
+                    if (objectsWillBeDestroyed.Count >= stackedList.Count)
                         objectsWillBeDestroyed.Add(objDestroyed.GetComponent<Interactable>().firstPos);
                 }
             }
@@ -159,6 +159,10 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                         objTransform.DOPunchScale(new Vector3(.1f,.1f,.1f), 1f);
                     }
                 }
+                else
+                {
+                    objTransform.DOPunchScale(new Vector3(.1f, .1f, .1f), 1f);
+                }
             }
 
             else
@@ -182,7 +186,7 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                 stacked.GetComponent<Interactable>().isPlate = true;
             }
             var plateTransform = GameObject.FindGameObjectWithTag(type).transform;
-            for (int i = 0; i < stackedList.Count; i++)
+            for (var i = 0; i < stackedList.Count; i++)
             {
                 stackedList[i].GetComponent<Interactable>().targetTransform = i==0 ? plateTransform : stackedList[i - 1];
                 stackedList[i].rotation = plateTransform.rotation;
@@ -223,15 +227,13 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
             }
         }
 
-        void MaterialColorChange(Renderer renderer)
+        void MaterialColorChange(Animator animator /*Renderer renderer*/)
         {
-            //Debug.Log(renderer.materials[1].GetColor("_EmissionColor"));
-
-            var myColor = renderer.materials[1].GetColor("_EmissionColor");
-            var endColor = new Color(0.302f, 0, 0, 0);
-            renderer.materials[1].SetColor("_EmissionColor",endColor);
-            //DOTween.To(() =>myColor , x => myColor = x, endColor , .3f);
-            //Debug.Log(renderer.materials[1].GetColor("_EmissionColor"));
+            animator.Play("cookerAnims");
+           
+            //var myColor = renderer.materials[1].GetColor("_EmissionColor");
+            //var endColor = new Color(0.302f, 0, 0, 0);
+            //renderer.materials[1].SetColor("_EmissionColor",endColor);
         }
     }
 }
