@@ -22,6 +22,7 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
         [Header("Transforms")]
         [SerializeField] private Transform targetPosition;
         [SerializeField] private Transform tempParent;
+        private Transform tarPos;
 
         [Header("Scripts")]
         [SerializeField] private InputController inputController;
@@ -46,24 +47,29 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                     switch (interactable.type)
                     {
                         case InteractableTypes.Pancake:
-                            ObjectDestroyedListController(other.transform);
                             StackedListController(other.transform, targetPosition);
+
+                            ObjectDestroyedListController(other.transform);
                             break;
                         case InteractableTypes.Egg:
-                            ObjectDestroyedListController(other.transform);
                             StackedListController(other.transform, targetPosition);
+
+                            ObjectDestroyedListController(other.transform);
                             break;
                         case InteractableTypes.Bacon:
-                            ObjectDestroyedListController(other.transform);
                             StackedListController(other.transform, targetPosition);
+
+                            ObjectDestroyedListController(other.transform);
                             break;
                         case InteractableTypes.Bagel:
-                            ObjectDestroyedListController(other.transform);
                             StackedListController(other.transform, targetPosition);
+
+                            ObjectDestroyedListController(other.transform);
                             break;
                         case InteractableTypes.Steak:
-                            ObjectDestroyedListController(other.transform);
                             StackedListController(other.transform, targetPosition);
+
+                            ObjectDestroyedListController(other.transform);
                             break;
                         case InteractableTypes.OvenParts:
                             MaterialColorChange(other.transform.GetChild(0).GetComponent<Animator/*Renderer*/>());
@@ -124,15 +130,20 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
             {
                 if (objDestroyed.GetComponent<Interactable>().type == stackedList[0].GetComponent<Interactable>().type)
                 {
-                    objDestroyed.GetComponent<Interactable>().firstPos = objDestroyed.transform.position;
-                    if (objectsWillBeDestroyed.Count >= stackedList.Count)
+                    if (objectsWillBeDestroyed.Count < stackedList.Count)
+                    {
+                        Debug.Log("girdi");
+                        objDestroyed.GetComponent<Interactable>().firstPos = objDestroyed.transform.position;
                         objectsWillBeDestroyed.Add(objDestroyed.GetComponent<Interactable>().firstPos);
+
+                    }
                 }
             }
+
             else
             {
                 objDestroyed.GetComponent<Interactable>().firstPos = objDestroyed.transform.position;
-                if (objectsWillBeDestroyed.Count <= stackedList.Count)
+                if (objectsWillBeDestroyed.Count < stackedList.Count)
                     objectsWillBeDestroyed.Add(objDestroyed.GetComponent<Interactable>().firstPos);
             }
         }
@@ -186,27 +197,30 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                 stacked.GetComponent<Interactable>().isPlate = true;
             }
             var plateTransform = GameObject.FindGameObjectWithTag(type).transform;
+            //if (plateTransform.GetComponent<PlateCountController>().onPlateObjectsList.Count > 1)
+            //{
+            //    tarPos.position = new Vector3(plateTransform.position.x, plateTransform.GetComponent<PlateCountController>().onPlateObjectsList.Count * 3, plateTransform.position.z);
+            //}
             for (var i = 0; i < stackedList.Count; i++)
             {
-                stackedList[i].GetComponent<Interactable>().targetTransform = i==0 ? plateTransform : stackedList[i - 1];
+
+                //plateTransform.position= new Vector3(plateTransform.position.x, plateTransform.GetComponent<PlateCountController>().onPlateObjectsList.Count * 3,plateTransform.position.z);
+                stackedList[i].GetComponent<Interactable>().targetTransform = i==0 ? plateTransform.GetComponent<PlateCountController>().onPlateObjectsList[^1] : stackedList[i-1] ;
                 stackedList[i].rotation = plateTransform.rotation;
                 stackedList[i].parent = plateTransform;
+                plateTransform.GetComponent<PlateCountController>().onPlateObjectsList.Add(stackedList[i]);
+
             }
-            //foreach (var t in stackedList)
-            //{
-            //    t.GetComponent<Interactable>().targetTransform = plateTransform;
-            //    //t.DOMove(plateTransform.position,.5f);
-            //    t.rotation = plateTransform.rotation;
-            //    t.parent = plateTransform;
-            //}
+
             RecipeController.instance.RecipeHandlerFunction(plateTransform.GetChild(1).GetComponent<SingleRecipe>(),stackedList.Count,type);
            
             //DuringGamePanelController.instance.MoveCountDecrease();
             stackedList.Clear();
 
             FillerBoardManager.instance.TakeTransformInfos(objectsWillBeDestroyed);
-            objectsWillBeDestroyed.Clear();
             CompletePanelController.instance.plateMoveFinished = true;
+            objectsWillBeDestroyed.Clear();
+
         }
 
         private bool IsEnough()

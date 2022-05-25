@@ -14850,6 +14850,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1092878308834488123}
+  - component: {fileID: 8944501173775001472}
   m_Layer: 6
   m_Name: PancakePlate(Clone)
   m_TagString: PancakePlate
@@ -14874,6 +14875,19 @@ Transform:
   m_Father: {fileID: 1092878309575821875}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8944501173775001472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092878308834488122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 492c9aa1891951440a953ae4c2de713f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPlateObjectsList: []
 --- !u!1 &1092878308882177339
 GameObject:
   m_ObjectHideFlags: 0
@@ -20170,6 +20184,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1092878309142452988}
+  - component: {fileID: 3311864357997582977}
   m_Layer: 6
   m_Name: EggPlate(Clone)
   m_TagString: EggPlate
@@ -20194,6 +20209,19 @@ Transform:
   m_Father: {fileID: 1092878309575821875}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3311864357997582977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092878309142452867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 492c9aa1891951440a953ae4c2de713f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPlateObjectsList: []
 --- !u!1 &1092878309201462885
 GameObject:
   m_ObjectHideFlags: 0
@@ -65636,6 +65664,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1092878310394554142}
+  - component: {fileID: 7989364025954704904}
   m_Layer: 6
   m_Name: BaconPlate(Clone)
   m_TagString: BaconPlate
@@ -65660,6 +65689,19 @@ Transform:
   m_Father: {fileID: 1092878309575821875}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7989364025954704904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092878310394554141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 492c9aa1891951440a953ae4c2de713f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPlateObjectsList: []
 --- !u!1 &1092878310419506343
 GameObject:
   m_ObjectHideFlags: 0

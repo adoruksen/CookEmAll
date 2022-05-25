@@ -31495,6 +31495,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4871596473673453080}
+  - component: {fileID: 5490995563878945187}
   m_Layer: 6
   m_Name: PancakePlate(Clone)
   m_TagString: PancakePlate
@@ -31519,6 +31520,19 @@ Transform:
   m_Father: {fileID: 4871596473675101406}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5490995563878945187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4871596473673453083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 492c9aa1891951440a953ae4c2de713f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPlateObjectsList: []
 --- !u!1 &4871596473675101401
 GameObject:
   m_ObjectHideFlags: 0
@@ -61848,6 +61862,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4871596474166689060}
+  - component: {fileID: 5039956972925727278}
   m_Layer: 6
   m_Name: BaconPlate(Clone)
   m_TagString: BaconPlate
@@ -61872,6 +61887,19 @@ Transform:
   m_Father: {fileID: 4871596473675101406}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5039956972925727278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4871596474166689063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 492c9aa1891951440a953ae4c2de713f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPlateObjectsList: []
 --- !u!1 &4871596474169919923
 GameObject:
   m_ObjectHideFlags: 0
@@ -117001,6 +117029,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4871596474906300314}
+  - component: {fileID: 8324972634178435154}
   m_Layer: 6
   m_Name: BagelPlate(Clone)
   m_TagString: BagelPlate
@@ -117025,6 +117054,19 @@ Transform:
   m_Father: {fileID: 4871596473675101406}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8324972634178435154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4871596474906300293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 492c9aa1891951440a953ae4c2de713f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPlateObjectsList: []
 --- !u!1 &4871596474914667369
 GameObject:
   m_ObjectHideFlags: 0
@@ -137108,6 +137150,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4871596475090407506}
+  - component: {fileID: 4985254686176038668}
   m_Layer: 6
   m_Name: SteakPlate(Clone)
   m_TagString: SteakPlate
@@ -137132,6 +137175,19 @@ Transform:
   m_Father: {fileID: 4871596473675101406}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4985254686176038668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4871596475090407517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 492c9aa1891951440a953ae4c2de713f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPlateObjectsList: []
 --- !u!1 &4871596475100655466
 GameObject:
   m_ObjectHideFlags: 0
@@ -142836,6 +142892,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4871596475235234197}
+  - component: {fileID: 8578368375261924130}
   m_Layer: 6
   m_Name: EggPlate(Clone)
   m_TagString: EggPlate
@@ -142860,6 +142917,19 @@ Transform:
   m_Father: {fileID: 4871596473675101406}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8578368375261924130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4871596475235234196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 492c9aa1891951440a953ae4c2de713f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPlateObjectsList: []
 --- !u!1 &4871596475238900623
 GameObject:
   m_ObjectHideFlags: 0

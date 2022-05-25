@@ -30158,6 +30158,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 315420039665756140}
+  - component: {fileID: 2905667313585103847}
   m_Layer: 6
   m_Name: EggPlate(Clone)
   m_TagString: EggPlate
@@ -30182,6 +30183,19 @@ Transform:
   m_Father: {fileID: 315420039184524102}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2905667313585103847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315420039665756141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 492c9aa1891951440a953ae4c2de713f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPlateObjectsList: []
 --- !u!1 &315420039698849314
 GameObject:
   m_ObjectHideFlags: 0
@@ -45715,6 +45729,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 315420040260479022}
+  - component: {fileID: 1079814567854912235}
   m_Layer: 6
   m_Name: PancakePlate(Clone)
   m_TagString: PancakePlate
@@ -45739,6 +45754,19 @@ Transform:
   m_Father: {fileID: 315420039184524102}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1079814567854912235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315420040260479023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 492c9aa1891951440a953ae4c2de713f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPlateObjectsList: []
 --- !u!1 &7766637098547577337
 GameObject:
   m_ObjectHideFlags: 0

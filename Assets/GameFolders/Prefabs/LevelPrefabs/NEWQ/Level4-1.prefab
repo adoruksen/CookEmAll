@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2362533414292276254}
+  - component: {fileID: 310294207292786621}
   m_Layer: 6
   m_Name: PancakePlate(Clone)
   m_TagString: PancakePlate
@@ -33,6 +34,19 @@ Transform:
   m_Father: {fileID: 2362533414309588468}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &310294207292786621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2362533414292276255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 492c9aa1891951440a953ae4c2de713f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPlateObjectsList: []
 --- !u!1 &2362533414298707225
 GameObject:
   m_ObjectHideFlags: 0
@@ -34728,6 +34742,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2362533414820506085}
+  - component: {fileID: 1064476822225967488}
   m_Layer: 6
   m_Name: BaconPlate(Clone)
   m_TagString: BaconPlate
@@ -34752,6 +34767,19 @@ Transform:
   m_Father: {fileID: 2362533414309588468}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1064476822225967488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2362533414820506086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 492c9aa1891951440a953ae4c2de713f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPlateObjectsList: []
 --- !u!1 &2362533414837097155
 GameObject:
   m_ObjectHideFlags: 0
@@ -69759,6 +69787,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2362533415471967670}
+  - component: {fileID: 6612681866343801461}
   m_Layer: 6
   m_Name: SteakPlate(Clone)
   m_TagString: SteakPlate
@@ -69783,6 +69812,19 @@ Transform:
   m_Father: {fileID: 2362533414309588468}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6612681866343801461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2362533415471967671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 492c9aa1891951440a953ae4c2de713f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPlateObjectsList: []
 --- !u!1 &2362533415498929445
 GameObject:
   m_ObjectHideFlags: 0
@@ -76103,6 +76145,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2362533415815501685}
+  - component: {fileID: 7605692751407189442}
   m_Layer: 6
   m_Name: EggPlate(Clone)
   m_TagString: EggPlate
@@ -76127,6 +76170,19 @@ Transform:
   m_Father: {fileID: 2362533414309588468}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7605692751407189442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2362533415815501686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 492c9aa1891951440a953ae4c2de713f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPlateObjectsList: []
 --- !u!1 &2362533415860792532
 GameObject:
   m_ObjectHideFlags: 0
