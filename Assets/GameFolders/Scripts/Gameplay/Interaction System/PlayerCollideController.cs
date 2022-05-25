@@ -197,24 +197,17 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                 stacked.GetComponent<Interactable>().isPlate = true;
             }
             var plateTransform = GameObject.FindGameObjectWithTag(type).transform;
-            //if (plateTransform.GetComponent<PlateCountController>().onPlateObjectsList.Count > 1)
-            //{
-            //    tarPos.position = new Vector3(plateTransform.position.x, plateTransform.GetComponent<PlateCountController>().onPlateObjectsList.Count * 3, plateTransform.position.z);
-            //}
             for (var i = 0; i < stackedList.Count; i++)
             {
-
-                //plateTransform.position= new Vector3(plateTransform.position.x, plateTransform.GetComponent<PlateCountController>().onPlateObjectsList.Count * 3,plateTransform.position.z);
                 stackedList[i].GetComponent<Interactable>().targetTransform = i==0 ? plateTransform.GetComponent<PlateCountController>().onPlateObjectsList[^1] : stackedList[i-1] ;
                 stackedList[i].rotation = plateTransform.rotation;
                 stackedList[i].parent = plateTransform;
                 plateTransform.GetComponent<PlateCountController>().onPlateObjectsList.Add(stackedList[i]);
-
             }
 
             RecipeController.instance.RecipeHandlerFunction(plateTransform.GetChild(1).GetComponent<SingleRecipe>(),stackedList.Count,type);
            
-            //DuringGamePanelController.instance.MoveCountDecrease();
+            DuringGamePanelController.instance.MoveCountDecrease();
             stackedList.Clear();
 
             FillerBoardManager.instance.TakeTransformInfos(objectsWillBeDestroyed);

@@ -13,8 +13,8 @@ namespace Assets.GameFolders.Scripts.UI
         [SerializeField] private TMP_Text levelText;
 
         [SerializeField] private TMP_Text coinText;
-         //[SerializeField] private TMP_Text moveCounterText;
-        //public int moveCount;
+        [SerializeField] private TMP_Text moveCounterText;
+        public int moveCount;
 
 
         void Awake()
@@ -24,10 +24,11 @@ namespace Assets.GameFolders.Scripts.UI
             coinText.text = $"{GameManager.Coin}";
         }
 
-        //void Start()
-        //{
-        //    moveCount = LevelManager.instance.MoveCounter;
-        //}
+        void Start()
+        {
+            moveCount = LevelController.instance.moveCounter;
+            moveCounterText.text = $"MOVE:{moveCount}";
+        }
         public void RetryButtonHandle()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -43,22 +44,25 @@ namespace Assets.GameFolders.Scripts.UI
         public void Activator()
         {
             retryButton.SetActive(true);
-            levelText.text = $"Level {GameManager.Level}";
+            levelText.text = $"LEVEL {GameManager.Level}";
             levelText.transform.parent.gameObject.SetActive(true);
             coinText.transform.parent.gameObject.SetActive(true);
+            moveCounterText.gameObject.SetActive(true);
         }
-        //public void MoveCounterSetter(int value)
-        //{
-        //    moveCounterText.text = $"Move: {value}";
-        //}
+        public void MoveCounterSetter(int value)
+        {
+            moveCounterText.text = $"MOVE: {value}";
+        }
 
-        //public void MoveCountDecrease()
-        //{
-        //    moveCount--;
-        //    moveCounterText.text = $"Move: {moveCount}";
-        //    if (moveCount != 0) return;
-        //    LevelManager.gameState = GameState.Finish;
-        //    //CompletePanelController.instance.transform.GetChild(1).gameObject.SetActive(true); about Move Counter
-        //}
+        public void MoveCountDecrease()
+        {
+            moveCount--;
+            moveCounterText.text = $"MOVE: {moveCount}";
+            if (moveCount <= 0)
+            {
+                LevelManager.gameState = GameState.Finish;
+            }
+            //CompletePanelController.instance.transform.GetChild(1).gameObject.SetActive(true); about Move Counter
+        }
     }
 }

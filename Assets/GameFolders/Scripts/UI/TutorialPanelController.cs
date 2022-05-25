@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using Assets.GameFolders.Scripts.Gameplay.Controllers;
 using Assets.GameFolders.Scripts.Managers;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class TutorialPanelController : MonoBehaviour

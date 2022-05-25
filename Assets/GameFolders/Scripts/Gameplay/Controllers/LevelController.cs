@@ -10,8 +10,20 @@ public class LevelController : MonoBehaviour
     {
         instance = this;
     }
+    [Header("Level Contains:")]
+    public bool egg;
+    public bool pancake;
+    public bool bagel;
+    public bool bacon;
+    public bool steak;
 
     public List<GameObject> objectsCanBeInstantiated;
-    public Vector3 cameraPos;
+
     public List<GameObject> recipeList;
+
+    [Header("Level Settings")]
+    public Vector3 cameraPos;
+    public int moveCounter;
+
+
 }

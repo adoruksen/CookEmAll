@@ -34420,7 +34420,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7823340333909791897, guid: ec8f6b69ca269af459bfda04b486ea41, type: 2}
+  - {fileID: -2215118241656551096, guid: 2c039253b95849943a5ddf710aba1352, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -34464,8 +34464,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: x5
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ec8f6b69ca269af459bfda04b486ea41, type: 2}
-  m_sharedMaterial: {fileID: -7823340333909791897, guid: ec8f6b69ca269af459bfda04b486ea41, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2c039253b95849943a5ddf710aba1352, type: 2}
+  m_sharedMaterial: {fileID: -2215118241656551096, guid: 2c039253b95849943a5ddf710aba1352, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -40254,7 +40254,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7823340333909791897, guid: ec8f6b69ca269af459bfda04b486ea41, type: 2}
+  - {fileID: -2215118241656551096, guid: 2c039253b95849943a5ddf710aba1352, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -40298,8 +40298,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: x5
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ec8f6b69ca269af459bfda04b486ea41, type: 2}
-  m_sharedMaterial: {fileID: -7823340333909791897, guid: ec8f6b69ca269af459bfda04b486ea41, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2c039253b95849943a5ddf710aba1352, type: 2}
+  m_sharedMaterial: {fileID: -2215118241656551096, guid: 2c039253b95849943a5ddf710aba1352, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -54964,7 +54964,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7823340333909791897, guid: ec8f6b69ca269af459bfda04b486ea41, type: 2}
+  - {fileID: -2215118241656551096, guid: 2c039253b95849943a5ddf710aba1352, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -55008,8 +55008,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: x5
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ec8f6b69ca269af459bfda04b486ea41, type: 2}
-  m_sharedMaterial: {fileID: -7823340333909791897, guid: ec8f6b69ca269af459bfda04b486ea41, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2c039253b95849943a5ddf710aba1352, type: 2}
+  m_sharedMaterial: {fileID: -2215118241656551096, guid: 2c039253b95849943a5ddf710aba1352, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -75053,7 +75053,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7823340333909791897, guid: ec8f6b69ca269af459bfda04b486ea41, type: 2}
+  - {fileID: -2215118241656551096, guid: 2c039253b95849943a5ddf710aba1352, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -75097,8 +75097,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: x5
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ec8f6b69ca269af459bfda04b486ea41, type: 2}
-  m_sharedMaterial: {fileID: -7823340333909791897, guid: ec8f6b69ca269af459bfda04b486ea41, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2c039253b95849943a5ddf710aba1352, type: 2}
+  m_sharedMaterial: {fileID: -2215118241656551096, guid: 2c039253b95849943a5ddf710aba1352, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -91020,17 +91020,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 669784f5228d6404ead37f35c23dfcef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  egg: 1
+  pancake: 1
+  bagel: 0
+  bacon: 1
+  steak: 1
   objectsCanBeInstantiated:
   - {fileID: 7003372874284843569, guid: cde2c60937558ac4ca641fc676a0e800, type: 3}
   - {fileID: 8776449815978770029, guid: ea6e4b685cce0bf4e9d52a9bd76a3b9e, type: 3}
   - {fileID: 2675138390254599811, guid: 7ef699695dfe5fb44b3246488a2b45a1, type: 3}
   - {fileID: 2648643936722839014, guid: bd8c03e5a446a8b419840481b0b2847f, type: 3}
-  cameraPos: {x: 0, y: 2, z: -8}
   recipeList:
   - {fileID: 2362533414780748848}
   - {fileID: 2362533415871352045}
   - {fileID: 2362533415994036251}
   - {fileID: 2362533414487001581}
+  cameraPos: {x: 0, y: 2, z: -8}
+  moveCounter: 50
 --- !u!1 &2362533416017973507
 GameObject:
   m_ObjectHideFlags: 0
