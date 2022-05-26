@@ -35279,7 +35279,7 @@ MonoBehaviour:
   recipeList:
   - {fileID: 317563822990444782}
   - {fileID: 3140917433919347798}
-  cameraPos: {x: 0, y: 0.36, z: -6.06}
+  cameraPos: {x: 0, y: 0.5, z: -7}
   moveCounter: 50
 --- !u!1 &4438297453041248638
 GameObject:

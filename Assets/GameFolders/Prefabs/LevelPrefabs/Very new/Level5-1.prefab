@@ -64404,7 +64404,7 @@ MonoBehaviour:
   - {fileID: 8798426492308532384}
   - {fileID: 8798426492066792547}
   - {fileID: 8798426491319879605}
-  cameraPos: {x: 0, y: 2.5, z: -10}
+  cameraPos: {x: 0, y: 2.5, z: -10.5}
   moveCounter: 50
 --- !u!1 &3100135769790482087
 GameObject:

@@ -22,13 +22,13 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
         [Header("Transforms")]
         [SerializeField] private Transform targetPosition;
         [SerializeField] private Transform tempParent;
-        private Transform tarPos;
 
         [Header("Scripts")]
         [SerializeField] private InputController inputController;
 
         [Header("Components")] 
         [SerializeField] private BoxCollider playerCollider;
+
 
         private float maxDistance = 1.5f;
 
@@ -169,6 +169,7 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                         objTransform.transform.parent = parent;
                         objTransform.GetComponent<Interactable>().targetTransform = stackedList[^1];
                         stackedList.Add(objTransform);
+                        objTransform.DOPunchScale(new Vector3(.5f, .5f, .5f), .75f,1,1f);
                         objTransform.GetComponent<Interactable>().isStacked = true;
                         objTransform.GetChild(0).gameObject.SetActive(true);
                     }
@@ -189,6 +190,7 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                 objTransform.transform.parent = parent;
                 objTransform.GetComponent<Interactable>().targetTransform = targetPosition;
                 stackedList.Add(objTransform);
+                objTransform.DOPunchScale(new Vector3(.5f, .5f, .5f), .75f,1,1f);
                 objTransform.GetComponent<Interactable>().isStacked = true;
                 objTransform.GetChild(0).gameObject.SetActive(true);
             }
@@ -217,8 +219,10 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                 plateTransform.GetComponent<PlateCountController>().onPlateObjectsList.Add(stackedList[i]);
             }
 
+            ParticleSystemController(stackedList.Count);
             RecipeController.instance.RecipeHandlerFunction(plateTransform.GetChild(1).GetComponent<SingleRecipe>(),stackedList.Count,type);
            
+
             DuringGamePanelController.instance.MoveCountDecrease();
             stackedList.Clear();
 
@@ -254,5 +258,26 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
             //var endColor = new Color(0.302f, 0, 0, 0);
             //renderer.materials[1].SetColor("_EmissionColor",endColor);
         }
+
+        private void ParticleSystemController(int value)
+        {
+            if (value == 5)
+            {
+                PlayerParticleController.instance.PlayParticle(0);
+            }
+            if (value == 6)
+            {
+                PlayerParticleController.instance.PlayParticle(1);
+            }
+            if (value == 7)
+            {
+                PlayerParticleController.instance.PlayParticle(2);
+            }
+            if (value >= 8)
+            {
+                PlayerParticleController.instance.PlayParticle(3);
+            }
+        }
+
     }
 }

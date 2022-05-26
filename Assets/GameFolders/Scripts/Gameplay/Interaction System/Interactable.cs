@@ -10,13 +10,12 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
         [System.NonSerialized]public  Vector3 firstPos;
         public bool isStacked = false;
         public bool isPlate = false;
-        public Transform targetTransform ;
-
+        public Transform targetTransform;
         IEnumerator Start()
         {
             yield return new WaitForSeconds(1f);
 
-            if (type is InteractableTypes.Pancake or InteractableTypes.Egg)
+            if (type == InteractableTypes.Egg || type == InteractableTypes.Pancake || type == InteractableTypes.Bacon || type == InteractableTypes.Bagel || type == InteractableTypes.Steak)
             {
                 transform.DOPunchScale(new Vector3(.075f, .075f, .075f), .3f);
             }

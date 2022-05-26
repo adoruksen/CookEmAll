@@ -42339,7 +42339,7 @@ MonoBehaviour:
   - {fileID: 6999580751482164428}
   - {fileID: 4625101703705378005}
   - {fileID: 6749663836352106540}
-  cameraPos: {x: 0, y: 1.5, z: -7}
+  cameraPos: {x: 0, y: 1.5, z: -6.5}
   moveCounter: 50
 --- !u!1 &8227365731581752774
 GameObject:

@@ -10,6 +10,8 @@ namespace Assets.GameFolders.Scripts.Gameplay.Recipe_System
     {
         public static RecipeController instance;
         public List<SingleRecipe> singleRecipes;
+        [SerializeField] private ParticleSystem[] confettiParticle;
+
         private void Awake()
         {
             instance = this;
@@ -41,6 +43,10 @@ namespace Assets.GameFolders.Scripts.Gameplay.Recipe_System
             if (DidWin())
             {
                 LevelManager.gameState = GameState.Finish;
+                foreach (var item in confettiParticle)
+                {
+                    item.Play();
+                }
                 CompletePanelController.instance.Activator();
                 CompletePanelController.instance.SetFinalScoreText(value*5);
             }
