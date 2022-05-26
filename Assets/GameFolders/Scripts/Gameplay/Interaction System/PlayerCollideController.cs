@@ -124,6 +124,10 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
             }
         }
 
+        /// <summary>
+        /// function that keeping the position data of gone objects, adding them to objectDestroyedList to reach out from fillerboardmanager
+        /// </summary>
+        /// <param name="objDestroyed"></param>
         private void ObjectDestroyedListController(Transform objDestroyed)
         {
             if (objectsWillBeDestroyed.Count > 0)
@@ -135,7 +139,6 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                         Debug.Log("girdi");
                         objDestroyed.GetComponent<Interactable>().firstPos = objDestroyed.transform.position;
                         objectsWillBeDestroyed.Add(objDestroyed.GetComponent<Interactable>().firstPos);
-
                     }
                 }
             }
@@ -148,6 +151,10 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
             }
         }
 
+
+        /// <summary>
+        /// function that controls objects are the same type or not. if it is, adding stackedList
+        /// </summary>
         private void StackedListController(Transform objTransform, Transform parent)
         {
             if (stackedList.Count > 0)
@@ -186,6 +193,11 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                 objTransform.GetChild(0).gameObject.SetActive(true);
             }
         }
+
+
+        /// <summary>
+        /// function that finds same type plate with stackedList objects. Working after we have at least 3 stacked object and mousebuttonup
+        /// </summary>
         private void PlateAction(string type)
         {
             if (stackedList.Count <= 2) return;

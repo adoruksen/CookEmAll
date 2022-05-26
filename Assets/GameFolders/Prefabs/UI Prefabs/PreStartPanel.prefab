@@ -216,8 +216,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "TAP TO PLAY \n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ec8f6b69ca269af459bfda04b486ea41, type: 2}
-  m_sharedMaterial: {fileID: -7823340333909791897, guid: ec8f6b69ca269af459bfda04b486ea41, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2c039253b95849943a5ddf710aba1352, type: 2}
+  m_sharedMaterial: {fileID: -2215118241656551096, guid: 2c039253b95849943a5ddf710aba1352, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0

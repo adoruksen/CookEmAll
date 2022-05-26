@@ -35,7 +35,7 @@ AnimatorState:
   m_PrefabAsset: {fileID: 0}
   m_Name: cookerAnims
   m_Speed: 0.75
-  m_CycleOffset: 0.5
+  m_CycleOffset: 0
   m_Transitions:
   - {fileID: -1085414528592596565}
   m_StateMachineBehaviours: []
