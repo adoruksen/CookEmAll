@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
@@ -28,7 +27,7 @@ public class PlayerParticleController : MonoBehaviour
             particles[particleIndex].Play();
             particleImg.SetActive(true);
             particleImg.transform.DOPunchScale(new Vector3(.1f, .1f, .1f), 1f,1,1);
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(1);
             particleImg.SetActive(false);
         }
         else

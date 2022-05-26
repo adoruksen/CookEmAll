@@ -17,7 +17,7 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
 
             if (type == InteractableTypes.Egg || type == InteractableTypes.Pancake || type == InteractableTypes.Bacon || type == InteractableTypes.Bagel || type == InteractableTypes.Steak)
             {
-                transform.DOPunchScale(new Vector3(.075f, .075f, .075f), .3f);
+                transform.DOPunchScale(new Vector3(.075f, .075f, .075f), .5f);
             }
         }
 
@@ -26,14 +26,15 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
         {
             if (isStacked)
             {
-                transform.position = Vector3.Lerp(transform.position, new Vector3(targetTransform.position.x, targetTransform.position.y + 0.133f, targetTransform.position.z), 10f * Time.deltaTime);
+                transform.position = Vector3.Lerp(transform.position, new Vector3(targetTransform.position.x, targetTransform.position.y + 0.08f, targetTransform.position.z), 10f * Time.deltaTime);
                 transform.rotation = targetTransform.rotation;
             }
 
 
             if (isPlate)
             {
-                transform.position = Vector3.Lerp(transform.position, new Vector3(targetTransform.position.x, targetTransform.position.y + 0.05f, targetTransform.position.z), 15f * Time.deltaTime);
+                //transform.position = Vector3.Lerp(transform.position, new Vector3(targetTransform.position.x, targetTransform.position.y + 0.08f, targetTransform.position.z), 15f * Time.deltaTime);
+                transform.DOJump(new Vector3(targetTransform.position.x, targetTransform.position.y + 0.08f, targetTransform.position.z), .01f, 1, .35f);
                 transform.rotation = targetTransform.rotation;
             }
             

@@ -41469,9 +41469,5 @@ PrefabInstance:
       propertyPath: coin
       value: 
       objectReference: {fileID: 1338320341}
-    - target: {fileID: 7500081489493237172, guid: 6dad0cfdc1094ed4197a411ea11dcf00, type: 3}
-      propertyPath: confettiParticle
-      value: 
-      objectReference: {fileID: 1379352395}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6dad0cfdc1094ed4197a411ea11dcf00, type: 3}
