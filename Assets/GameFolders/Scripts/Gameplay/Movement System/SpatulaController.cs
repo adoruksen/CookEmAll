@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 using Assets.GameFolders.Scripts.Gameplay.Controllers;
 using DG.Tweening;
@@ -6,7 +5,6 @@ using DG.Tweening;
 public class SpatulaController : MonoBehaviour
 {
     [SerializeField] private Transform stackArea;
-    [SerializeField] private List<Transform> stackedObjectsList;
     [SerializeField] private InputController inputController;
     [SerializeField] Transform objectToFollow;
     [SerializeField] Vector3 offset;

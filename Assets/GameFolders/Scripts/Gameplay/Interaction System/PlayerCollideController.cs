@@ -1,12 +1,17 @@
 using System;
 using System.Collections.Generic;
 using System.Collections;
+using UnityEngine;
+
+using DG.Tweening;
+using MoreMountains.NiceVibrations;
+
 using Assets.GameFolders.Scripts.Gameplay.Controllers;
 using Assets.GameFolders.Scripts.Gameplay.Recipe_System;
 using Assets.GameFolders.Scripts.Managers;
 using Assets.GameFolders.Scripts.UI;
-using DG.Tweening;
-using UnityEngine;
+
+
 
 namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
 {
@@ -73,6 +78,7 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                             break;
                         case InteractableTypes.OvenParts:
                             MaterialColorChange(other.transform.GetChild(0).GetComponent<Animator/*Renderer*/>());
+                            MoveCancelFunction(other.transform);
                             break;
                     }
                 }
@@ -165,6 +171,7 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                         stackedList[^1].GetComponent<Interactable>().firstPos));
                     if ((curDistance < maxDistance))
                     {
+                        MMVibrationManager.Haptic(HapticTypes.LightImpact);
                         objTransform.GetComponent<BoxCollider>().enabled = false;
                         objTransform.transform.parent = parent;
                         objTransform.GetComponent<Interactable>().targetTransform = stackedList[^1];
@@ -175,17 +182,20 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                     }
                     else
                     {
+                        MMVibrationManager.Haptic(HapticTypes.HeavyImpact);
                         objTransform.DOPunchScale(new Vector3(.1f,.1f,.1f), 1f);
                     }
                 }
                 else
                 {
+                    MMVibrationManager.Haptic(HapticTypes.HeavyImpact); 
                     objTransform.DOPunchScale(new Vector3(.1f, .1f, .1f), 1f);
                 }
             }
 
             else
             {
+                MMVibrationManager.Haptic(HapticTypes.LightImpact);
                 objTransform.GetComponent<BoxCollider>().enabled = false;
                 objTransform.transform.parent = parent;
                 objTransform.GetComponent<Interactable>().targetTransform = targetPosition;
@@ -279,5 +289,17 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
             }
         }
 
+        void MoveCancelFunction(Transform ovenTransform)
+        {
+            if (inputController.FingerHold)
+            {
+                if (stackedList[^1].GetComponent<Interactable>().isStacked)
+                {
+                    stackedList[^1].transform.position = stackedList[^1].GetComponent<Interactable>().firstPos;
+                    stackedList[^1].GetComponent<BoxCollider>().enabled = true;
+                    stackedList.RemoveAt(stackedList.Count - 1);
+                }
+            }
+        }
     }
 }
