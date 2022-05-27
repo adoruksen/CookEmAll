@@ -26,7 +26,7 @@ namespace Assets.GameFolders.Scripts.Managers
 
         void InitializeObjects()
         {
-            for (var i = 0; i < 2000; i++)
+            for (var i = 0; i < LevelController.instance.moveCounter*10; i++)
             {
                 var randomValue = Random.Range(0, LevelController.instance.objectsCanBeInstantiated.Count/*LevelManager.instance.LevelNumber*//*levelRules.levelObjects.Length*/);
                 var insObject = Instantiate(LevelController.instance.objectsCanBeInstantiated[randomValue], objectsParent);
