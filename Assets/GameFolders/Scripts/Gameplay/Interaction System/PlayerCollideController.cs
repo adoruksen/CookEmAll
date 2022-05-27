@@ -27,6 +27,7 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
         [Header("Transforms")]
         [SerializeField] private Transform targetPosition;
         [SerializeField] private Transform tempParent;
+        Transform? plateTransform;
 
         [Header("Scripts")]
         [SerializeField] private InputController inputController;
@@ -78,7 +79,6 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                             break;
                         case InteractableTypes.OvenParts:
                             MaterialColorChange(other.transform.GetChild(0).GetComponent<Animator/*Renderer*/>());
-                            MoveCancelFunction(other.transform);
                             break;
                     }
                 }
@@ -220,17 +220,31 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                 stacked.GetComponent<Interactable>().isStacked = false;
                 stacked.GetComponent<Interactable>().isPlate = true;
             }
-            var plateTransform = GameObject.FindGameObjectWithTag(type).transform;
-            for (var i = 0; i < stackedList.Count; i++)
+            plateTransform = GameObject.FindGameObjectWithTag(type).transform;
+            if (plateTransform!=null)
             {
-                stackedList[i].GetComponent<Interactable>().targetTransform = i==0 ? plateTransform.GetComponent<PlateCountController>().onPlateObjectsList[^1] : stackedList[i-1] ;
-                stackedList[i].rotation = plateTransform.rotation;
-                stackedList[i].parent = plateTransform;
-                plateTransform.GetComponent<PlateCountController>().onPlateObjectsList.Add(stackedList[i]);
-            }
+                for (var i = 0; i < stackedList.Count; i++)
+                {
+                    stackedList[i].GetComponent<Interactable>().targetTransform = i == 0 ? plateTransform.GetComponent<PlateCountController>().onPlateObjectsList[^1] : stackedList[i - 1];
+                    stackedList[i].rotation = plateTransform.rotation;
+                    stackedList[i].parent = plateTransform;
+                    plateTransform.GetComponent<PlateCountController>().onPlateObjectsList.Add(stackedList[i]);
+                }
 
-            ParticleSystemController(stackedList.Count);
-            RecipeController.instance.RecipeHandlerFunction(plateTransform.GetChild(1).GetComponent<SingleRecipe>(),stackedList.Count,type);
+                ParticleSystemController(stackedList.Count);
+                RecipeController.instance.RecipeHandlerFunction(plateTransform.GetChild(1).GetComponent<SingleRecipe>(), stackedList.Count, type);
+            }
+            else
+            {
+                for (var i = 0; i < stackedList.Count; i++)
+                {
+                    stackedList[i].DOPunchScale(new Vector3(.1f, .1f, .1f), .4f, 1, 1).OnComplete(() =>
+                    {
+                        stackedList[i].DOScale(0, 4f).OnComplete(() => Destroy(stackedList[i]));
+                    });
+                }
+            }
+            
            
 
             DuringGamePanelController.instance.MoveCountDecrease();
@@ -289,17 +303,6 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
             }
         }
 
-        void MoveCancelFunction(Transform ovenTransform)
-        {
-            if (inputController.FingerHold)
-            {
-                if (stackedList[^1].GetComponent<Interactable>().isStacked)
-                {
-                    stackedList[^1].transform.position = stackedList[^1].GetComponent<Interactable>().firstPos;
-                    stackedList[^1].GetComponent<BoxCollider>().enabled = true;
-                    stackedList.RemoveAt(stackedList.Count - 1);
-                }
-            }
-        }
+       
     }
 }

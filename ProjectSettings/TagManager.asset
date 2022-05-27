@@ -9,6 +9,7 @@ TagManager:
   - BaconPlate
   - BagelPlate
   - SteakPlate
+  - EverythingPlate
   layers:
   - Default
   - TransparentFX
