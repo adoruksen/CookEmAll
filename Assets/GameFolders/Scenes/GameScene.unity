@@ -5396,7 +5396,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectFillList: []
-  levelRules: {fileID: 11400000, guid: 6be3eda1a7e03264999b4301639c962b, type: 2}
   objectsParent: {fileID: 1449774825}
 --- !u!1 &328155908
 GameObject:
@@ -25317,6 +25316,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1314514399}
   - component: {fileID: 1314514400}
+  - component: {fileID: 1314514401}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -25350,6 +25350,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d3ed417e68824774482c88f7c4487a3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1314514401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314514398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d87efd083bca5c4da269b471cb985ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1331047653
