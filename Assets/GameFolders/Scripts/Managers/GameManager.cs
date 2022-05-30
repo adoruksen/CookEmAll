@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Assets.GameFolders.Scripts.Managers
+namespace CookEmAll.Managers
 {
     public class GameManager : MonoBehaviour
     {

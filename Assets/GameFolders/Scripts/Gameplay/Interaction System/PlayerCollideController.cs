@@ -6,14 +6,14 @@ using UnityEngine;
 using DG.Tweening;
 using MoreMountains.NiceVibrations;
 
-using Assets.GameFolders.Scripts.Gameplay.Controllers;
-using Assets.GameFolders.Scripts.Gameplay.Recipe_System;
-using Assets.GameFolders.Scripts.Managers;
-using Assets.GameFolders.Scripts.UI;
+using CookEmAll.Gameplay.Controllers;
+using CookEmAll.Gameplay.Recipe_System;
+using CookEmAll.Managers;
+using CookEmAll.UI;
 
 
 
-namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
+namespace CookEmAll.Gameplay.Interaction_System
 {
     [RequireComponent(typeof(Collider))]
     public class PlayerCollideController : MonoBehaviour
@@ -27,10 +27,10 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
         [Header("Transforms")]
         [SerializeField] private Transform targetPosition;
         [SerializeField] private Transform tempParent;
-        Transform? plateTransform;
 
         [Header("Scripts")]
-        [SerializeField] private InputController inputController;
+        InputController inputController;
+        CookerAnimatorController cookerAnimatorController;
 
         [Header("Components")] 
         [SerializeField] private BoxCollider playerCollider;
@@ -41,6 +41,8 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
         private void Awake()
         {
             instance = this;
+            inputController = new InputController();
+            cookerAnimatorController = transform.parent.GetComponent<CookerAnimatorController>();
         }
 
         private void OnTriggerEnter(Collider other)
@@ -78,7 +80,7 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                             ObjectDestroyedListController(other.transform);
                             break;
                         case InteractableTypes.OvenParts:
-                            MaterialColorChange(other.transform.GetChild(0).GetComponent<Animator/*Renderer*/>());
+                            cookerAnimatorController.MaterialColorChange(other.transform.GetChild(0).GetComponent<Animator>());
                             break;
                     }
                 }
@@ -133,7 +135,6 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
         /// <summary>
         /// function that keeping the position data of gone objects, adding them to objectDestroyedList to reach out from fillerboardmanager
         /// </summary>
-        /// <param name="objDestroyed"></param>
         private void ObjectDestroyedListController(Transform objDestroyed)
         {
             if (objectsWillBeDestroyed.Count > 0)
@@ -142,7 +143,6 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                 {
                     if (objectsWillBeDestroyed.Count < stackedList.Count)
                     {
-                        Debug.Log("girdi");
                         objDestroyed.GetComponent<Interactable>().firstPos = objDestroyed.transform.position;
                         objectsWillBeDestroyed.Add(objDestroyed.GetComponent<Interactable>().firstPos);
                     }
@@ -220,32 +220,17 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
                 stacked.GetComponent<Interactable>().isStacked = false;
                 stacked.GetComponent<Interactable>().isPlate = true;
             }
-            plateTransform = GameObject.FindGameObjectWithTag(type).transform;
-            if (plateTransform!=null)
+            var plateTransform = GameObject.FindGameObjectWithTag(type).transform;
+            for (var i = 0; i < stackedList.Count; i++)
             {
-                for (var i = 0; i < stackedList.Count; i++)
-                {
-                    stackedList[i].GetComponent<Interactable>().targetTransform = i == 0 ? plateTransform.GetComponent<PlateCountController>().onPlateObjectsList[^1] : stackedList[i - 1];
-                    stackedList[i].rotation = plateTransform.rotation;
-                    stackedList[i].parent = plateTransform;
-                    plateTransform.GetComponent<PlateCountController>().onPlateObjectsList.Add(stackedList[i]);
-                }
+                stackedList[i].GetComponent<Interactable>().targetTransform = i == 0 ? plateTransform.GetComponent<PlateCountController>().onPlateObjectsList[^1] : stackedList[i - 1];
+                stackedList[i].rotation = plateTransform.rotation;
+                stackedList[i].parent = plateTransform;
+                plateTransform.GetComponent<PlateCountController>().AddToList(stackedList[i]);/*onPlateObjectsList.Add(stackedList[i])*/;
+            }
 
-                ParticleSystemController(stackedList.Count);
-                RecipeController.instance.RecipeHandlerFunction(plateTransform.GetChild(1).GetComponent<SingleRecipe>(), stackedList.Count, type);
-            }
-            else
-            {
-                for (var i = 0; i < stackedList.Count; i++)
-                {
-                    stackedList[i].DOPunchScale(new Vector3(.1f, .1f, .1f), .4f, 1, 1).OnComplete(() =>
-                    {
-                        stackedList[i].DOScale(0, 4f).OnComplete(() => Destroy(stackedList[i]));
-                    });
-                }
-            }
-            
-           
+            ParticleSystemController(stackedList.Count);
+            RecipeController.instance.RecipeHandlerFunction(plateTransform.GetChild(1).GetComponent<SingleRecipe>(), stackedList.Count, type);
 
             DuringGamePanelController.instance.MoveCountDecrease();
             stackedList.Clear();
@@ -274,14 +259,6 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
             }
         }
 
-        void MaterialColorChange(Animator animator /*Renderer renderer*/)
-        {
-            animator.Play("cookerAnims");
-           
-            //var myColor = renderer.materials[1].GetColor("_EmissionColor");
-            //var endColor = new Color(0.302f, 0, 0, 0);
-            //renderer.materials[1].SetColor("_EmissionColor",endColor);
-        }
 
         private void ParticleSystemController(int value)
         {

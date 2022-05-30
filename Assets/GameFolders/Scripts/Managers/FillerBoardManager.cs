@@ -2,15 +2,13 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
-namespace Assets.GameFolders.Scripts.Managers
+namespace CookEmAll.Managers
 {
     public class FillerBoardManager : MonoBehaviour
     {
         public static FillerBoardManager instance;
 
         [SerializeField] private List<Transform> objectFillList;
-
-        [SerializeField] private LevelRules levelRules;
 
         [SerializeField] private Transform objectsParent;
 

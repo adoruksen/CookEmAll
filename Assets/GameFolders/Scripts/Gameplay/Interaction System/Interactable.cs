@@ -1,8 +1,8 @@
-using System.Collections;
 using UnityEngine;
 using DG.Tweening;
+using CookEmAll.Managers;
 
-namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
+namespace CookEmAll.Gameplay.Interaction_System
 {
     public class Interactable : MonoBehaviour
     {
@@ -11,64 +11,19 @@ namespace Assets.GameFolders.Scripts.Gameplay.Interaction_System
         public bool isStacked = false;
         public bool isPlate = false;
         public Transform targetTransform;
-        IEnumerator Start()
-        {
-            yield return new WaitForSeconds(1f);
-
-            if (type == InteractableTypes.Egg || type == InteractableTypes.Pancake || type == InteractableTypes.Bacon || type == InteractableTypes.Bagel || type == InteractableTypes.Steak)
-            {
-                transform.DOPunchScale(new Vector3(.075f, .075f, .075f), .5f);
-            }
-        }
-
 
         void Update()
         {
             if (isStacked)
             {
-                transform.position = Vector3.Lerp(transform.position, new Vector3(targetTransform.position.x, targetTransform.position.y + 0.08f, targetTransform.position.z), 10f * Time.deltaTime);
-                transform.rotation = targetTransform.rotation;
+                transform.SetPositionAndRotation(Vector3.Lerp(transform.position, new Vector3(targetTransform.position.x, targetTransform.position.y + 0.08f, targetTransform.position.z), 10f * Time.deltaTime), targetTransform.rotation);
             }
-
-
             if (isPlate)
             {
                 //transform.position = Vector3.Lerp(transform.position, new Vector3(targetTransform.position.x, targetTransform.position.y + 0.08f, targetTransform.position.z), 15f * Time.deltaTime);
-                transform.DOJump(new Vector3(targetTransform.position.x, targetTransform.position.y + 0.08f, targetTransform.position.z), .01f, 1, .35f);
+                transform.DOJump(new Vector3(targetTransform.position.x, targetTransform.position.y + 0.08f, targetTransform.position.z), .01f, 1, .5f);
                 transform.rotation = targetTransform.rotation;
             }
-            
-
         }
-
-        //void OnTriggerExit(Collider other)
-        //{
-        //    Debug.Log("buna girdi" + other.name);
-        //    if (type!= InteractableTypes.OvenParts)
-        //    {
-        //        var interactable = other.GetComponent<Interactable>();
-        //        if (interactable != null)
-        //        {
-        //            if (interactable.type == InteractableTypes.OvenParts)
-        //            {
-        //                Debug.Log("carpisma old");
-        //                MaterialColorChange(other.GetComponent<Renderer>());
-        //            }
-        //        }
-        //    }
-        //}
-
-
-        
-
-        //public void MoveElements(List<Transform> collected)
-        //{
-        //    for (var i = 1; i < collected.Count; i++)
-        //    {
-        //        var pos = collected[i].transform.position;
-        //        pos.x = collected[i - 1].transform.position.x;
-        //        collected[i].transform.position = Vector3.Lerp(collected[i].transform.position, pos, .25f * Time.deltaTime);
-        //    }
-        //}
     }
 }

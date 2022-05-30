@@ -127,6 +127,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coffee_Steam
       objectReference: {fileID: 0}
+    - target: {fileID: 106292, guid: b0bf238d6091b11448ef6980d430013b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 415290, guid: b0bf238d6091b11448ef6980d430013b, type: 3}
       propertyPath: m_RootOrder
       value: 0

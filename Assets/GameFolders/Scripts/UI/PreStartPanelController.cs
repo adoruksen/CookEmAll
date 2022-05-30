@@ -1,8 +1,8 @@
-using Assets.GameFolders.Scripts.Managers;
+using CookEmAll.Managers;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Assets.GameFolders.Scripts.UI
+namespace CookEmAll.UI
 {
     public class PreStartPanelController : MonoBehaviour
     {

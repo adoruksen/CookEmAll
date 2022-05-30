@@ -1,13 +1,14 @@
 using UnityEngine;
 using DG.Tweening;
 
-namespace Assets.GameFolders.Scripts.UI
+namespace CookEmAll.UI
 {
     public class SceneLoadLayer : MonoBehaviour
     {
         [SerializeField]GameObject img_sceneLoad;
 
         #region Singleton Pattern
+        
         public static SceneLoadLayer instance;
         private void Awake()
         {

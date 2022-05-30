@@ -1,9 +1,9 @@
 ﻿using TMPro;
 using UnityEngine;
 
-namespace Assets.GameFolders.Scripts.Gameplay.Recipe_System
+namespace CookEmAll.Gameplay.Recipe_System
 {
-    public abstract class RecipeBase : MonoBehaviour
+    public abstract class RecipeBase:MonoBehaviour
     {
         public virtual void TextSetter(int value, TMP_Text textHolder, GameObject recipe, GameObject doneImg)
         {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Assets.GameFolders.Scripts.Gameplay.Recipe_System
+namespace CookEmAll.Gameplay.Recipe_System
 {
     public class SingleRecipe : RecipeBase
     {

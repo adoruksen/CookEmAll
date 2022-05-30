@@ -1,8 +1,8 @@
-using Assets.GameFolders.Scripts.Gameplay.Controllers;
-using Assets.GameFolders.Scripts.Managers;
+using CookEmAll.Gameplay.Controllers;
+using CookEmAll.Managers;
 using UnityEngine;
 
-namespace Assets.GameFolders.Scripts.Gameplay.Movement_System
+namespace CookEmAll.Gameplay.Movement_System
 {
     public class PlayerMovementController : MonoBehaviour
     {
@@ -14,11 +14,14 @@ namespace Assets.GameFolders.Scripts.Gameplay.Movement_System
 
         [SerializeField] private InputController inputController;
 
-
-        private void Start()
+        private void Awake()
         {
+            inputController = new InputController();
             cam = GameObject.Find("Main Camera").GetComponent<Camera>();
             planeCollider = GameObject.Find("FreeRoamArea").GetComponent<Collider>();
+        }
+        private void Start()
+        {
         }
 
         private void FixedUpdate()

@@ -1,20 +1,18 @@
 using System;
 using System.Collections;
-using Assets.GameFolders.Scripts.Managers;
+using CookEmAll.Managers;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-namespace Assets.GameFolders.Scripts.UI
+namespace CookEmAll.UI
 {
     public class CompletePanelController : MonoBehaviour
     {
         [Header("UI Elements")]
         [SerializeField] private GameObject backgroundImg;
-        [SerializeField] private GameObject levelCompletedText;
-        [SerializeField] private GameObject coin;
         [SerializeField] private GameObject nextLevelButton;
         [SerializeField] private GameObject score;
         [SerializeField] private GameObject layout;
@@ -36,8 +34,8 @@ namespace Assets.GameFolders.Scripts.UI
         public void NextButtonHandle()
         {
             GameManager.Level++;
+            //SceneLoadLayer.instance.SceneLoadAnimation(false);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            SceneLoadLayer.instance.SceneLoadAnimation(false);
         }
 
         public string SetFinalScoreText(int scoreValue)
@@ -48,7 +46,6 @@ namespace Assets.GameFolders.Scripts.UI
         public void Activator(bool condition = true)
         {
             if (!condition) return;
-            levelCompletedText.GetComponent<TMP_Text>().text = $"LEVEL {GameManager.Level} COMPLETED";
             StartCoroutine(PanelOpenDelay());
         }
 
@@ -56,28 +53,21 @@ namespace Assets.GameFolders.Scripts.UI
         {
             yield return longWaitTime;
             yield return new WaitUntil(() => plateMoveFinished);
+            plateMoveFinished = false;
             BackgroundAnimation();
 
 
-            levelCompletedText.SetActive(true);
             VerticalLayoutSetter();
             yield return shortWaitTime;
-            layout.SetActive(true);
 
             score.SetActive(true);
-            coin.SetActive(true);
-
-            yield return shortWaitTime;
             LayoutElementsAnimation();
-
             yield return shortWaitTime;
             nextLevelButton.SetActive(true);
-            plateMoveFinished = false;
         }
 
         public void BackgroundAnimation()
         {
-            backgroundImg.SetActive(true);
             backgroundImg.transform.DOScale(1, .5f);
         }
 
@@ -95,27 +85,27 @@ namespace Assets.GameFolders.Scripts.UI
             if (eggPart.activeInHierarchy)
             {
                 DOTween.To(() => eggPart.transform.GetChild(0).GetChild(0).GetComponent<Image>().fillAmount, x=>
-                    eggPart.transform.GetChild(0).GetChild(0).GetComponent<Image>().fillAmount = x ,1f, 3f);
+                    eggPart.transform.GetChild(0).GetChild(0).GetComponent<Image>().fillAmount = x ,1f, 1f);
             }
             if (pancakePart.activeInHierarchy)
             {
                 DOTween.To(() => pancakePart.transform.GetChild(0).GetChild(0).GetComponent<Image>().fillAmount, x =>
-                    pancakePart.transform.GetChild(0).GetChild(0).GetComponent<Image>().fillAmount = x, 1f, 3f);
+                    pancakePart.transform.GetChild(0).GetChild(0).GetComponent<Image>().fillAmount = x, 1f, 1f);
             }
             if (baconPart.activeInHierarchy)
             {
                 DOTween.To(() => baconPart.transform.GetChild(0).GetChild(0).GetComponent<Image>().fillAmount, x =>
-                    baconPart.transform.GetChild(0).GetChild(0).GetComponent<Image>().fillAmount = x, 1f, 3f);
+                    baconPart.transform.GetChild(0).GetChild(0).GetComponent<Image>().fillAmount = x, 1f, 1f);
             }
             if (bagelPart.activeInHierarchy)
             {
                 DOTween.To(() => bagelPart.transform.GetChild(0).GetChild(0).GetComponent<Image>().fillAmount, x =>
-                    bagelPart.transform.GetChild(0).GetChild(0).GetComponent<Image>().fillAmount = x, 1f, 3f);
+                    bagelPart.transform.GetChild(0).GetChild(0).GetComponent<Image>().fillAmount = x, 1f, 1f);
             }
             if (steakPart.activeInHierarchy)
             {
                 DOTween.To(() => steakPart.transform.GetChild(0).GetChild(0).GetComponent<Image>().fillAmount, x =>
-                    steakPart.transform.GetChild(0).GetChild(0).GetComponent<Image>().fillAmount = x, 1f, 3f);
+                    steakPart.transform.GetChild(0).GetChild(0).GetComponent<Image>().fillAmount = x, 1f, 1f);
             }
         }
 

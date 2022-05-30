@@ -1,24 +1,29 @@
-using Assets.GameFolders.Scripts.Gameplay.Controllers;
-using Assets.GameFolders.Scripts.Managers;
+using CookEmAll.Gameplay.Controllers;
+using CookEmAll.Managers;
 using UnityEngine;
 
-public class TutorialPanelController : MonoBehaviour
+namespace CookEmAll.UI
 {
-    public static TutorialPanelController instance;
+    public class TutorialPanelController : MonoBehaviour
+    {
+        private InputController inputController;
+        public static TutorialPanelController instance;
 
-    void Awake()
-    {
-        instance = this;
-    }
-    [SerializeField] private InputController inputController;
-    void Update()
-    {
-        if (LevelManager.gameState==GameState.Normal)
+        void Awake()
         {
-            if (inputController.FingerTap)
+            instance = this;
+            inputController = new InputController();
+        }
+        void Update()
+        {
+            if (LevelManager.gameState == GameState.Normal)
             {
-                gameObject.SetActive(false);
+                if (inputController.FingerTap)
+                {
+                    gameObject.SetActive(false);
+                }
             }
         }
     }
 }
+

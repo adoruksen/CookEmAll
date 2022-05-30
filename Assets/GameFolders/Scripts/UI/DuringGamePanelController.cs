@@ -1,10 +1,10 @@
-using Assets.GameFolders.Scripts.Managers;
+using CookEmAll.Managers;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Assets.GameFolders.Scripts.UI
+namespace CookEmAll.UI
 {
     public class DuringGamePanelController : MonoBehaviour
     {

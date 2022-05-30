@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
-using Assets.GameFolders.Scripts.Managers;
-using Assets.GameFolders.Scripts.UI;
+using CookEmAll.Managers;
+using CookEmAll.UI;
 using UnityEngine;
 
-namespace Assets.GameFolders.Scripts.Gameplay.Recipe_System
+namespace CookEmAll.Gameplay.Recipe_System
 {
     public class RecipeController : MonoBehaviour
     {
