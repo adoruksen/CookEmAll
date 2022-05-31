@@ -50,6 +50,7 @@ MonoBehaviour:
   value: 0
   recipe: {fileID: 8553329950308632681}
   countText: {fileID: 1187519385075268588}
+  doneImg: {fileID: 0}
 --- !u!1 &8692612005926547034
 GameObject:
   m_ObjectHideFlags: 0

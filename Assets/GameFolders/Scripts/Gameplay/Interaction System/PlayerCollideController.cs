@@ -176,7 +176,7 @@ namespace CookEmAll.Gameplay.Interaction_System
                         objTransform.transform.parent = parent;
                         objTransform.GetComponent<Interactable>().targetTransform = stackedList[^1];
                         stackedList.Add(objTransform);
-                        objTransform.DOPunchScale(new Vector3(.5f, .5f, .5f), .75f,1,1f);
+                        objTransform.DOPunchScale(new Vector3(.1f, .1f, .1f), .75f,1,1f);
                         objTransform.GetComponent<Interactable>().isStacked = true;
                         objTransform.GetChild(0).gameObject.SetActive(true);
                     }
@@ -200,7 +200,7 @@ namespace CookEmAll.Gameplay.Interaction_System
                 objTransform.transform.parent = parent;
                 objTransform.GetComponent<Interactable>().targetTransform = targetPosition;
                 stackedList.Add(objTransform);
-                objTransform.DOPunchScale(new Vector3(.5f, .5f, .5f), .75f,1,1f);
+                objTransform.DOPunchScale(new Vector3(.1f, .1f, .1f), .75f,1,1f);
                 objTransform.GetComponent<Interactable>().isStacked = true;
                 objTransform.GetChild(0).gameObject.SetActive(true);
             }
