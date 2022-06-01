@@ -692,7 +692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 516cfe1f46c539744a3216e2bb4d28bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 4
+  type: 3
   value: 5
   recipe: {fileID: 952688260874630612}
   countText: {fileID: 4500926670701173557}
