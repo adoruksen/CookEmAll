@@ -14,15 +14,24 @@ namespace CookEmAll.Gameplay.Interaction_System
 
         void Update()
         {
-            if (isStacked)
+            if (LevelManager.gameState==GameState.Normal)
             {
-                transform.SetPositionAndRotation(Vector3.Lerp(transform.position, new Vector3(targetTransform.position.x, targetTransform.position.y + 0.08f, targetTransform.position.z), 10f * Time.deltaTime), targetTransform.rotation);
-            }
-            if (isPlate)
-            {
-                //transform.position = Vector3.Lerp(transform.position, new Vector3(targetTransform.position.x, targetTransform.position.y + 0.08f, targetTransform.position.z), 15f * Time.deltaTime);
-                transform.DOJump(new Vector3(targetTransform.position.x, targetTransform.position.y + 0.08f, targetTransform.position.z), .01f, 1, .5f);
-                transform.rotation = targetTransform.rotation;
+                if (isStacked)
+                {
+                    if (targetTransform!=null)
+                    {
+                        transform.SetPositionAndRotation(Vector3.Lerp(transform.position, new Vector3(targetTransform.position.x, targetTransform.position.y + 0.08f, targetTransform.position.z), 10f * Time.deltaTime), targetTransform.rotation);
+                    }
+                }
+                if (isPlate)
+                {
+                    if (targetTransform!=null)
+                    {
+                        transform.DOJump(new Vector3(targetTransform.position.x, targetTransform.position.y + 0.08f, targetTransform.position.z), .01f, 1, .25f);
+                        transform.rotation = targetTransform.rotation;
+                    }
+                    //transform.position = Vector3.Lerp(transform.position, new Vector3(targetTransform.position.x, targetTransform.position.y + 0.08f, targetTransform.position.z), 15f * Time.deltaTime);
+                }
             }
         }
     }

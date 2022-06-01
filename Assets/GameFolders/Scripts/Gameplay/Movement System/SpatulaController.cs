@@ -19,6 +19,7 @@ namespace CookEmAll.Gameplay.Movement_System
 
         void Update()
         {
+            Debug.Log(LevelManager.gameState);
             if (LevelManager.gameState == GameState.Normal)
             {
                 if (inputController.FingerHold)
@@ -27,7 +28,7 @@ namespace CookEmAll.Gameplay.Movement_System
                 }
                 if (inputController.FingerUp)
                 {
-                    transform.DOMove(firstTransform.position, 1f);/*Vector3.Lerp(transform.position, firstTransform.position, 10*Time.deltaTime);*/
+                    transform.position = Vector3.Lerp(transform.position,firstTransform.position, 5*Time.deltaTime);/*Vector3.Lerp(transform.position, firstTransform.position, 10*Time.deltaTime);*/
                 }
             }
 

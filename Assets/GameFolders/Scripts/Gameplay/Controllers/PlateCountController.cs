@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using CookEmAll.Gameplay.Interaction_System;
+using CookEmAll.UI;
 
 public class PlateCountController : MonoBehaviour
 {
@@ -20,9 +21,11 @@ public class PlateCountController : MonoBehaviour
     public void AddToList(Transform stackedObject)
     {
         onPlateObjectsList.Add(stackedObject);
+    }
+    public void ListPlateFalse()
+    {
         StartCoroutine(ListIsPlateFalse());
     }
-
     IEnumerator ListIsPlateFalse()
     {
         yield return new WaitForSeconds(2f);

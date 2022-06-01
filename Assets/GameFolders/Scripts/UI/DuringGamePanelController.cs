@@ -31,6 +31,8 @@ namespace CookEmAll.UI
         }
         public void RetryButtonHandle()
         {
+            LevelManager.gameState = GameState.BeforeStart;
+            DOTween.KillAll();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 

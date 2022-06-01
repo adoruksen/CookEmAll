@@ -226,19 +226,19 @@ namespace CookEmAll.Gameplay.Interaction_System
                 stackedList[i].GetComponent<Interactable>().targetTransform = i == 0 ? plateTransform.GetComponent<PlateCountController>().onPlateObjectsList[^1] : stackedList[i - 1];
                 stackedList[i].rotation = plateTransform.rotation;
                 stackedList[i].parent = plateTransform;
-                plateTransform.GetComponent<PlateCountController>().AddToList(stackedList[i]);/*onPlateObjectsList.Add(stackedList[i])*/;
+                plateTransform.GetComponent<PlateCountController>().AddToList(stackedList[i]);/*onPlateObjectsList.Add(stackedList[i])*/
             }
 
             ParticleSystemController(stackedList.Count);
+            DuringGamePanelController.instance.MoveCountDecrease();
             RecipeController.instance.RecipeHandlerFunction(plateTransform.GetChild(1).GetComponent<SingleRecipe>(), stackedList.Count, type);
 
-            DuringGamePanelController.instance.MoveCountDecrease();
             stackedList.Clear();
-
-            FillerBoardManager.instance.TakeTransformInfos(objectsWillBeDestroyed);
             CompletePanelController.instance.plateMoveFinished = true;
-            objectsWillBeDestroyed.Clear();
+            FillerBoardManager.instance.TakeTransformInfos(objectsWillBeDestroyed);
 
+            objectsWillBeDestroyed.Clear();
+            plateTransform.GetComponent<PlateCountController>().ListPlateFalse();
         }
 
         private bool IsEnough()
@@ -259,7 +259,6 @@ namespace CookEmAll.Gameplay.Interaction_System
             }
         }
 
-
         private void ParticleSystemController(int value)
         {
             if (value == 5)
@@ -279,7 +278,5 @@ namespace CookEmAll.Gameplay.Interaction_System
                 PlayerParticleController.instance.PlayParticle(3);
             }
         }
-
-       
     }
 }
