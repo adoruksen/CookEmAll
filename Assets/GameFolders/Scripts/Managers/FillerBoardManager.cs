@@ -39,7 +39,7 @@ namespace CookEmAll.Managers
             {
                 var pos = destroyedObjectsList[i];
                 objectFillList[i].gameObject.SetActive(true);
-                objectFillList[i].DOMove(pos, .5f);
+                objectFillList[i].DOMove(pos, .4f);
                 objectFillList[i].GetComponent<BoxCollider>().enabled = true;
             }
             objectFillList.RemoveRange(0,destroyedObjectsList.Count);

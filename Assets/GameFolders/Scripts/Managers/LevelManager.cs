@@ -22,7 +22,7 @@ namespace CookEmAll.Managers
             }
             else
             {
-                var randomNumber = Random.Range(0, levelAsset.levels.Length);
+                var randomNumber = Random.Range(6, levelAsset.levels.Length);
                 Instantiate(levelAsset.levels[randomNumber]);
             }
         }

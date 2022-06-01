@@ -14,18 +14,18 @@ namespace CookEmAll.Gameplay.Interaction_System
 
         void Update()
         {
-            if (LevelManager.gameState==GameState.Normal)
+            if (LevelManager.gameState is GameState.Normal or GameState.Finish)
             {
                 if (isStacked)
                 {
-                    if (targetTransform!=null)
+                    if (targetTransform != null)
                     {
                         transform.SetPositionAndRotation(Vector3.Lerp(transform.position, new Vector3(targetTransform.position.x, targetTransform.position.y + 0.08f, targetTransform.position.z), 10f * Time.deltaTime), targetTransform.rotation);
                     }
                 }
                 if (isPlate)
                 {
-                    if (targetTransform!=null)
+                    if (targetTransform != null)
                     {
                         transform.DOJump(new Vector3(targetTransform.position.x, targetTransform.position.y + 0.08f, targetTransform.position.z), .01f, 1, .25f);
                         transform.rotation = targetTransform.rotation;
@@ -33,6 +33,7 @@ namespace CookEmAll.Gameplay.Interaction_System
                     //transform.position = Vector3.Lerp(transform.position, new Vector3(targetTransform.position.x, targetTransform.position.y + 0.08f, targetTransform.position.z), 15f * Time.deltaTime);
                 }
             }
+            
         }
     }
 }

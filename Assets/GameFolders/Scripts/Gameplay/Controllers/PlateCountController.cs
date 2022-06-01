@@ -28,12 +28,13 @@ public class PlateCountController : MonoBehaviour
     }
     IEnumerator ListIsPlateFalse()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         foreach (var item in onPlateObjectsList)
         {
             if (item.TryGetComponent<Interactable>(out var interactable))
             {
-                interactable.isPlate = false;
+                if (Mathf.Abs(item.transform.position.y - interactable.targetTransform.position.y) > 0.08f)
+                    interactable.isPlate = false;
             }
         }
     }
