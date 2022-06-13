@@ -19,11 +19,13 @@ namespace CookEmAll.Managers
             if (GameManager.Level <= levelAsset.levels.Length)
             {
                 Instantiate(levelAsset.levels[GameManager.Level - 1]);
+              
             }
             else
             {
                 var randomNumber = Random.Range(6, levelAsset.levels.Length);
                 Instantiate(levelAsset.levels[randomNumber]);
+               
             }
         }
     }

@@ -33,7 +33,7 @@ public class PlateCountController : MonoBehaviour
         {
             if (item.TryGetComponent<Interactable>(out var interactable))
             {
-                if (Mathf.Abs(item.transform.position.y - interactable.targetTransform.position.y) > 0.08f)
+                if (Mathf.Abs(item.transform.position.y - interactable.targetTransform.position.y) > 0.07f)
                     interactable.isPlate = false;
             }
         }

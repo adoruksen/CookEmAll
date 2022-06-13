@@ -33,7 +33,10 @@ namespace CookEmAll.UI
 
         public void NextButtonHandle()
         {
+
+            Initialize.instance.LevelComplete(GameManager.Level);
             GameManager.Level++;
+
             //SceneLoadLayer.instance.SceneLoadAnimation(false);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }

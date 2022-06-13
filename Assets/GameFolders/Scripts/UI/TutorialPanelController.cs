@@ -8,6 +8,9 @@ namespace CookEmAll.UI
     {
         private InputController inputController;
         public static TutorialPanelController instance;
+        [SerializeField] GameObject hand;
+        [SerializeField] GameObject background;
+        [SerializeField] GameObject tutorialMessage;
 
         void Awake()
         {
@@ -21,8 +24,18 @@ namespace CookEmAll.UI
                 if (inputController.FingerTap)
                 {
                     gameObject.SetActive(false);
+                    if (GameManager.Level==1)
+                    {
+                        DuringGamePanelController.instance.Activator();
+                    }
                 }
             }
+        }
+        public void Activator()
+        {
+            hand.SetActive(true);
+            background.SetActive(true); 
+            tutorialMessage.SetActive(true);    
         }
     }
 }
